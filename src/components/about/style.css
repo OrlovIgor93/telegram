@@ -1,0 +1,31 @@
+.wrap {
+    display: block;
+    max-width: 480px;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+}
+.head {
+    background-color:rgb(85, 128, 163);
+    color: #fff;
+    padding: 0 0 28px 26px;
+}
+.profile_description{
+    text-color:#fffff;
+    font-size: 14px;
+    padding: 15px 0 9px;
+}
+.title{
+    text-color: #fffff;
+    font-weight: 700;
+    padding: 18px 0 5px;
+    font-size: 14px;
+}
+.close{
+    float:right;
+    text-color: #fffff;
+    font-weight: 700;
+    padding: 18px 5px;
+    font-size: 14px;
+    padding-right: 22px;
+}
