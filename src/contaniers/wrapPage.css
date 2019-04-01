@@ -1,0 +1,61 @@
+.wrapPage {
+  display: block;
+  margin: 0 auto;
+  background-color: aqua;
+  max-width: 1010px;
+  min-width: 300px;
+  max-height: 100vh;
+  min-height: 100vh;
+}
+.wrapHeader {
+  min-height: 60px;
+  display: flex;
+  background-color: #5682a3;
+}
+.wrapPageContext {
+  background-color: red;
+  display: flex;
+  height: 700px;
+}
+.leftBlockDialogs {
+  background-color: salmon;
+  border-right: 2px solid #E9EBED;
+  flex: 1 2 31%;
+}
+.history {
+  background-color: slategrey;
+  flex: 2 1 69%;
+}
+.search {
+    padding: 10px;
+
+}
+.dialogs {
+  background-color: greenyellow;
+  overflow: auto;
+  margin:0;
+  padding: 7px 14px;
+  
+ display: flex;
+ flex-direction: row;
+}
+.imgDialogPhoto{
+    height: 48px;
+    width: 48px;
+    background-color: gray;
+    border-radius: 50%;
+    margin-right: 14px;
+    text-align: center;
+}
+
+.textPlaceholder {
+
+    line-height: 48px;
+    font-size: 18px;
+    color: white;
+}
+
+
+li {
+    list-style-type: none;
+}
