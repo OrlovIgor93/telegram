@@ -13,12 +13,12 @@
   background-color: #5682a3;
 }
 .wrapPageContext {
-  background-color: red;
+  background-color: white;
   display: flex;
   height: 700px;
 }
 .leftBlockDialogs {
-  background-color: salmon;
+  background-color: white;
   border-right: 2px solid #e9ebed;
   flex: 1 2 31%;
 }
@@ -26,13 +26,25 @@
   background-color: slategrey;
   flex: 2 1 69%;
 }
-.search {
+.searchWrap {
   padding: 10px;
+  text-align: center;
+}
+
+.inputSearch {
+    width: 250px;
+    height: 25px;
+    background: #F2F2F2 0 0;
+    border: 1px solid #F2F2F2;
+    border-radius: 2px;
+    font-size: 18px;
+    padding: 6px 26px 6px 30px;
+
 }
 .dialogs {
-  background-color: greenyellow;
+  background-color: white;
   overflow: auto;
-  height: 659px;
+  height: 641px;
   margin: 0;
   padding: 0;
   display: flex;
@@ -43,6 +55,10 @@
 
 
 dialogs::-webkit-scrollbar {width:0px;}
+
+.dialog:hover {
+    background-color: lightblue
+}
 .imgDialogPhoto {
   height: 48px;
   width: 48px;
@@ -54,7 +70,8 @@ dialogs::-webkit-scrollbar {width:0px;}
 
 .dialog {
     padding: 7px 14px;
-  display: flex;
+  display: flex;    
+  justify-content: space-between;
 }
 
 .textPlaceholder {
