@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #E7EBF0;
+}
+
+.wrap {
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: 35%;
+}
+
+p {
+    color: gray;
+    font-size: 15px;
+}
+
+.next {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    color: white;
+}
+
+.welcome-footer {
+    color: #5580a3;
+    text-align: center;
+}
+
+.learn-more {
+    color: #5580a3;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+A:link {
+    text-decoration: none;
+}
+
+A:visited {
+    text-decoration: none;
+}
+
+A:active {
+    text-decoration: none;
+}
+
+.title_wrap img {
+    float: left;
+    width: 30px;
+    height: auto;
+    padding-right: 20px;
+}
+
+.name_title {
+    display: block;
+    text-align: left;
+    font-size: 18px;
+}
+
+.next_wrap {
+    font-size: 17px;
+    margin-left: auto;
+}
+
+.title_wrap {
+    padding: 4%;
+    color: white;
+    height: 30px;
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid lightgray;
+}
+
+.country_input {
+    width: 100%;
+    border: none;
+    padding: 4%;
+}
+
+.code_input {
+    width: 20%;
+    margin-right: 10%;
+}
+
+.telephone_input {
+    width: 68.5%;
+}
+
+.login_wrap h1 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.login_wrap {
+    border-radius: 4px 4px 4px 4px;
+    background-color: white;
+}
+
+.login_container {
+    padding: 15%;
+    padding-top: 10%;
+}
+
+.head {
+    background-color: #5580a3;
+    padding: 0 0 210px 0;
+    position: relative;
+}
