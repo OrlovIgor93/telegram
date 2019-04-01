@@ -16,7 +16,7 @@ body{
     padding-top: 40px;
 }
 .profile_description{
-    text-color:#fffff;
+    text-color: #fff;
     font-size: 14px;
     padding: 15px 0 9px;
 }
@@ -26,17 +26,15 @@ body{
     padding: 30px;
 }
 .title{
-    text-color: #fffff;
+    text-color: #fff;
     font-weight: 700;
     padding: 18px 0 5px;
 }
-.link1, .title1{
-    float:left;
-}
-.link2, .title2  {
-    float: right;
-}
-.profile_wrap{
-    margin: 19px 0 0 100px;
-    padding-right: 28px;
+.close{
+    float:right;
+    text-color: #fff;
+    font-weight: 700;
+    padding: 18px 5px;
+    font-size: 14px;
+    padding-right: 22px;
 }
