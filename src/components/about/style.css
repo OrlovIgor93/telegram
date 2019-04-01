@@ -4,7 +4,7 @@ body{
 }
 .wrap {
     display: block;
-    max-width: 480px;
+    width: 480px;
     padding: 0 33.3%;
 }
 .head {
