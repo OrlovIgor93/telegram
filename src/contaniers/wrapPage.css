@@ -19,7 +19,7 @@
 }
 .leftBlockDialogs {
   background-color: salmon;
-  border-right: 2px solid #E9EBED;
+  border-right: 2px solid #e9ebed;
   flex: 1 2 31%;
 }
 .history {
@@ -27,35 +27,77 @@
   flex: 2 1 69%;
 }
 .search {
-    padding: 10px;
-
+  padding: 10px;
 }
 .dialogs {
   background-color: greenyellow;
   overflow: auto;
-  margin:0;
-  padding: 7px 14px;
-  
- display: flex;
- flex-direction: row;
+  height: 659px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+      overflow-x: hidden;
+    overflow-y: scroll;
 }
-.imgDialogPhoto{
-    height: 48px;
-    width: 48px;
-    background-color: gray;
-    border-radius: 50%;
-    margin-right: 14px;
-    text-align: center;
+
+
+dialogs::-webkit-scrollbar {width:0px;}
+.imgDialogPhoto {
+  height: 48px;
+  width: 48px;
+  background-color: gray;
+  border-radius: 50%;
+  margin-right: 14px;
+  text-align: center;
+}
+
+.dialog {
+    padding: 7px 14px;
+  display: flex;
 }
 
 .textPlaceholder {
-
-    line-height: 48px;
-    font-size: 18px;
-    color: white;
+  line-height: 48px;
+  font-size: 18px;
+  color: white;
 }
 
+.dialogInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dialogName {
+  font-weight: bold;
+  line-height: 18px;
+  font-size: 18px;
+}
+
+.infoLastMessage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 12px;
+}
+
+.chip {
+  height: 18px;
+  width: 18px;
+  background-color: royalblue;
+  border-radius: 50%;
+  text-align: center;
+  
+}
+
+.chipText {
+  line-height: 18px;
+  
+  color: white;
+}
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
