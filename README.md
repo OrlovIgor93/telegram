@@ -1,8 +1,10 @@
+## [Repository](https://github.com/OrlovIgor93/telegram)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## First start
 
-### `npm instal`
+### `npm install`
 
 ## Available Scripts
 
