@@ -1,8 +1,5 @@
 body {
-    margin: 0;
-}
-
-::-webkit-scrollbar { /* chrome based */
-    width: 0px;  /* ширина scrollbar'a */
-    background: transparent;  /* опционально */
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
 }
