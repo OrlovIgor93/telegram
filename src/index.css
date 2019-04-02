@@ -1,5 +1,7 @@
 body {
-    margin: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
 ::-webkit-scrollbar { /* chrome based */

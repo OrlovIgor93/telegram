@@ -4,7 +4,30 @@ import "./wrapPage.css";
 const wrapPage = () => {
   return (
     <div className="wrapPage">
-      <div className="wrapHeader" />
+      <div className="wrapHeader">
+        <div className="headerLeftMenu">
+          <div className="navButton">
+            <a href="">About</a>
+          </div>
+          <div className="navButton">
+            <a href="">User</a>
+          </div>
+          <div className="navButton">
+            <a href="">Login</a>
+          </div>
+        </div>
+        <div className="headerTitle">
+        <h2>Liza Smitt</h2>     
+          <div class="tg_head_peer_dropdown tg_head_peer_media_dropdown dropdown" dropdown="">
+            <a class="tg_head_btn dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+ 
+          </div>   
+        </div>
+      </div>
       <div className="wrapPageContext">
         <div className="leftBlockDialogs">
           <div className="searchWrap">
@@ -247,18 +270,23 @@ const wrapPage = () => {
         </div>
 
         <div className="history">
-          <div className="inputArea">
+          <div className="inputMesageArea">
             <div className="imgDialogPhoto inputLogoImage">
               <span className="textImagePlaceholder">DP</span>
             </div>
+
             <textarea
               type="textArea"
               className="inputMessage"
               rows="2"
               cols="50"
-              placeholder="Message..."
+              placeholder="Write a message..."
             />
-            <div className="imgDialogPhoto inputLogoImage imageGroup">
+
+            <div
+              className="imgDialogPhoto inputLogoImage"
+              style={{ backgroundColor: "green" }}
+            >
               <span className="textImagePlaceholder">LS</span>
             </div>
           </div>
@@ -276,9 +304,10 @@ const wrapPage = () => {
                   <div className="dialogName">Dima Petrov</div>
                   <div className="dialogLastMessage">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Harum totam numquam molestiae excepturi est possimus facere
-                    magnam corporis eum, non nesciunt ab dolores repudiandae
-                    voluptatem corrupti unde voluptatum. Non, excepturi.
+                    Harum totam numquam molestiae excepturi est possimus
+                    facere magnam corporis eum, non nesciunt ab dolores
+                    repudiandae voluptatem corrupti unde voluptatum. Non,
+                    excepturi.
                   </div>
                 </div>
                 <div className="timeLastMessage">
@@ -296,8 +325,9 @@ const wrapPage = () => {
                   <div className="dialogLastMessage">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Nobis, iusto velit commodi mollitia eveniet aspernatur,
-                    rerum dolor deleniti quam autem iste eius repellat doloribus
-                    laborum voluptates eos explicabo tempore doloremque!
+                    rerum dolor deleniti quam autem iste eius repellat
+                    doloribus laborum voluptates eos explicabo tempore
+                    doloremque!
                   </div>
                 </div>
                 <div className="timeLastMessage">
@@ -314,9 +344,10 @@ const wrapPage = () => {
                   <div className="dialogName">Dima Petrov</div>
                   <div className="dialogLastMessage">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Harum totam numquam molestiae excepturi est possimus facere
-                    magnam corporis eum, non nesciunt ab dolores repudiandae
-                    voluptatem corrupti unde voluptatum. Non, excepturi.
+                    Harum totam numquam molestiae excepturi est possimus
+                    facere magnam corporis eum, non nesciunt ab dolores
+                    repudiandae voluptatem corrupti unde voluptatum. Non,
+                    excepturi.
                   </div>
                 </div>
                 <div className="timeLastMessage">
@@ -349,9 +380,10 @@ const wrapPage = () => {
                   <div className="dialogName">Dima Petrov</div>
                   <div className="dialogLastMessage">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Harum totam numquam molestiae excepturi est possimus facere
-                    magnam corporis eum, non nesciunt ab dolores repudiandae
-                    voluptatem corrupti unde voluptatum. Non, excepturi.
+                    Harum totam numquam molestiae excepturi est possimus
+                    facere magnam corporis eum, non nesciunt ab dolores
+                    repudiandae voluptatem corrupti unde voluptatum. Non,
+                    excepturi.
                   </div>
                 </div>
                 <div className="timeLastMessage">
@@ -384,9 +416,10 @@ const wrapPage = () => {
                   <div className="dialogName">Dima Petrov</div>
                   <div className="dialogLastMessage">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Harum totam numquam molestiae excepturi est possimus facere
-                    magnam corporis eum, non nesciunt ab dolores repudiandae
-                    voluptatem corrupti unde voluptatum. Non, excepturi.
+                    Harum totam numquam molestiae excepturi est possimus
+                    facere magnam corporis eum, non nesciunt ab dolores
+                    repudiandae voluptatem corrupti unde voluptatum. Non,
+                    excepturi.
                   </div>
                 </div>
                 <div className="timeLastMessage">
@@ -419,9 +452,10 @@ const wrapPage = () => {
                   <div className="dialogName">Dima Petrov</div>
                   <div className="dialogLastMessage">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Harum totam numquam molestiae excepturi est possimus facere
-                    magnam corporis eum, non nesciunt ab dolores repudiandae
-                    voluptatem corrupti unde voluptatum. Non, excepturi.
+                    Harum totam numquam molestiae excepturi est possimus
+                    facere magnam corporis eum, non nesciunt ab dolores
+                    repudiandae voluptatem corrupti unde voluptatum. Non,
+                    excepturi.
                   </div>
                 </div>
                 <div className="timeLastMessage">
