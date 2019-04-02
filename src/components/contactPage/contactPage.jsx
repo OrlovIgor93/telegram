@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My profile</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<div class="wrap">
+    <div class="head">
+        <div class="title">
+            <div class="title1">Settings</div>
+            <div class="title2">Edit</div>
+            <div class="title2">Close</div>
+        </div>
+        <div class="photo_wrap">
+            <div class="telegram_logo">
+                <img src="userpic.png" alt="userpic">
+            </div>
+            <div class="profile">
+                <div class="profile_name">Name</div>
+                <div class="profile_description">online status</div>
+            </div>
+        </div>
+    </div>
+    <div class="profile_wrap">
+        <div class="phone">
+            <p>Phone number</p>
+        </div>
+        <div class="section">
+            <p>Username</p>
+        </div>
+    </div>
+    <br/>
+    <div class="container">
+        <div class="box">
+            <div class="desc">
+                <p>Notifications</p>
+            </div>
+            <div>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"/>
+                </label>
+            </div>
+        </div>
+        <ul class="options">
+            <li><a href="">Share contact</a></li>
+            <li><a href="">Delete contact</a></li>
+            <li><a href="">Clear history</a></li>
+            <li><a href="">Delete conversation</a></li>
+        </ul>
+    </div>
+</div>
+</html>

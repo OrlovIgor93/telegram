@@ -1,13 +1,10 @@
-import React, { Component } from 'react';
-import WrapPage from './contaniers/wrapPage'
-import AboutPage from './components/about/about'
-import LoginPage from './components/login/loginPage'
+import AboutPage fr
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <AboutPage />
+       <WrapPage />
       </div>
     );
   }
