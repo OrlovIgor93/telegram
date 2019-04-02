@@ -1,8 +1,7 @@
 import React from "react";
-import "./wrapPage.css";
+import "./style.css";
 
-const wrapPage = () => {
-  return (
+export const MainPage = () =>  (
     <div className="wrapPage">
       <div className="wrapHeader">
         <div className="headerLeftMenu">
@@ -18,14 +17,7 @@ const wrapPage = () => {
         </div>
         <div className="headerTitle">
         <h2>Liza Smitt</h2>     
-          <div class="tg_head_peer_dropdown tg_head_peer_media_dropdown dropdown" dropdown="">
-            <a class="tg_head_btn dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
- 
-          </div>   
+  
         </div>
       </div>
       <div className="wrapPageContext">
@@ -484,6 +476,4 @@ const wrapPage = () => {
       </div>
     </div>
   );
-};
 
-export default wrapPage;
