@@ -2,23 +2,47 @@
   display: block;
   margin: 0 auto;
   background-color: aqua;
-  height: 90vh;
-  width: 95vw;
-  max-width: 95cv;
-  min-width: 300px;
+
+  max-width: 1000px;
+  min-width: 600px;
+  max-height: 95vh;
+  min-height: 95vh;
 }
 .wrapHeader {
   min-height: 60px;
   display: flex;
   background-color: #5682a3;
+  align-items: center;
+}
+
+.headerLeftMenu {
+  
+  font-size: 18px;
+  flex: 1 2 31%;
+  display: flex;
+  flex-direction: row;
+}
+a, .navButton {
+  color: white;
+padding: 10px;
+}
+
+.headerTitle {
+  flex: 1 2 69%;
+  padding: 0 20px;
+  color: white;
+  display: flex;
+  flex-direction: row;
 }
 .wrapPageContext {
   background-color: white;
   display: flex;
-  height: 700px;
+  height: 90vh;
 }
 .leftBlockDialogs {
   background-color: white;
+  display: flex;
+  flex-direction: column;
   border-right: 2px solid #e9ebed;
   flex: 1 2 31%;
   width: 31%;
@@ -47,7 +71,6 @@
 .dialogs {
   background-color: white;
   overflow: auto;
-  height: 641px;
   margin: 0;
   padding: 0;
   display: flex;
@@ -70,6 +93,7 @@ dialogs::-webkit-scrollbar {
   border-radius: 50%;
   margin-right: 14px;
   text-align: center;
+  flex: 0 0 auto;
 }
 
 .dialog {
@@ -125,7 +149,6 @@ li {
 .messageContext {
   background-color: white;
   overflow: auto;
-  height: 641px;
   margin: 0;
   padding: 0;
   display: flex;
@@ -133,35 +156,29 @@ li {
   overflow-x: hidden;
   overflow-y: scroll;
 }
-.inputArea {
+.inputMesageArea {
   display: flex;
   padding: 10px;
-  justify-content: space-between;
+  flex: 0 0 auto;
+  justify-content: space-around;
 }
-
-.inputMessage {
-  background: #f2f2f2 0 0;
-  border: 1px solid #f2f2f2;
-  border-radius: 2px;
-  font-size: 18px;
-  padding: 6px 26px 6px 30px;
-  margin: 0 10px;
-  flex-wrap: wrap;
-}
-
-.inputLogoImage {
-  margin: 0;
+.inputLogoImage{
+  line-height: 56px;
+  color: white;
+ font-size: 20px;
   height: 56px;
   width: 56px;
-}
+  text-align: center;
+  margin: 0;
+  flex: 0 0 auto;
 
-.textImagePlaceholder {
-  line-height: 56px;
-  font-size: 20px;
-  color: white;
 }
-.imageGroup {
-  background-color: darkcyan;
+.inputMessage {
+  background: #f7f5f5 0 0;
+  border:0;
+  border-bottom: 2px solid #64b7f7;
+  font-size: 14px;
+  flex: 0 1 500px;
 }
 
 .message {
