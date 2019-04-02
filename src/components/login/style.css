@@ -2,13 +2,21 @@ body {
     margin: 0;
     padding: 0;
     background-color: #E7EBF0;
+    
 }
 
 .wrap {
     display: block;
     position: absolute;
     top: 80px;
+    background-size: contain;
     left: 35%;
+}
+
+@media all and (max-width: 900px) {
+    .wrap {
+        left:20%;
+    }
 }
 
 p {
