@@ -1,5 +1,8 @@
 import React from "react";
+import { Avatar } from "../Avatar";
 import "./style.css";
+import "../MainPage/style";
+
 const groupPage = () => (
     <div className="head">
         <div className="wrap">
@@ -12,7 +15,19 @@ const groupPage = () => (
                 <div className="input_search"><input type="search" placeholder="Search..." /></div>
             </div>
             <div className="contact_wrap">
-                {/* contacts */}
+                <ul className="dialogs">
+                    <li>
+                        <div className="dialog">
+                            <Avatar style={{ height: 48, width: 48, backgroundColor: "coral" }}>im</Avatar>
+                            <div className="dialogInfo">
+                                <div className="dialogName">Ilona Menkui</div>
+                            </div>
+                            <div className="infoLastMessage">
+                                <div>Last seen recently</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
             <div className="foot_wrap">
                 <div className="cancel">Cancel</div>
