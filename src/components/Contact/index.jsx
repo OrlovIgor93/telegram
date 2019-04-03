@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
-const Contact = () => {
+
+export const Contact = () => {
     return (
 <div className="wrap">
     <div className="head">
@@ -51,4 +52,3 @@ const Contact = () => {
 );
 };
 
-export default Contact;
