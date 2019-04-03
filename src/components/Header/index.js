@@ -7,7 +7,7 @@ export const Header = () => (
          <div className="wrapHeader">
            <div className="headerLeftMenu">
              <div className="navButton">
-                <Link to="">About</Link>
+                <Link to="/about">About</Link>
              </div>
              <div className="navButton">
                <Link to="/contact">User</Link>
