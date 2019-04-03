@@ -10,7 +10,6 @@ body {
     position: absolute;
     top: 80px;
     background-size: contain;
-    left: 35%;
 }
 
 @media all and (max-width: 900px) {
