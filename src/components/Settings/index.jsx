@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
-const Settings = () => {
+import {Avatar} from "../Avatar";
+const Index = () => {
     return (
         <div className="wrap">
             <div className="head">
@@ -11,7 +12,7 @@ const Settings = () => {
                 </div>
                 <div className="photo_wrap">
                     <div className="telegram_logo">
-                        <img src={require('../../img/userpic.png')} alt="userpic"/>
+                        <Avatar style={{ height: 48, width: 48 }}>dp</Avatar>
                     </div>
                     <div className="profile">
                         <div className="profile_name">Name</div>
@@ -91,4 +92,4 @@ const Settings = () => {
     );
 };
 
-export default Settings;
+export default Index;
