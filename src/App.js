@@ -6,6 +6,7 @@ import { Contact } from './components/Contact'
 import { MainPage } from './components/MainPage'
 import { About } from './components/About'
 import { GroupPage } from "./components/Group"
+import { Contacts } from './components/Contacts'
 import { LoginPage } from "./components/Login";
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
         <Route path="/contact" component={Contact} />
         <Route path="/login" component={LoginPage} />
         <Route path="/group" component={GroupPage} />
+        <Route path="/contacs" component={Contacts} />
       </Switch>
     );
   }
