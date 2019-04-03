@@ -13,7 +13,10 @@ export const Header = () => (
         <Link to="/contact">User</Link>
       </div>
       <div className="navButton">
-        <Link to="login">Login</Link>
+        <Link to="contact">Contact</Link>
+      </div>
+      <div className="navButton">
+        <Link to="group">Group</Link>
       </div>
     </div>
     <div className="headerTitle">
