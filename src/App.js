@@ -6,13 +6,15 @@ import { Contact } from './components/Contact'
 import { MainPage } from './components/MainPage'
 import { About } from './components/About'
 
+import { LoginPage } from "./components/Login";
+
 class App extends Component {
   render() {
     return (
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route path="/contact" component={Contact} />
-        <Route path="/about" component={About} />
+        <Route path="/login" component={LoginPage} />
       </Switch>
     );
   }
