@@ -4,7 +4,7 @@ import {Avatar} from "../Avatar";
 
 export const Contact = () => {
     return (
-<div className="wrap">
+<div className="wrap2">
     <div className="head">
         <div className="title">
             <div className="title1">Contact Info</div>
