@@ -1,0 +1,26 @@
+.wrapHeader {
+  min-height: 60px;
+  display: flex;
+  background-color: #5682a3;
+  align-items: center;
+}
+
+.headerLeftMenu {
+  
+  font-size: 18px;
+  flex: 1 2 31%;
+  display: flex;
+  flex-direction: row;
+}
+a, .navButton {
+  color: white;
+padding: 10px;
+}
+
+.headerTitle {
+  flex: 1 2 69%;
+  padding: 0 20px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+}
