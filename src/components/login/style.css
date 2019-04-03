@@ -43,15 +43,7 @@ p {
     text-align: center;
 }
 
-A:link {
-    text-decoration: none;
-}
-
-A:visited {
-    text-decoration: none;
-}
-
-A:active {
+A:link, A:visited, A:active {
     text-decoration: none;
 }
 
