@@ -14,7 +14,7 @@ export const MainPage = () => (
         <ul className="dialogs">
           <li>
             <div className="dialog">
-              <Avatar style={{ height: 48, width: 48 }}>dp</Avatar>
+              <Avatar style={{ height: 48, width: 48, backgroundColor: "pink" }}>dp</Avatar>
               <div className="dialogInfo">
                 <div className="dialogName">Dima Petrov</div>
                 <div className="dialogLastMessage">
