@@ -1,12 +1,12 @@
 .head {
     width: 430px;
+    background-color:#5580a3;
     padding: 0 33.3%;
     font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
 }
 
 .new-group {
     float: left;
-    padding: 19px;
     display: inline-block;
     padding: 19px;
 }
@@ -21,7 +21,6 @@
 .title_wrap {
     font-weight: bold;
     height: 55px;
-    background-color:#5580a3;
     color: #fff;
     text-transform: uppercase;
 }
@@ -45,6 +44,7 @@
 }
 
 .search_wrap {
+    background-color: #fff;
     float: left;
     border-bottom: lightgray solid 1.5px;
 }
@@ -72,8 +72,3 @@ height: auto;
     color: #72a0c7;
 }
 
-@media all and (max-width: 900px) {
-    .head {
-        padding: 0 20%;
-    }
-}
