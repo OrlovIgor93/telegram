@@ -12,3 +12,6 @@
   color: #fff;
   font-size: 140%;
 }
+.avatar:hover {
+  cursor: pointer;
+}

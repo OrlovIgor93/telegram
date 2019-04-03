@@ -1,0 +1,17 @@
+.btn {
+  position: relative;
+  padding: 10px 15px;
+  background-color: #7CC6fE;
+  border: none;
+  color: #FFF;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #70B4E6;
+}
+

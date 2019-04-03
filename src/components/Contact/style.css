@@ -15,7 +15,7 @@ body{
     padding-top: 40px;
 }
 .profile_description{
-    text-color:#fffff;
+    color:#fff;
     font-size: 14px;
     padding: 15px 0 9px;
 }
@@ -24,11 +24,13 @@ body{
     float: left;
     padding: 30px;
 }
+
 .title{
-    text-color: #fffff;
+    color: #fff;
     font-weight: 700;
     padding: 18px 0 5px;
 }
+
 .link1, .title1{
     float:left;
 }
