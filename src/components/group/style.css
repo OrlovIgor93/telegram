@@ -1,0 +1,50 @@
+.head {
+    width: 430px;
+    padding: 0 33.3%;
+    font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
+}
+
+.new_group {
+    float: left;
+    padding: 19px 15px 5px;
+}
+
+.close {
+    float: right;
+    width: 100px;
+    display: block;
+    float: right;
+    color: #dde8f1;
+    padding: 19px;
+}
+
+.title_wrap {
+    font-weight: bold;
+    height: 55px;
+    background-color:#5580a3;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.foot_wrap {
+    text-transform: uppercase;
+}
+
+.img_search {
+    display: inline;
+}
+
+.img_search img {
+width: 25px;
+height: auto;
+}
+
+.input_search {
+    display: inline;
+}
+
+@media all and (max-width: 900px) {
+    .head {
+        padding: 0 20%;
+    }
+}
