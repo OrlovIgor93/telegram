@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import {Avatar} from "../Avatar";
 
 export const Contact = () => {
     return (
@@ -12,7 +13,7 @@ export const Contact = () => {
         </div>
         <div className="photo_wrap">
             <div className="telegram_logo">
-                <img src={require('../../img/userpic.png')} alt="userpic"/>
+                <Avatar style={{ height: 48, width: 48 }}>dp</Avatar>
             </div>
             <div className="profile">
                 <div className="profile_name">Name</div>
