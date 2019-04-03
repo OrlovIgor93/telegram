@@ -5,9 +5,9 @@ const Contact = () => {
 <div className="wrap">
     <div className="head">
         <div className="title">
-            <div className="title1">Settings</div>
-            <div className="title2">Edit</div>
+            <div className="title1">Contact Info</div>
             <div className="title2">Close</div>
+            <div className="title2">Edit</div>
         </div>
         <div className="photo_wrap">
             <div className="telegram_logo">
@@ -23,7 +23,7 @@ const Contact = () => {
         <div className="phone">
             <p>Phone number</p>
         </div>
-        <div className="section">
+        <div className="username">
             <p>Username</p>
         </div>
     </div>

@@ -109,3 +109,15 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+.icon-phone {
+    width: 18px;
+    height: 18px;
+    background-image: url(../../img/ProfileIcons.png);
+    background-repeat: no-repeat;
+    background-position: -12px -10px;
+    margin-top: 3px;
+    display: inline-block;
+    margin-left: -64px;
+    position: absolute;
+
+}
