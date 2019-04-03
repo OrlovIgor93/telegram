@@ -1,23 +1,16 @@
-import React from 'react';
-import classNames from 'classnames';
+import React from "react";
+import classNames from "classnames";
 
-import './style.css'
+import "./style.css";
 
-export const Avatar = ({ children, className, ...attrs})=>{
+export const Avatar = ({ children, className, ...attrs }) => {
+  const classes = classNames("avatar", className);
 
-    const classes = classNames(
-        'avatar',
-        className,   
-    );
+  const Tag = attrs.src ? "img" : "p";
 
-const Tag = attrs.src ? 'img':'p';
-
-    return(
-        <Tag className={classes}
-            {...attrs}
-         >
-         {children}
-         </Tag>
-     
-    );
+  return (
+    <Tag className={classes} {...attrs}>
+      {children}
+    </Tag>
+  );
 };
