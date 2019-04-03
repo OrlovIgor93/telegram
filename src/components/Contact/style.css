@@ -2,14 +2,14 @@ body{
     font-family: sans-serif;
     font-size: 13px;
 }
-.wrap {
+.wrap2 {
     width: 480px;
     padding: 0 33.3%;
 }
 .head {
     background-color:rgb(85, 128, 163);
     color: #fff;
-    padding: 0 28px 26px;
+    padding: 0 28px 26px !important;
 }
 .profile{
     padding-top: 40px;
@@ -56,10 +56,10 @@ body{
     width:33%;
     display:inline-block;
 }
-.options li{
+.options li, li a{
     list-style: none;
     line-height: 2;
-    color: black;
+    color: grey !important;
 }
 .switch {
     position: relative;

@@ -3,7 +3,7 @@ import "./style.css";
 import { Avatar } from "../Avatar";
 export const Profile = () => {
     return (
-        <div className="wrap">
+        <div className="wrap2">
             <div className="head">
                 <div className="title">
                     <div className="title1">My Profile</div>
