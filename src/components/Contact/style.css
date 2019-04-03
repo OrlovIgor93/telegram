@@ -59,6 +59,7 @@ body{
 .options li{
     list-style: none;
     line-height: 2;
+    color: black;
 }
 .switch {
     position: relative;

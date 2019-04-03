@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-const About = () => {
+export const About = () => {
     return (
 <div className="wrap">
     <div className="head">
@@ -32,5 +32,3 @@ const About = () => {
 </div>
 );
 };
-
-export default About;

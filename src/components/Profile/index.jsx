@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import { Avatar } from "../Avatar";
-const Profile = () => {
+export const Profile = () => {
     return (
         <div className="wrap">
             <div className="head">
@@ -51,5 +51,3 @@ const Profile = () => {
         </div>
     );
 };
-
-export default Profile;

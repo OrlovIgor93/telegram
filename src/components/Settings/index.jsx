@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import {Avatar} from "../Avatar";
-const Index = () => {
+export const Settings = () => {
     return (
         <div className="wrap">
             <div className="head">
@@ -91,5 +91,3 @@ const Index = () => {
         </div>
     );
 };
-
-export default Index;
