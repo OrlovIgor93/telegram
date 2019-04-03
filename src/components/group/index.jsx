@@ -4,9 +4,9 @@ import "./style.css";
 import "../MainPage/style.css";
 
 export const GroupPage = () => (
-    <div className="head3">
-        <div className="wrap3">
-            <div className="title_wrap">
+    <div className="head_group">
+        <div className="wrap_group">
+            <div className="title_wrap_group">
                 <div className="new-group">New Group</div>
                 <div className="close">Close</div>
             </div>
@@ -15,13 +15,12 @@ export const GroupPage = () => (
                 <div className="input_search"><input type="search" placeholder="Search..." /></div>
             </div>
             <div className="contact_wrap">
-                <br /> <br /> <br /> <br />
-                <ul className="dialogs dialogs3">
+                <ul className="dialogs dialogs_group">
                     <li>
                         <div className="dialog">
                             <Avatar style={{ height: 48, width: 48, backgroundColor: "coral" }}>im</Avatar>
                             <div className="dialogInfo">
-                                <div className="dialogName">Ilona Menkui</div>
+                                <div className="dialogName dialogName_group">Ilona Menkui</div>
                             </div>
                             <div className="infoLastMessage">
                                 <div>Last seen recently</div>
@@ -30,9 +29,9 @@ export const GroupPage = () => (
                     </li>
                     <li>
                         <div className="dialog">
-                            <Avatar style={{ height: 48, width: 48, backgroundColor: "coral" }}>dp</Avatar>
+                            <Avatar style={{ height: 48, width: 48, backgroundColor: "coral" }}>im</Avatar>
                             <div className="dialogInfo">
-                                <div className="dialogName">Dima Platon</div>
+                                <div className="dialogName dialogName_group">Ilona Menkui</div>
                             </div>
                             <div className="infoLastMessage">
                                 <div>Last seen recently</div>
@@ -41,9 +40,42 @@ export const GroupPage = () => (
                     </li>
                     <li>
                         <div className="dialog">
-                            <Avatar style={{ height: 48, width: 48, backgroundColor: "coral" }}>lm</Avatar>
+                            <Avatar style={{ height: 48, width: 48, backgroundColor: "lightgreen" }}>dp</Avatar>
                             <div className="dialogInfo">
-                                <div className="dialogName">Lera Milasha</div>
+                                <div className="dialogName dialogName_group">Dima Platon</div>
+                            </div>
+                            <div className="infoLastMessage">
+                                <div>Last seen recently</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="dialog">
+                            <Avatar style={{ height: 48, width: 48, backgroundColor: "dark" }}>lm</Avatar>
+                            <div className="dialogInfo">
+                                <div className="dialogName dialogName_group">Lera Milasha</div>
+                            </div>
+                            <div className="infoLastMessage">
+                                <div>Last seen recently</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="dialog">
+                            <Avatar style={{ height: 48, width: 48, backgroundColor: "dark" }}>lm</Avatar>
+                            <div className="dialogInfo">
+                                <div className="dialogName dialogName_group">Lera Milasha</div>
+                            </div>
+                            <div className="infoLastMessage">
+                                <div>Last seen recently</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="dialog">
+                            <Avatar style={{ height: 48, width: 48, backgroundColor: "dark" }}>lm</Avatar>
+                            <div className="dialogInfo">
+                                <div className="dialogName dialogName_group">Lera Milasha</div>
                             </div>
                             <div className="infoLastMessage">
                                 <div>Last seen recently</div>
@@ -52,7 +84,7 @@ export const GroupPage = () => (
                     </li>
                 </ul>
             </div>
-            <div className="foot_wrap">
+            <div className="foot_wrap_group">
                 <div className="cancel">Cancel</div>
                 <div className="next">Next</div>
             </div>
