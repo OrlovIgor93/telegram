@@ -1,11 +1,13 @@
-.head {
-    width: 430px;
+.head3 {
+    margin: 0 33.3%;
+    height: 100px;
+    width: 425px;
     background-color:#5580a3;
-    padding: 0 33.3%;
     font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
 }
 
 .new-group {
+    color: #dde8f1;
     float: left;
     display: inline-block;
     padding: 19px;
@@ -18,7 +20,16 @@
     padding: 19px;
 }
 
+.contact_wrap {
+    display: block;
+}
+
+.dialogs3 {
+    width: 425px;
+}
+
 .title_wrap {
+    font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
     font-weight: bold;
     height: 55px;
     color: #fff;
@@ -26,6 +37,7 @@
 }
 
 .foot_wrap {
+    font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -44,6 +56,7 @@
 }
 
 .search_wrap {
+    font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
     background-color: #fff;
     float: left;
     border-bottom: lightgray solid 1.5px;

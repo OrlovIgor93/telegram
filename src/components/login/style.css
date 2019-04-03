@@ -6,7 +6,6 @@ body {
 }
 
 .wrap {
-    display: block;
     position: absolute;
     top: 80px;
     background-size: contain;
@@ -24,10 +23,10 @@ p {
 }
 
 .next {
-    display: block;
+    display: inline-block;
     text-align: right;
     font-weight: bold;
-    color: white;
+    color: #5580a3;
 }
 
 .welcome-footer {
@@ -54,19 +53,22 @@ A:link, A:visited, A:active {
 }
 
 .name_title {
-    display: block;
+    float: left;
+    display: inline-block;
     text-align: left;
     font-size: 18px;
 }
 
 .next_wrap {
+    float: right;
+    display: inline-block;
     font-size: 17px;
     margin-left: auto;
 }
 
 .title_wrap {
     padding: 4%;
-    color: white;
+    color: #5580a3;
     height: 30px;
 }
 
@@ -107,6 +109,6 @@ input {
 
 .head {
     background-color: #5580a3;
-    padding: 0 0 210px 0;
+    padding: 0 0 80px 0;
     position: relative;
 }
