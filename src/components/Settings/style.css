@@ -63,8 +63,8 @@ body{
 .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width: 54px;
+    height: 20px;
 }
 .slider {
     position: absolute;
@@ -80,10 +80,9 @@ body{
 .slider:before {
     position: absolute;
     content: "";
-    height: 26px;
-    width: 26px;
+    height: 20px;
+    width: 20px;
     left: 4px;
-    bottom: 4px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
@@ -109,4 +108,16 @@ input:checked + .slider:before {
 }
 .slider.round:before {
     border-radius: 50%;
+}
+.icon-phone {
+    width: 18px;
+    height: 18px;
+    background-image: url(../../img/ProfileIcons.png);
+    background-repeat: no-repeat;
+    background-position: -12px -10px;
+    margin-top: 3px;
+    display: inline-block;
+    margin-left: -64px;
+    position: absolute;
+
 }

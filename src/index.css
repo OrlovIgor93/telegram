@@ -3,3 +3,8 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
+::-webkit-scrollbar { /* chrome based */
+    width: 0px;  /* ширина scrollbar'a */
+    background: transparent;  /* опционально */
+}

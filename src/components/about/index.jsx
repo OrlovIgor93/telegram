@@ -1,6 +1,6 @@
 import React from "react";
-import "./aboutPage.css";
-const aboutPage = () => {
+import "./style.css";
+const About = () => {
     return (
 <div className="wrap">
     <div className="head">
@@ -25,12 +25,12 @@ const aboutPage = () => {
     </div>
     <div className="footer_wrap">
         <div className="footer">
-            <a className="link1" href="#" target="_blank">Link 1</a>
-            <a className="link2" href="#" target="_blank">Link 2</a>
+            <a className="link1" href="/" target="_blank">Link 1</a>
+            <a className="link2" href="/" target="_blank">Link 2</a>
         </div>
     </div>
 </div>
 );
 };
 
-export default aboutPage;
+export default About;
