@@ -1,6 +1,6 @@
-.head_group {
+.head3 {
     margin: 0 33.3%;
-    height: 65px;
+    height: 100px;
     width: 425px;
     background-color:#5580a3;
     font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
@@ -24,19 +24,19 @@
     display: block;
 }
 
-.dialogs_group {
+.dialogs3 {
     width: 425px;
 }
 
-.title_wrap_group {
+.title_wrap {
     font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
     font-weight: bold;
+    height: 55px;
     color: #fff;
+    text-transform: uppercase;
 }
 
-.foot_wrap_group {
-    background-color: #fff;
-    height: 56px;
+.foot_wrap {
     font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
     font-weight: bold;
     text-transform: uppercase;
@@ -62,10 +62,6 @@
     border-bottom: lightgray solid 1.5px;
 }
 
-.dialogName_group {
-    font-size: 15px;
-}
-
 .img_search img {
 width: 25px;
 height: auto;
@@ -76,7 +72,6 @@ height: auto;
 }
 
 .cancel {
-    background-color: #fff;
     display: inline-block;
     float: right;
     color: #72a0c7;
@@ -84,7 +79,6 @@ height: auto;
 }
 
 .next {
-    background-color: #fff;
     padding: 19px;
     display: inline-block;
     float: left;
