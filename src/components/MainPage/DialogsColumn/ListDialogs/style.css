@@ -4,17 +4,13 @@
   margin: 0;
   padding: 0;
 }
-.dialogs-list::-webkit-scrollbar{
+.dialogs-list::-webkit-scrollbar {
   width: 2px;
 }
 
-.dialogs-list::-webkit-scrollbar-track{
-  background: #fff;
-  border-radius: 20px;
+.dialogs-list::-webkit-scrollbar-track {
+  background: #e2e2e2;
 }
-::-webkit-scrollbar-thumb{ 
-  background: #aad7fa;
+::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
 }
-
-
-

@@ -1,0 +1,21 @@
+.message-context {
+  background-color: white;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.message-context::-webkit-scrollbar {
+  width: 15px;
+}
+
+.message-context::-webkit-scrollbar-track {
+  background: #e2e2e2;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 2px;
+}
