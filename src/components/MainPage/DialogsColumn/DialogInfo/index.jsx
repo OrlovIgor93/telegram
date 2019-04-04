@@ -5,7 +5,7 @@ import "./style.css";
 export const DialogInfo = ({ profileName, lastMessage }) => {
   return (
     <div className="dialogInfo">
-      <div>
+      <div className="strechArea">
         <div className="dialogName">{profileName}</div>
         <div className="dialogLastMessage">{lastMessage.text}</div>
       </div>

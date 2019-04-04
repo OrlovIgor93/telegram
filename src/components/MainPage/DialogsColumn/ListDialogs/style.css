@@ -3,14 +3,18 @@
   overflow: auto;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  overflow-y: scroll;
+}
+.dialogs-list::-webkit-scrollbar{
+  width: 2px;
 }
 
-dialogs::-webkit-scrollbar {
-  width: 0px;
+.dialogs-list::-webkit-scrollbar-track{
+  background: #fff;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb{ 
+  background: #aad7fa;
 }
 
-.dialog:hover {
-  background-color: lightblue;
-}
+
+

@@ -1,9 +1,11 @@
 .dialog-item {
   padding: 7px 14px;
   display: flex;
-  justify-content: space-between;
 }
 
 .avatar {
   flex: 0;
+}
+.dialog-item:hover {
+  background-color: lightblue;
 }

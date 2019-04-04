@@ -1,4 +1,6 @@
 .dialogInfo {
+  padding: 5px 10px;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -9,7 +11,11 @@
   line-height: 18px;
   font-size: 18px;
 }
-
+.strechArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
 .infoLastMessage {
   display: flex;
   flex-direction: column;

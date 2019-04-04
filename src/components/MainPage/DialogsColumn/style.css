@@ -1,4 +1,8 @@
 .dialogs-column {
   display: flex;
   flex-direction: column;
+  flex: 1 2 31%;
+  width: 31%;
+  justify-content: center;
+  border-right: 3px solid #aad7fa;
 }
