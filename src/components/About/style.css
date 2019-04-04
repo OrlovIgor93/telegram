@@ -1,53 +1,48 @@
 body{
     font-family: sans-serif;
-    font-size: 13px;
+    height: 100vh;
+    width: 100vw;
 }
-.wrap2 {
-    display: block;
-    width: 480px;
-    padding: 0 33.3%;
+.wrapper {
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 .head {
-    background-color:rgb(85, 128, 163);
+    background-color: rgb(85, 128, 163);
     color: #fff;
     padding: 0 28px 26px;
-}
-.profile{
-    padding-top: 40px;
+    height: 150px;
 }
 .profile_description{
-    color: #fff;
+    text-color:#fffff;
     font-size: 14px;
     padding: 15px 0 9px;
 }
+.photo_wrap{
+    display: flex;
+}
 .telegram_logo{
     display: block;
-    float: left;
     padding: 30px;
 }
 .title{
-    color: #fff;
+    display: flex;
+    text-color: #fffff;
     font-weight: 700;
     padding: 18px 0 5px;
 }
-.close{
-    float:right;
-    color: #fff;
-    font-weight: 700;
-    padding: 18px 5px;
-    font-size: 14px;
-    padding-right: 22px;
+.link2, .title2  {
+    margin-left: auto;
 }
-.title1, .link1 {
-    float:left;
+.profile_wrapper{
+    padding: 20px 0 20px 60px;
 }
-.title2, .link2 {
-    float:right;
+.footer{
+    display: flex;
+    padding: 10px;
 }
-.section {
-    padding-left: 100px;
-    padding-right: 20px;
-}
-.footer a{
-    color: grey !important;
+.footer a {
+    color: gray;
 }

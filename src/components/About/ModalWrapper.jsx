@@ -4,7 +4,7 @@ import {Heading} from "./Heading";
 import {ModalBody} from "./ModalBody";
 
 export const ModalWrapper = () => (
-    <div className="wrap2">
+    <div className="wrapper">
         <Heading/>
         <ModalBody/>
     </div>
