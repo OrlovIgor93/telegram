@@ -5,7 +5,7 @@ export const Heading = () => (
     <div className="head">
         <div className="title">
             <div className="title1">About</div>
-            <div className="title2">Close</div>
+            <div className="title2"><a href="/">Close</a></div>
         </div>
         <div className="photo_wrap">
             <div className="telegram_logo">
