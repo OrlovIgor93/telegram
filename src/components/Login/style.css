@@ -5,7 +5,10 @@
     padding: 0 0 190px 0;
     position: relative;
 }
+
 .wrap_login {
+    overflow: hidden;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -16,7 +19,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #E7EBF0; 
+    background-color: #E7EBF0;
 }
 
 p {
@@ -64,6 +67,7 @@ A:link, A:visited, A:active {
     color: #5580a3;
     height: 30px;
 }
+
 .title_login img {
     width: 30px;
     height: auto;
@@ -81,6 +85,7 @@ input {
 }
 
 .input_number_login {
+    padding: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -88,6 +93,7 @@ input {
 
 .code_input {
     padding: 10px;
+    width: 50px;
 }
 
 .telephone_input {
@@ -100,18 +106,18 @@ input {
 }
 
 .login_wrap {
-    border-radius: 4px 4px 4px 4px;
     background-color: white;
 }
 
 .login_container {
-    padding: 15%;
-    padding-top: 10%;
     display: flex;
     flex-direction: column;
 }
 
 .footer_wrap_login {
     display: flex;
+    align-items: center;
+    padding: 20px;
     flex-direction: column;
+    background-color: #f2f6fb;
 }
