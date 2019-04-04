@@ -11,6 +11,7 @@
   border-radius: 50%;
   color: #fff;
   font-size: 140%;
+  flex: 0 0 auto;
 }
 .avatar:hover {
   cursor: pointer;

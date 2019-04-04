@@ -4,7 +4,7 @@
 }
 
 .avatar {
-  flex: 0;
+  flex: 0 0 auto;
 }
 .dialog-item:hover {
   background-color: lightblue;
