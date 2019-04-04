@@ -10,9 +10,9 @@ export const ContactBody = () => (
             <div className="username">
                 <p>Username</p>
             </div>
-            <div className="container" >
-                <p style={{float: "left"}}>Notifications</p>
-                <div className="toggle" style={{float: "right", padding: '14px 0'}}>
+            <div className="contain" >
+                <p>Notifications</p>
+                <div className="toggle">
                     <label className="switch">
                         <input type="checkbox"/>
                         <span className="slider round"/>

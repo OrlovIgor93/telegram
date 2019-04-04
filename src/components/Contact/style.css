@@ -1,10 +1,11 @@
 body{
     font-family: sans-serif;
-    font-size: 13px;
 }
-.wrap2 {
-    width: 480px;
-    padding: 0 33.3%;
+.wrapper {
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
 }
 .head {
     background-color:rgb(85, 128, 163);
@@ -24,19 +25,15 @@ body{
     float: left;
     padding: 30px;
 }
-
-.title{
+.titles{
+    display: flex;
+    justify-content: space-between;
     color: #fff;
-    font-weight: 700;
     padding: 18px 0 5px;
 }
-
-.link1, .title1{
-    float:left;
-}
-.link2, .title2  {
-    float: right;
-    padding-left: 20px;
+.title2 {
+    margin-left: auto;
+    margin-right: 15px;
 }
 .profile_wrap{
     margin: 19px 0 0 100px;
@@ -46,12 +43,12 @@ body{
     font-size: 16px;
     font-weight: bold;
 }
-.container{
-    overflow:hidden;
-    width:100%;
+.contain{
+    display: flex;
+    justify-content: space-between;
 }
-.box{
-    white-space:nowrap;
+.toggle {
+    align-self: center;
 }
 .box div {
     margin-left: 100px;
