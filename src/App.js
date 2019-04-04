@@ -16,9 +16,7 @@ class App extends Component {
         <Route path="/main" component={MainPage} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
-
         <Route path="/group" component={GroupPage} />
-      
       </Switch>
     );
   }
