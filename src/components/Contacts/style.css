@@ -1,65 +1,89 @@
-.head3 {
-    margin: 0 33.3%;
-    height: 100px;
+.wrap_group {
+    height: 65px;
     width: 425px;
+    display: flex;
+    flex-direction: column;
     background-color:#5580a3;
     font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
 }
 
-.new-group {
+.head_group {
+    display: flex;
+    justify-content: center;    
+}
+
+.contact-contacts {
+    flex: 8;
     color: #dde8f1;
-    float: left;
-    display: inline-block;
     padding: 19px;
 }
 
 .close {
-    display: inline-block;
-    float: right;
+    flex: 1;
     color: #dde8f1;
     padding: 19px;
 }
 
-.contact_wrap {
-    display: block;
+.edit-contact {
+    flex: 1;
+    color: #dde8f1;
+    padding: 19px;
 }
 
-.dialogs3 {
-    width: 425px;
+.dialogs_group {
+    padding: 5px;
+    background-color: #fff;
+    margin: 0px;
 }
 
-.title_wrap {
+.dialog{
+    margin: 0 20px 15px 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.title_wrap_group {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
     font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
     font-weight: bold;
-    height: 55px;
     color: #fff;
-    text-transform: uppercase;
 }
 
-.foot_wrap {
+.foot_wrap_group {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
     font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
     font-weight: bold;
     text-transform: uppercase;
-}
-
-.img_search {
-    float: left;
-    display: inline-block;
 }
 
 .input_search input {
     border: none;
     outline: none;
-    width: 400px;
-    padding: 4px;
-    height: 50px;
+    padding: 7px;
+}
+
+li {
+    list-style-type: none;
 }
 
 .search_wrap {
+    align-items: center;
+    display: flex;
     font: 13px/18px Tahoma,sans-serif,Arial,Helvetica;
     background-color: #fff;
-    float: left;
     border-bottom: lightgray solid 1.5px;
+}
+
+.dialogName_group {
+    font-size: 14px;
+}
+
+.infoLastMessage {
+    color:gray;
 }
 
 .img_search img {
@@ -68,20 +92,20 @@ height: auto;
 }
 
 .input_search {
-    display: inline-block;
+    padding: 15px;
 }
 
-.cancel {
-    display: inline-block;
-    float: right;
-    color: #72a0c7;
-    padding: 19px;
+.new-contact {
+    font-size: 14px;
+    color: #5580a3;
+    text-align: right;
+    padding: 15px;
 }
 
-.next {
-    padding: 19px;
-    display: inline-block;
-    float: left;
-    color: #72a0c7;
-}
+/* flex for avatar contacts */
+
+
+
+
+
 
