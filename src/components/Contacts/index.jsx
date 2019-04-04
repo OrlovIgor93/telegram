@@ -3,7 +3,7 @@ import { Avatar } from "../Avatar";
 import "./style.css";
 import "../MainPage/style.css";
 
-export const GroupPage = () => (
+export const Contacts = () => (
     <div className="head3">
         <div className="wrap3">
             <div className="title_wrap">
@@ -11,7 +11,7 @@ export const GroupPage = () => (
                 <div className="close">Close</div>
             </div>
             <div className="search_wrap">
-                <div className="img_search"><img src={require('./search_image.png')} alt="Search pic" /></div>
+                <div className="img_search"><img src={require('../Group/search_image.png')} alt="Search pic" /></div>
                 <div className="input_search"><input type="search" placeholder="Search..." /></div>
             </div>
             <div className="contact_wrap">

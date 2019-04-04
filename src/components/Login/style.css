@@ -1,20 +1,22 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #E7EBF0;
-    
+.head_login {
+    display: flex;
+    justify-content: center;
+    background-color: #5580a3;
+    padding: 0 0 190px 0;
+    position: relative;
 }
-
-.wrap {
+.wrap_login {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     top: 80px;
     background-size: contain;
 }
 
-@media all and (max-width: 900px) {
-    .wrap {
-        left:20%;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #E7EBF0; 
 }
 
 p {
@@ -22,8 +24,8 @@ p {
     font-size: 15px;
 }
 
-.next {
-    display: inline-block;
+.next_login {
+    
     text-align: right;
     font-weight: bold;
     color: #5580a3;
@@ -37,7 +39,6 @@ p {
 .learn-more {
     color: #5580a3;
     font-weight: bold;
-    display: block;
     text-align: center;
 }
 
@@ -45,31 +46,29 @@ A:link, A:visited, A:active {
     text-decoration: none;
 }
 
-.title_wrap img {
-    float: left;
-    width: 30px;
-    height: auto;
-    padding-right: 20px;
-}
-
 .name_title {
-    float: left;
-    display: inline-block;
+    color: white;
     text-align: left;
     font-size: 18px;
 }
 
-.next_wrap {
-    float: right;
-    display: inline-block;
+.next_login {
+    color: white;
     font-size: 17px;
     margin-left: auto;
 }
 
-.title_wrap {
+.title_login {
+    display: flex;
+    justify-content: space-between;
     padding: 4%;
     color: #5580a3;
     height: 30px;
+}
+.title_login img {
+    width: 30px;
+    height: auto;
+    padding-right: 20px;
 }
 
 input {
@@ -78,18 +77,22 @@ input {
 }
 
 .country_input {
-    width: 100%;
+    font-size: 15px;
     border: none;
-    padding: 4%;
+}
+
+.input_number_login {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .code_input {
-    width: 20%;
-    margin-right: 10%;
+    padding: 10px;
 }
 
 .telephone_input {
-    width: 68.5%;
+    padding: 10px;
 }
 
 .login_wrap h1 {
@@ -105,10 +108,12 @@ input {
 .login_container {
     padding: 15%;
     padding-top: 10%;
+    display: flex;
+    flex-direction: column;
 }
 
-.head {
-    background-color: #5580a3;
-    padding: 0 0 80px 0;
-    position: relative;
+.footer_wrap_login {
+    display: flex;
+    flex-direction: column;
+
 }
