@@ -43,6 +43,14 @@ const dialogsList = [
   {
     profileName: "Jon Smith",
     lastMessage: { idLastMessage: new Date().getTime(), text: "ok" }
+  },
+  {
+    profileName: "Jon Smith",
+    lastMessage: { idLastMessage: new Date().getTime(), text: "ok" }
+  },
+  {
+    profileName: "Jon Smith",
+    lastMessage: { idLastMessage: new Date().getTime(), text: "ok" }
   }
 ];
 

@@ -9,6 +9,7 @@ export const ListItem = ({ lastMessage, profileName, ...attrs }) => {
   return (
     <li className="dialog-item">
       <Avatar
+      className="avatar"
         style={{
           height: 48,
           width: 48,
