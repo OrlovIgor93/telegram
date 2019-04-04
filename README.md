@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+##Firebase
+
+Project Console: https://console.firebase.google.com/project/eagles-telegram/overview <br>
+Hosting URL: https://eagles-telegram.firebaseapp.com
+
 ## First start
 
 ### `npm install`
