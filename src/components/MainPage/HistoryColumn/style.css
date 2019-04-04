@@ -15,29 +15,7 @@
   overflow-x: hidden;
   overflow-y: scroll;
 }
-.inputMesageArea {
-  display: flex;
-  padding: 10px;
-  flex: 0 0 auto;
-  justify-content: space-around;
-}
-.inputLogoImage {
-  line-height: 56px;
-  color: white;
-  font-size: 20px;
-  height: 56px;
-  width: 56px;
-  text-align: center;
-  margin: 0;
-  flex: 0 0 auto;
-}
-.inputMessage {
-  background: #f7f5f5 0 0;
-  border: 0;
-  border-bottom: 2px solid #64b7f7;
-  font-size: 14px;
-  flex: 0 1 500px;
-}
+
 
 .message {
   display: flex;
