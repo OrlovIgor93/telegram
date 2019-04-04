@@ -25,7 +25,6 @@ p {
 }
 
 .next_login {
-    
     text-align: right;
     font-weight: bold;
     color: #5580a3;
@@ -115,5 +114,4 @@ input {
 .footer_wrap_login {
     display: flex;
     flex-direction: column;
-
 }

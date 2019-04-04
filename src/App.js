@@ -5,7 +5,7 @@ import { Contact } from './components/Contact'
 import { MainPage } from './components/MainPage'
 import { About } from './components/About'
 import { GroupPage } from "./components/Group"
-//import { Contacts } from './components/Contacts'
+import { Contacts } from './components/Contacts'
 import { LoginPage } from "./components/Login";
 
 class App extends Component {
@@ -17,6 +17,7 @@ class App extends Component {
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/group" component={GroupPage} />
+        <Route path="/contacts" component={Contacts} />
       </Switch>
     );
   }
