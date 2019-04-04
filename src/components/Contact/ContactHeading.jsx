@@ -4,10 +4,10 @@ import {Avatar} from "../Avatar";
 
 export const ContactHeading = () => (
     <div className="head">
-        <div className="title">
+        <div className="titles">
             <div className="title1">Contact Info</div>
-            <div className="title2">Close</div>
             <div className="title2">Edit</div>
+            <div className="title3">Close</div>
         </div>
         <div className="photo_wrap">
             <div className="telegram_logo">

@@ -4,7 +4,7 @@ import {ContactHeading} from "./ContactHeading";
 import {ContactBody} from "./ContactBody";
 
 export const ContactWrapper = () => (
-    <div className="wrap2">
+    <div className="wrapper">
         <ContactHeading/>
         <ContactBody/>
     </div>

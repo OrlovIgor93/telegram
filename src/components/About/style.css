@@ -27,22 +27,16 @@ body{
     display: block;
     padding: 30px;
 }
-.title{
+.title, .footer{
     display: flex;
-    text-color: #fffff;
     font-weight: 700;
     padding: 18px 0 5px;
-}
-.link2, .title2  {
-    margin-left: auto;
+    justify-content: space-between;
 }
 .profile_wrapper{
     padding: 20px 0 20px 60px;
 }
-.footer{
-    display: flex;
-    padding: 10px;
-}
 .footer a {
+    padding: 0 20px;
     color: gray;
 }
