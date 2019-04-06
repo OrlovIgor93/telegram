@@ -1,8 +1,9 @@
 import React from "react";
 import "./style.css";
 
-export const ContactBody = () => (
-    <div>
+export const ContactBody = () => {
+    return (
+    <div style={{ background:"white"}} >
         <div className="profile_wrap">
             <div className="phone">
                 <p>Phone number</p>
@@ -10,7 +11,7 @@ export const ContactBody = () => (
             <div className="username">
                 <p>Username</p>
             </div>
-            <div className="contain" >
+            <div className="contain">
                 <p>Notifications</p>
                 <div className="toggle">
                     <label className="switch">
@@ -27,4 +28,5 @@ export const ContactBody = () => (
             <li><a>Delete conversation</a></li>
         </ul>
     </div>
-);
+)
+};

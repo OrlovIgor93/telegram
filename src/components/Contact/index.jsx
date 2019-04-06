@@ -1,9 +1,13 @@
 import React from "react";
 import "./style.css";
 
-import {ContactWrapper} from "../Contact/ContactWrapper";
+import {ContactHeading} from "./ContactHeading";
+import {ContactBody} from "./ContactBody";
 
-export const Contact = () => {
-    return <ContactWrapper/>;
-};
+export const Contact = () => (
+    <div className="wrapper">
+        <ContactHeading/>
+        <ContactBody/>
+    </div>
+);
 
