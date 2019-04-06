@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const SettingsBody = () => (
-    <div>
+    <div style={{ background:"white"}} >
         <div className="profile_wrap">
             <div className="phone">
                 <div className="icon_phone"/>

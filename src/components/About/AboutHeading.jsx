@@ -1,11 +1,12 @@
 import React from "react";
 import "./style.css";
+import {Link} from "react-router-dom";
 
-export const Heading = () => (
+export const AboutHeading = () => (
     <div className="head">
         <div className="title">
             <div className="title1">About</div>
-            <div className="title2"><a href="/">Close</a></div>
+            <div className="title2"><Link to="/">Close</Link></div>
         </div>
         <div className="photo_wrap">
             <div className="telegram_logo">

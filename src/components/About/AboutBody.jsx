@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.css";
-
-export const ModalBody = () => (
-    <div>
+import {Link} from "react-router-dom";
+export const AboutBody = () => (
+    <div style={{ background:"white"}} >
         <div className="profile_wrapper">
             <div className="section">
                 <p>Just another free messaging app based on Telegram API made by three future JS geniuses.</p>
@@ -10,8 +10,8 @@ export const ModalBody = () => (
         </div>
         <div className="footer_wrap">
             <div className="footer">
-                <a className="link1" href="/">Link 1</a>
-                <a className="link2" href="/">Link 2</a>
+                <Link to="/">Link 1</Link>
+                <Link to="/">Link 2</Link>
             </div>
         </div>
     </div>

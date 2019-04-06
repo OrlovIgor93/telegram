@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
 
-import {Heading} from "./Heading";
-import {ModalBody} from "./ModalBody";
+import {AboutHeading} from "./AboutHeading";
+import {AboutBody} from "./AboutBody";
 
 export const About = () => (
     <div className="wrapper">
-        <Heading/>
-        <ModalBody/>
+        <AboutHeading/>
+        <AboutBody/>
     </div>
 );
 
