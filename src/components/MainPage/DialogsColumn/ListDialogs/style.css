@@ -9,8 +9,8 @@
 }
 
 .dialogs-list::-webkit-scrollbar-track {
-  background: #e2e2e2;
+  background: #fff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #c4c4c4;
+  background: #fff;
 }

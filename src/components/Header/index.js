@@ -6,18 +6,21 @@ import "./style.css";
 export const Header = () => (
   <div className="wrapHeader">
     <div className="headerLeftMenu">
-      <div className="navButton">
-        <Link to="/about">About</Link>
-      </div>
-      <div className="navButton">
-        <Link to="/contact">User</Link>
-      </div>
-      <div className="navButton">
-        <Link to="contact">Contact</Link>
-      </div>
-      <div className="navButton">
-        <Link to="group">Group</Link>
-      </div>
+      <Link className="navButton" to="/about">
+        About
+      </Link>
+
+      <Link className="navButton" to="/contact">
+        User
+      </Link>
+
+      <Link className="navButton" to="contact">
+        Contact
+      </Link>
+
+      <Link className="navButton" to="group">
+        Group
+      </Link>
     </div>
     <div className="headerTitle">
       <h2>Liza Smitt</h2>

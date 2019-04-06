@@ -1,4 +1,5 @@
 import React from "react";
+import { Chip } from "../Chip";
 
 import "./style.css";
 
@@ -16,9 +17,7 @@ export const DialogInfo = ({ profileName, lastMessage }) => {
           )}
         </div>
 
-        <div className="chip">
-          <div className="chipText">5</div>
-        </div>
+        <Chip value={15} />
       </div>
     </div>
   );

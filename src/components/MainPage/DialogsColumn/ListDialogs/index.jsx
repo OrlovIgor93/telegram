@@ -56,7 +56,7 @@ const dialogsList = [
 
 export const ListDialogs = () => (
   <ul className="dialogs-list">
-    {dialogsList.map(({ timeLastMessage, profileName, lastMessage }) => (
+    {dialogsList.map(({ profileName, lastMessage }) => (
       <ListItem
         key={lastMessage.idLastMessage}
         profileName={profileName}
