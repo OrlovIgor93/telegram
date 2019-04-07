@@ -3,8 +3,8 @@ import React from 'react';
 import '../style.css'
 
 export const Header = () => (
-    <div className="title_wrap_group">
-        <div className="new-group">New Group</div>
-        <div className="close">Close</div>
+    <div className="title_wrap_group_page">
+        <div className="new-group_page">New Group</div>
+        <div className="close_group_page">Close</div>
     </div>
 );

@@ -1,5 +1,4 @@
 import React from "react";
-import { Avatar } from "../Avatar";
 import { Header } from "./ComponentsGroup/Header";
 import { Search } from "./ComponentsGroup/Search";
 import { ContactList } from "./ComponentsGroup/ContactList";
