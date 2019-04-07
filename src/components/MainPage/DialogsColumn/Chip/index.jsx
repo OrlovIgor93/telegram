@@ -5,11 +5,13 @@ import { Typography } from "../../Typography";
 const style = {
   chip: {
     display: "inline-flex",
+    minWidth: 11,
     padding: 3,
-    backgroundColor: "#868686",
+    backgroundColor: "#BFBFBF",
     borderRadius: 50,
     textOverflow: "ellipsis",
-    color: "white"
+    color: "white",
+    justifyContent: "space-evenly"
   }
 };
 

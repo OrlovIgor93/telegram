@@ -26,14 +26,11 @@ const style = {
     backgroundImage: `url(${IconsetW})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "-6px -205px",
-    ":hover": {
-      background: "#fff",
-      outline: "none",
-      border: "1px solid #b8b8b8"
-    }
-  },
-
-  inputSearchActive: {
-    background: "#fff"
+     '&:focus': {
+       background: "#fff",
+       outline: "none",
+       border: "1px solid #b8b8b8"
+     }
   }
 };
+
