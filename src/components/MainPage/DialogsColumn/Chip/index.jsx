@@ -1,9 +1,10 @@
 import React from "react";
 
+import { Typography } from "../../Typography";
+
 const style = {
   chip: {
     display: "inline-flex",
-    alignItems: "center",
     padding: 3,
     backgroundColor: "#868686",
     borderRadius: 50,
@@ -12,6 +13,6 @@ const style = {
   }
 };
 
-export const Chip = ({ value }) => {
-    return <span style={style.chip}>{value}</span>;
-};
+export const Chip = ({ value }) => (
+         <Typography style={style.chip} variant="caption">{value}</Typography>
+       );
