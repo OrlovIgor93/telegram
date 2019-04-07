@@ -105,3 +105,33 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+.icon_phone {
+    width: 18px;
+    height: 18px;
+    background-image: url(../../img/icons/ProfileIcons.png);
+    background-repeat: no-repeat;
+    background-position: -12px -10px;
+    margin-top: 3px;
+    margin-left: -64px;
+    position: absolute;
+}
+.icon_user {
+    width: 18px;
+    height: 18px;
+    background-image: url(../../img/icons/ProfileIcons.png);
+    background-repeat: no-repeat;
+    background-position: -12px -90px;
+    margin-top: 3px;
+    margin-left: -64px;
+    position: absolute;
+}
+.icon_notify {
+    width: 18px;
+    height: 19px;
+    background-image: url(../../img/icons/ProfileIcons.png);
+    background-repeat: no-repeat;
+    background-position: -12px -40px;
+    margin-top: 15px;
+    margin-left: -64px;
+    position: absolute;
+}

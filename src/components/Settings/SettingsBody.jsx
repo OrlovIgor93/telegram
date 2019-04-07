@@ -8,6 +8,7 @@ export const SettingsBody = () => (
                 <p>Phone number</p>
             </div>
             <div className="username">
+                <div className="icon_user"/>
                 <p>Username</p>
             </div>
         </div>
