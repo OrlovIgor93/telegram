@@ -2,9 +2,14 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
+  font-family: sans-serif;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
 }
 
-::-webkit-scrollbar { /* chrome based */
-    width: 0px;  /* ширина scrollbar'a */
-    background: transparent;  /* опционально */
+::-webkit-scrollbar {
+  /* chrome based */
+  width: 0px; /* ширина scrollbar'a */
+  background: transparent; /* опционально */
 }

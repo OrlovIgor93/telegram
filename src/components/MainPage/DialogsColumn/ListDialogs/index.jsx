@@ -50,7 +50,11 @@ const dialogsList = [
   },
   {
     profileName: "Jon Smith",
-    lastMessage: { idLastMessage: new Date().getTime(), text: "ok" }
+    lastMessage: {
+      idLastMessage: new Date().getTime(),
+      text:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit odit recusandae, nihil cumque sint, nobis, nesciunt esse totam libero aperiam saepe temporibus architecto maxime cupiditate. Maxime quo itaque enim sit."
+    }
   }
 ];
 
@@ -65,3 +69,5 @@ export const ListDialogs = () => (
     ))}
   </ul>
 );
+
+
