@@ -9,12 +9,18 @@ import "./style.css";
 import "../MainPage/style.css";
 
 export const Contacts = () => (
+    <Wrap>
+        <Header />
+        <Search />
+        <ContactList />
+        <Navigate />
+    </Wrap>
+);
+
+export const Wrap = props => (
     <div className="head_group">
         <div className="wrap_group">
-            <Header />
-            <Search />
-            <ContactList />
-            <Navigate />
+            {props.children}
         </div>
-    </div>
+    </div >
 );
