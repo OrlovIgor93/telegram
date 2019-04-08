@@ -8,8 +8,10 @@ export const DialogInfo = ({ profileName, lastMessage }) => {
   return (
     <div className="dialogInfo">
       <div className="strechArea">
-        <Typography variant="title">{profileName}</Typography>
-        <Typography variant="body">{lastMessage.text}</Typography>
+        <Typography style={style.decorationOverflow} variant="title">{profileName}</Typography>
+        <Typography style={style.decorationOverflow} variant="body">
+          {lastMessage.text}
+        </Typography>
       </div>
       <div className="infoLastMessage">
         <Typography variant="caption">
@@ -23,3 +25,11 @@ export const DialogInfo = ({ profileName, lastMessage }) => {
     </div>
   );
 };
+
+const style ={
+  decorationOverflow:{
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  }
+}
