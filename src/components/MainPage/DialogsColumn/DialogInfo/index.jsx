@@ -18,7 +18,7 @@ export const DialogInfo = ({ profileName, lastMessage }) => {
           )}
         </Typography>
 
-        <Chip value={15} />
+        <Chip value={2} />
       </div>
     </div>
   );

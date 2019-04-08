@@ -5,7 +5,7 @@ export const Typography = ({variant , children, style }) => {
     (() => {
       switch (variant) {
         case "title":
-              options= { fontSize: 13, fontWeight: 700 };
+              options= { fontSize: 13, fontWeight: 800 };
           break;
         case "title2":
               options= { fontSize: 12, fontWeight: 700 };
