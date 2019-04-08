@@ -5,7 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import { User } from './components/User'
 import { MainPage } from './components/MainPage'
 import { About } from './components/About'
-import { GroupPage } from "./components/group"
+import { GroupPage } from "./components/Group"
 import { LoginPage } from "./components/Login";
 import { Settings } from "./components/Settings";
 
