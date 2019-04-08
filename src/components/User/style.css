@@ -1,5 +1,5 @@
 .wrapper {
-    max-width: 480px;
+    width: 480px;
     display: flex;
     flex-direction: column;
     margin: auto;
