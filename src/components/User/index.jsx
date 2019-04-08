@@ -3,11 +3,12 @@ import "./style.css";
 
 import {ContactHeading} from "./ContactHeading";
 import {ContactBody} from "./ContactBody";
+import {Wrapper} from "../About";
 
 export const User = () => (
-    <div className="wrapper">
+    <Wrapper>
         <ContactHeading/>
         <ContactBody/>
-    </div>
+    </Wrapper>
 );
 

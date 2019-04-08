@@ -2,11 +2,12 @@ import React from "react";
 import "./style.css";
 import {SettingsHeader} from "./SettingsHeader"
 import {SettingsBody} from "./SettingsBody"
+import {Wrapper} from "../About";
 
 export const Settings = () => (
-    <div className="wrapper">
+    <Wrapper>
         <SettingsHeader/>
         <SettingsBody/>
-    </div>
+    </Wrapper>
 );
 

@@ -5,9 +5,13 @@ import {AboutHeading} from "./AboutHeading";
 import {AboutBody} from "./AboutBody";
 
 export const About = () => (
-    <div className="wrapper">
+    <Wrapper>
         <AboutHeading/>
         <AboutBody/>
+    </Wrapper>
+);
+export const Wrapper = props => (
+    <div className="wrapper">
+        {props.children}
     </div>
 );
-
