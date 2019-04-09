@@ -1,10 +1,9 @@
 import React from 'react';
-
-import '../style.css'
+import Style from '../style.js'
 
 export const Header = () => (
-    <div className="title_wrap_group_page">
-        <div className="new-group_page">New Group</div>
-        <div className="close_group_page">Close</div>
+    <div style={Style.titleWrapGroupPageClass}>
+        <div style={Style.newGroupPageClass}>New Group</div>
+        <div style={Style.closeGroupPageClass}>Close</div>
     </div>
 );

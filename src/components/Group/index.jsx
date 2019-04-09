@@ -1,11 +1,12 @@
-import React from "react";
-import { Header } from "./ComponentsGroup/Header";
-import { Search } from "./ComponentsGroup/Search";
-import { ContactList } from "./ComponentsGroup/ContactList";
-import { Navigate } from "./ComponentsGroup/Navigate";
+import React from 'react';
+import { Header } from './ComponentsGroup/Header';
+import { Search } from './ComponentsGroup/Search';
+import { ContactList } from './ComponentsGroup/ContactList';
+import { Navigate } from './ComponentsGroup/Navigate';
+import Style from './style.js'
 
-import "./style.css";
-import "../MainPage/style.css";
+import './style.css';
+import '../MainPage/style.css';
 
 export const GroupPage = () => (
     <Wrap>
@@ -17,8 +18,8 @@ export const GroupPage = () => (
 );
 
 export const Wrap = props => (
-    <div className="head_group">
-        <div className="wrap_group">
+    <div style={Style.headGroupClass}>
+        <div style={Style.wrapGroupClass}>
             {props.children}
         </div>
     </div >

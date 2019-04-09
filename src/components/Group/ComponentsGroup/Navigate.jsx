@@ -1,10 +1,9 @@
 import React from 'react';
-
-import '../style.css'
+import Style from '../style.js'
 
 export const Navigate = () => (
-    <div className="foot_wrap_group_page">
-        <div className="cancel_group_page">Cancel</div>
-        <div className="next_group_page">Next</div>
+    <div style={Style.footWrapGroupPageClass}>
+        <div style={Style.cancelGroupPageClass}>Cancel</div>
+        <div style={Style.nextGroupPageClass}>Next</div>
     </div>
 );

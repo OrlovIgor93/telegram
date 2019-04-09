@@ -1,10 +1,9 @@
 import React from 'react';
-
-import '../style.css'
+import Style from '../style.js'
 
 export const Search = () => (
-    <div className="search_wrap">
-        <div className="img_search"><img src={require('../search_image.png')} alt="Search pic" /></div>
-        <div className="input_search"><input type="search" placeholder="Search..." /></div>
+    <div style={Style.searchWrapClass}>
+        <div style={Style.imgSearchimgClass}><img src={require('../search_image.png')} alt="Search pic" /></div>
+        <div style={Style.inputSearchClass}><input style={Style.inputSearchinputClass} type="search" placeholder="Search..." /></div>
     </div>
 );
