@@ -2,7 +2,13 @@ import React from 'react';
 
 export const SettingsBody = () => (
     <div style={{ background:"white"}} >
-        <div className="profile_wrap">
+        <div style={{
+            marginTop: 19+'px',
+            marginRight: 0,
+            marginBottom: 0,
+            marginLeft: 100 + 'px',
+            paddingRight: 28 + 'px'
+        }}>
             <div className="phone">
                 <div className="icon_phone"/>
                 <p>Phone number</p>

@@ -11,7 +11,11 @@ export const About = () => (
     </Wrapper>
 );
 export const Wrapper = props => (
-    <div className="wrapper">
+    <div style={{
+        width: 480+'px',
+        display: 'flex',
+        flexDirection: 'column',
+        margin: 'auto'}}>
         {props.children}
     </div>
 );

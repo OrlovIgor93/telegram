@@ -1,44 +1,4 @@
-.wrapper {
-    width: 480px;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-}
-.head {
-    background-color:rgb(85, 128, 163);
-    color: #fff;
-    padding: 0 28px 26px !important;
-}
-.profile{
-    padding-top: 40px;
-}
-.profile_description{
-    color:#fff;
-    font-size: 14px;
-    padding: 15px 0 9px;
-}
-.telegram_logo{
-    display: block;
-    padding: 30px;
-}
-.titles{
-    display: flex;
-    justify-content: space-between;
-    color: #fff;
-    padding: 18px 0 5px;
-}
-.title2 {
-    margin-left: auto;
-    margin-right: 15px;
-}
-.profile_wrap{
-    margin: 19px 0 0 100px;
-    padding-right: 28px;
-}
-.profile_name{
-    font-size: 16px;
-    font-weight: bold;
-}
+
 .contain{
     display: flex;
     justify-content: space-between;
