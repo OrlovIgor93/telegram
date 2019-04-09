@@ -1,5 +1,4 @@
-export const avatarStyle = {
-    small: {
+export const avatar = {    
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -10,18 +9,21 @@ export const avatarStyle = {
         textTransform: "uppercase",
         borderRadius: "50%",
         color: "#fff",
-        fontSize: "140%",
-        flex: "0 0 auto"
-    },
-    medium: {
-        height: 48,
-        width: 48
-    },
-    big: {
-        height: 56,
-        width: 56
-    }
+        fontSize: "160%",
+        flex: "0 0 auto",
 };
+
+export const avatarMedium ={
+        ...avatar,
+        height: 48,
+        width: 48,
+}
+
+export const avatarBig = {
+        ...avatar,
+        height: 56,
+        width: 56,
+}
 
 
 export const colors = {
