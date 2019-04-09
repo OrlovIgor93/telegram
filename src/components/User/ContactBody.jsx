@@ -1,12 +1,12 @@
 import React from "react";
 import "./style.css";
-import {LeraStyle} from "../LeraStyles/styles";
+import {style} from "../LeraStyles/style";
 import {UserOptions} from "../Settings/UserOptions";
 
 export const ContactBody = () => {
     return (
-        <div style={LeraStyle.BodyBackground} >
-            <div style={LeraStyle.BodyMargins}>
+        <div style={style.bodyBackground} >
+            <div style={style.bodyMargins}>
                 <div className="phone">
                     <div className="icon_phone"/>
                     <p>Phone number</p>

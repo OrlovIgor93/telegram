@@ -1,8 +1,8 @@
 import React from 'react';
-import {LeraStyle} from "../LeraStyles/styles";
+import {style} from "../LeraStyles/style";
 
 export const ProfileInfo = () => (
-    <div style={LeraStyle.BodyMargins}>
+    <div style={style.bodyMargins}>
         <div>
             <div className="icon_phone"/>
                 <p>Phone number</p>

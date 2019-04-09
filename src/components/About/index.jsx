@@ -2,7 +2,7 @@ import React from "react";
 
 import {AboutHeading} from "./AboutHeading";
 import {AboutBody} from "./AboutBody";
-import {LeraStyle} from "../LeraStyles/styles";
+import {style} from "../LeraStyles/style";
 
 export const About = () => (
     <Wrapper>
@@ -11,7 +11,7 @@ export const About = () => (
     </Wrapper>
 );
 export const Wrapper = props => (
-    <div style={LeraStyle.Wrapper}>
+    <div style={style.wrapper}>
         {props.children}
     </div>
 );

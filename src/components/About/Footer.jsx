@@ -1,13 +1,13 @@
 import React from "react";
 
 import {Link} from "react-router-dom";
-import {LeraStyle} from "../LeraStyles/styles";
+import {style} from "../LeraStyles/style";
 
 export const Footer = () =>
     <div className="footer_wrap">
-    <div style={LeraStyle.FooterLinks}>
+    <div style={style.footerLinks}>
         <Link to="/settings">Settings</Link>
-        <Link to="/contact" style={LeraStyle.LinksRight}>Profile</Link>
+        <Link to="/contact" style={style.linksRight}>Profile</Link>
     </div>
 </div>;
 

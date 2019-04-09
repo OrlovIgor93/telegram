@@ -1,12 +1,12 @@
 import React from 'react';
 
-import {LeraStyle} from "../LeraStyles/styles";
+import {style} from "../LeraStyles/style";
 import {ProfileInfo} from "./ProfileInfo";
 import {NotifySettings} from "./NotifySettings";
 import {UserOptions} from "./UserOptions";
 
 export const SettingsBody = () => (
-    <div style={LeraStyle.BodyBackground}>
+    <div style={style.bodyBackground}>
         <ProfileInfo/>
         <NotifySettings/>
         <UserOptions/>

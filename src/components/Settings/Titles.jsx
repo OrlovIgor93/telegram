@@ -1,14 +1,14 @@
 import {Link} from "react-router-dom"
 import React from "react";
 import {Typography} from "../MainPage/Typography";
-import {LeraStyle} from "../LeraStyles/styles";
+import {style} from "../LeraStyles/style";
 
 export const Titles = () => (
-    <div style={LeraStyle.Titles}>
+    <div style={style.titles}>
         <div>
             <Typography variant="title">Settings</Typography>
         </div>
-        <div style={LeraStyle.LinksRight}>
+        <div style={style.linksRight}>
             <Link to="/settings">
                 <Typography variant='title2'>Edit</Typography>
             </Link>

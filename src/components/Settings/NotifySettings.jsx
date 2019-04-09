@@ -1,58 +1,22 @@
 import React from 'react';
-// import {LeraStyle} from "../LeraStyles/LeraStyles";
+// import {LeraStyle} from "../LeraStyles/styles";
 
+export const SettingsItem = ({title}) => (
+        <div className="box">
+            <div>
+                <p>{title}</p>
+            </div>
+            <div>
+                <label className="switch">
+                    <input type="checkbox"/>
+                    <span className="slider round"/>
+                </label>
+            </div>
+        </div>
+);
 export const NotifySettings = () => (
-
     <div>
-        <div className="box">
-            <div>
-                <p>Desktop notifications</p>
-            </div>
-            <div>
-                <label className="switch">
-                    <input type="checkbox"/>
-                    <span className="slider round"/>
-                </label>
-            </div>
-        </div>
-        <div className="box">
-            <div>
-                <p>Background notifications</p>
-            </div>
-            <div>
-                <label className="switch">
-                    <input type="checkbox"/>
-                    <span className="slider round"/>
-                </label>
-            </div>
-        </div>
-        <div className="box">
-            <div>
-                <p>Message preview</p>
-            </div>
-            <div>
-                <label className="switch">
-                    <input type="checkbox"/>
-                    <span className="slider round"/>
-                </label>
-            </div>
-        </div>
-        <div className="box">
-            <div>
-                <p>Sound</p>
-            </div>
-            <div>
-                <label className="switch">
-                    <input type="checkbox"/>
-                    <span className="slider round"/>
-                </label>
-            </div>
-            <div className="tg_slider_wrap">
-                <div className="tg_slider_thumb"/>
-                <div className="tg_slider_track">
-                    <div className="tg_slider_track_fill"/>
-                </div>
-            </div>
-        </div>
+        <SettingsItem title="Dark theme"/>
+        <SettingsItem title="Bright theme"/>
     </div>
 );

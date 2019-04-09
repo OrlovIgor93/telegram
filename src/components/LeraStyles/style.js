@@ -1,52 +1,52 @@
 import React from "react";
 
-export const LeraStyle = {
-    Wrapper: {
+export const style = {
+    wrapper: {
         width: 480 + 'px',
         display: 'flex',
         flexDirection: 'column',
         margin: 'auto'
     },
-    Description: {
+    description: {
         paddingLeft: 60 + 'px',
         paddingTop: 20 + 'px'
     },
-    BodyBackground: {
+    bodyBackground: {
         background: "white"
     },
-    BodyMargins: {
+    bodyMargins: {
         marginTop: 19 + 'px',
         marginRight: 0,
         marginBottom: 0,
         marginLeft: 100 + 'px',
         paddingRight: 28 + 'px'
     },
-    LogoTelegram: {
+    logoTelegram: {
         display: 'block',
         padding: 30 + 'px'
     },
-    Titles: {
+    titles: {
         display: 'flex',
         justifyContent: 'spaceBetween',
         color: '#fff',
         padding: 20 + 'px', 0: 5 + 'px'
     },
-    LinksRight: {
+    linksRight: {
         marginLeft: 'auto',
         marginRight: 20 + 'px'
     },
-    Head: {
+    head: {
         backgroundColor: 'rgb(85, 128, 163)',
         color: "#fff",
         paddingLeft: 28 + 'px',
     },
-    FooterLinks: {
+    footerLinks: {
         display: 'flex',
         justifyContent: 'spaceBetween',
         padding: 20 + 'px',
         color: 'gray',
     },
-    SettingIcon: {
+    settingIcon: {
         width: 18 + 'px',
         height: 18 + 'px',
         backgroundImage: 'url(../../img/icons/ProfileIcons.png)',
