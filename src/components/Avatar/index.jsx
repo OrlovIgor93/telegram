@@ -4,11 +4,9 @@ import { avatar, avatarMedium, avatarBig, colors } from "../MainPage/styles";
 const getUserLetter = children => {
   const arrWord = children.split(" ");
 
-  const letters =
-    arrWord.length === 1
-      ? arrWord[0][0] + arrWord[0][1]
-      : arrWord[0][0] + arrWord[1][0];
-  return letters;
+  return arrWord.length === 1
+    ? arrWord[0][0] + arrWord[0][1]
+    : arrWord[0][0] + arrWord[1][0];
 };
 
 export const Avatar = ({  medium, big, style, src, name }) => {
