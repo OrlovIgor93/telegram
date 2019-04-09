@@ -1,12 +1,12 @@
 import {Avatar} from "../Avatar";
 import React from "react";
-import {LeraStyle} from "../LeraStyles/LeraStyles";
+import {Logostyle} from "../About/Description"
 import {Typography} from "../MainPage/Typography";
 
 
 export const Description = () => (
     <div style={{display: 'flex'}}>
-        <div style={LeraStyle.LogoTelegram}>
+        <div style={Logostyle.LogoTelegram}>
             <Avatar style={{height: 48, width: 48}}>dp</Avatar>
         </div>
         <div style={{paddingTop: 30 + 'px'}}>

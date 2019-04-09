@@ -1,11 +1,16 @@
 import React from "react";
-import {LeraStyle} from "../LeraStyles/LeraStyles";
+
 import {Profile} from "./Profile"
 import {Footer} from "./Footer"
 
 export const AboutBody = () => (
-    <div style={LeraStyle.BodyBackground}>
+    <div style={style.BodyBackground}>
         <Profile/>
         <Footer/>
     </div>
 );
+const style = {
+    BodyBackground: {
+        background:"white"
+    }
+};
