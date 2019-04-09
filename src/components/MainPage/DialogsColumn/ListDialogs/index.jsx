@@ -1,5 +1,5 @@
 import React from "react";
-import { listDialogs} from "../../../../mock/listDialogs";
+import { listDialogs } from "../../../../mock/listDialogs";
 import "./style.css";
 import { ListItem } from "../ListItem";
 
