@@ -9,3 +9,5 @@ export const Header = () => (
         <div className="close">Close</div>
     </div>
 );
+
+export default Header

@@ -86,3 +86,5 @@ export const ContactList = () => (
                 </ul>
             </div>
 );
+
+export default ContactList

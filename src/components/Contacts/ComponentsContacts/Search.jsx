@@ -8,3 +8,5 @@ export const Search = () => (
         <div className="input_search"><input type="search" placeholder="Search..." /></div>
     </div>
 );
+
+export default Search

@@ -7,3 +7,5 @@ export const Navigate = () => (
         <div className="new-contact">New contact</div>
     </div>
 );
+
+export default Navigate
