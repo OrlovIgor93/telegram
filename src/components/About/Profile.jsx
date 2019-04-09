@@ -1,15 +1,9 @@
 import React from "react";
-import "./style.css";
+import {style} from "../LeraStyles/style";
 
 export const Profile = () => (
 
-<div style={style.Description}>
+<div style={style.description}>
    <p>Just another free messaging app based on Telegram API made by three future JS geniuses.</p>
 </div>
 );
-const style= {
-    Description: {
-        paddingLeft: 60 + 'px',
-        paddingTop: 20+'px'
-    }
-};

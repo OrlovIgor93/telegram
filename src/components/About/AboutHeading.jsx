@@ -1,11 +1,11 @@
 import React from "react";
-import "./style.css";
+
 import {Title} from "./Title";
 import {Description} from "./Description";
-import {Settingsstyle} from "../Settings/Titles";
+import {style} from "../LeraStyles/style";
 
 export const AboutHeading = () => (
-    <div style={Settingsstyle.Head}>
+    <div style={style.head}>
         <Title/>
         <Description/>
     </div>

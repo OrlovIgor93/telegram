@@ -1,13 +1,17 @@
 import {Avatar} from "../Avatar";
 import React from "react";
-import {Logostyle} from "../About/Description"
+import {style} from "../LeraStyles/style";
 import {Typography} from "../MainPage/Typography";
 
 
 export const Description = () => (
     <div style={{display: 'flex'}}>
-        <div style={Logostyle.LogoTelegram}>
-            <Avatar style={{height: 48, width: 48}}>dp</Avatar>
+        <div style={style.logoTelegram}>
+            <Avatar
+                medium
+                style={{ marginRight: 15 }}
+                name={"Valerie"}
+            />
         </div>
         <div style={{paddingTop: 30 + 'px'}}>
             <div><Typography variant="title">Name</Typography></div>

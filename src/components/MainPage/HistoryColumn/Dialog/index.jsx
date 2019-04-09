@@ -18,9 +18,10 @@ export const Dialog = () => (
       cols="50"
       placeholder="Write a message..."
     />
+    
     <Link to="contact">
       <Avatar
-                src={require("../../../../img/user/08a594be-8778-49b8-a336-37f52b54e47c.jpg")}
+        src={require("../../../../img/user/08a594be-8778-49b8-a336-37f52b54e47c.jpg")}
         big
       />
     </Link>
