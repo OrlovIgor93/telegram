@@ -22,6 +22,10 @@ export const Header = () => (
       <Link className="navButton" to="group">
         Group
       </Link>
+
+      <Link className="navButton" to="contacts">
+        Contacts
+      </Link>
     </div>
     <div className="headerTitle">
       <Title style={{ color: "#fff", paddingRight: 5 }}>Liza Smitt</Title>
