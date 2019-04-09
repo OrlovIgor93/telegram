@@ -1,27 +1,39 @@
 import React from "react";
-import classNames from "classnames";
 
-import "./style.css";
+import { avatarStyle, colors } from "../MainPage/styles";
 
-export const Avatar = ({ children, className, ...attrs }) => {
-  const classes = classNames("avatar", className);
+export const Avatar = ({ children, ...attrs }) => {
 
-  const Tag = attrs.src ? "img" : "p";
+  let style = attrs.medium
+    ? { ...avatarStyle.small, ...avatarStyle.medium, ...attrs.style }
+    : attrs.big
+    ? { ...avatarStyle.small, ...avatarStyle.big, ...attrs.style }
+    : { ...avatarStyle.small, ...attrs.style };
 
   const getUserLetter = () => {
     const arrWord = children.split(" ");
-    console.log(arrWord);
+
     const letters =
       arrWord.length === 1
         ? arrWord[0][0] + arrWord[0][1]
         : arrWord[0][0] + arrWord[1][0];
+
+    style = { ...style, background: colors[letters[0].toLowerCase()] };  
+  
     return letters;
   };
 
-  const userLeter = Tag === "p" ? getUserLetter() : children;
-  return (
-    <Tag className={classes} {...attrs}>
-      {userLeter}
-    </Tag>
+  const userLetters = !attrs.src ? getUserLetter() : children;
+
+  return attrs.src ? (
+    <img alt="avatar" style={style} src={attrs.src} />
+  ) : (
+    <p style={style}>{userLetters} </p>
   );
 };
+
+
+
+
+
+

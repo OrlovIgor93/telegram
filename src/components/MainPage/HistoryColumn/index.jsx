@@ -5,8 +5,8 @@ import { HistoryList } from "./HistoryList";
 import "./style.css";
 
 export const HistoryColumn = () => (
-  <div className="history">
-    <Dialog />
-    <HistoryList />
-  </div>
-);
+         <div className="history">
+           <Dialog />
+           {/* <HistoryList />  */}
+         </div>
+       );

@@ -3,10 +3,9 @@ export const listDialogs = [
            id: 1,
            dialogInfo: {
              name: "Leanne Graham",
-             urlImg:
-               "https://drive.google.com/open?id=1GCcVt8cCXGpuspyQNe3Qj3S6uBAqbDUu"
+             urlImg: "https://via.placeholder.com/150/98032f"
            },
-           lastMesage: {
+           lastMessage: {
              timeMessage: 1524205536000,
              author: "Leanne Graham",
              text:
@@ -15,8 +14,11 @@ export const listDialogs = [
          },
          {
            id: 2,
-           name: "",
-           lastMesage: {
+           dialogInfo: {
+             name: "Ervin Howel",
+             urlImg: "https://via.placeholder.com/150/11a0f"
+           },
+           lastMessage: {
              timeMessage: 1547317613000,
              author: "Leanne Graham",
              text:
@@ -25,18 +27,25 @@ export const listDialogs = [
          },
          {
            id: 3,
-           name: "",
-           lastMesage: {
+           dialogInfo: {
+             name: "Jon Smith",
+             urlImg: ""
+           },
+           lastMessage: {
              timeMessage: 1552556839000,
              author: "Leanne Graham",
              text:
                "repellat aliquid praesentium dolorem quo\nsed totam minus non itaque\nnihil labore molestiae sunt dolor eveniet hic recusandae veniam\ntempora et tenetur expedita sunt"
            }
          },
+
          {
            id: 4,
-           name: "",
-           lastMesage: {
+           dialogInfo: {
+             name: "Clementine Bauch",
+             urlImg: "https://via.placeholder.com/150/e09463"
+           },
+           lastMessage: {
              timeMessage: 1551296854000,
              author: "Leanne Graham",
              text:
@@ -45,8 +54,11 @@ export const listDialogs = [
          },
          {
            id: 5,
-           name: "",
-           lastMesage: {
+           dialogInfo: {
+             name: "Clementine Bauch",
+             urlImg: "https://via.placeholder.com/150/a7cf71"
+           },
+           lastMessage: {
              timeMessage: 1540493418000,
              author: "Leanne Graham",
              text:
@@ -55,8 +67,11 @@ export const listDialogs = [
          },
          {
            id: 6,
-           name: "",
-           lastMesage: {
+           dialogInfo: {
+             name: "Clementine Bauch",
+             urlImg: "https://via.placeholder.com/150/e9ea13"
+           },
+           lastMessage: {
              timeMessage: 1527112387000,
              author: "Leanne Graham",
              text:
@@ -65,8 +80,11 @@ export const listDialogs = [
          },
          {
            id: 7,
-           name: "",
-           lastMesage: {
+           dialogInfo: {
+             name: "Clementine Bauch",
+             urlImg: "https://via.placeholder.com/150/b5c0e6"
+           },
+           lastMessage: {
              timeMessage: 1530750364000,
              author: "Leanne Graham",
              text:
@@ -75,8 +93,11 @@ export const listDialogs = [
          },
          {
            id: 8,
-           name: "",
-           lastMesage: {
+           dialogInfo: {
+             name: "Clementine Bauch",
+             urlImg:  "https://via.placeholder.com/150/b292e7"
+           },
+           lastMessage: {
              timeMessage: 1547763824000,
              author: "Leanne Graham",
              text:
@@ -85,8 +106,11 @@ export const listDialogs = [
          },
          {
            id: 9,
-           name: "",
-           lastMesage: {
+           dialogInfo: {
+             name: "Clementine Bauch",
+             urlImg: "https://via.placeholder.com/150/cf3f64" 
+                      },
+           lastMessage: {
              timeMessage: 1538125594000,
              author: "Leanne Graham",
              text:
@@ -95,8 +119,11 @@ export const listDialogs = [
          },
          {
            id: 10,
-           name: "",
-           lastMesage: {
+           dialogInfo: {
+             name: "Clementine Bauch",
+             urlImg: "https://via.placeholder.com/150/b4a2ba"        
+               },
+           lastMessage: {
              timeMessage: 1545351270000,
              author: "Leanne Graham",
              text:
@@ -105,8 +132,11 @@ export const listDialogs = [
          },
          {
            id: 11,
-           name: "",
-           lastMesage: {
+           dialogInfo: {
+             name: "Clementine Bauch",
+             urlImg: "https://via.placeholder.com/150/753ac8"          
+             },
+           lastMessage: {
              timeMessage: 1524293127000,
              author: "Leanne Graham",
              text:

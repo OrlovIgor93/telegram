@@ -1,10 +1,9 @@
-.dialogInfo {
-  padding: 5px 10px;
-  flex: 1 1 auto;
+.dialogInfo {  
+  padding: 7px 14px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-   overflow: hidden;
+  overflow: hidden;
 }
 
 .dialogName {

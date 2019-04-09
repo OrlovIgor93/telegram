@@ -1,5 +1,5 @@
 import React from "react";
-
+import { listDialogs} from "../../../../mock/listDialogs";
 import "./style.css";
 import { ListItem } from "../ListItem";
 
@@ -60,10 +60,10 @@ const dialogsList = [
 
 export const ListDialogs = () => (
   <ul className="dialogs-list">
-    {dialogsList.map(({ profileName, lastMessage }) => (
+    {listDialogs.map(({id, dialogInfo, lastMessage }) => (
       <ListItem
-        key={lastMessage.idLastMessage}
-        profileName={profileName}
+        key={id}
+        dialogInfo={dialogInfo}
         lastMessage={lastMessage}
       />
     ))}
