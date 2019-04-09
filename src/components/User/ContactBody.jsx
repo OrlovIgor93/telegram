@@ -1,16 +1,12 @@
 import React from "react";
 import "./style.css";
+import {LeraStyle} from "../LeraStyles/styles";
+import {UserOptions} from "../Settings/UserOptions";
 
 export const ContactBody = () => {
     return (
-        <div style={{background: "white"}}>
-            <div style={{
-                marginTop: 19+'px',
-                marginRight: 0,
-                marginBottom: 0,
-                marginLeft: 100 + 'px',
-                paddingRight: 28 + 'px'
-            }}>
+        <div style={LeraStyle.BodyBackground} >
+            <div style={LeraStyle.BodyMargins}>
                 <div className="phone">
                     <div className="icon_phone"/>
                     <p>Phone number</p>
@@ -30,12 +26,7 @@ export const ContactBody = () => {
                     </div>
                 </div>
             </div>
-            <ul className="options">
-                <li><a>Share contact</a></li>
-                <li><a>Delete contact</a></li>
-                <li><a>Clear history</a></li>
-                <li><a>Delete conversation</a></li>
-            </ul>
+            <UserOptions/>
         </div>
     )
 };
