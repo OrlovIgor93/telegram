@@ -6,10 +6,6 @@
     width:33%;
     display:inline-block;
 }
-.options li{
-    list-style: none;
-    line-height: 2;
-}
 .switch {
     position: relative;
     display: inline-block;

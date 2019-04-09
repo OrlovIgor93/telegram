@@ -1,8 +1,8 @@
 import React from "react";
-import "./style.css";
 
 import {AboutHeading} from "./AboutHeading";
 import {AboutBody} from "./AboutBody";
+import {LeraStyle} from "../LeraStyles/LeraStyles";
 
 export const About = () => (
     <Wrapper>
@@ -11,11 +11,7 @@ export const About = () => (
     </Wrapper>
 );
 export const Wrapper = props => (
-    <div style={{
-        width: 480+'px',
-        display: 'flex',
-        flexDirection: 'column',
-        margin: 'auto'}}>
+    <div style={LeraStyle.Wrapper}>
         {props.children}
     </div>
 );

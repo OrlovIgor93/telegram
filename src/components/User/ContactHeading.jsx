@@ -1,8 +1,9 @@
 import React from "react";
 import "./style.css";
 import {Link} from "react-router-dom";
-import {Settingsstyle} from "../Settings/Titles";
+
 import {Description} from "../Settings/Description"
+import {LeraStyle} from "../LeraStyles/LeraStyles";
 
 export const ContactHeading = () => (
     <div style={{
@@ -10,9 +11,9 @@ export const ContactHeading = () => (
         color: '#fff',
         paddingLeft: 28 + 'px'
     }}>
-        <div style={Settingsstyle.Titles}>
+        <div style={LeraStyle.Titles}>
             <div>Contact Info</div>
-            <div style={Settingsstyle.LinksRight}>
+            <div style={LeraStyle.LinksRight}>
                 <Link to="/settings">Edit</Link>
             </div>
             <div>
