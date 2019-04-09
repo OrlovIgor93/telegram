@@ -1,3 +1,5 @@
+import IconsetW from "../../../img/icons/IconsetW.png"
+
 export const avatar = {
     display: "flex",
     justifyContent: "center",
@@ -52,6 +54,27 @@ export const bodyTextstyle = {
 export const captionStyle = {
     fontSize: 11,
     fontWeight: 400,
+};
+
+export const inputSearchStyle = {
+    outline: "none",
+    margin: "10px 20px",
+    height: 25,
+    backgroundColor: "#f2f2f2",
+    fontSize: 12,
+    padding: "6px 26px 6px 30px",
+    border: "1px solid #f2f2f2",
+    borderRadius: 5,
+    backgroundImage: `url(${IconsetW})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "-6px -205px"
+};
+
+export const focusInputStyle = {
+    ...inputSearchStyle,
+    outline: "none",
+    backgroundColor: "#fff",
+    border: "1px solid #b8b8b8",
 };
 
 export const colors = {

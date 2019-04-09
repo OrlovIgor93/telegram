@@ -1,36 +1,18 @@
-import React from "react";
-import IconsetW from "../../../../img/icons/IconsetW.png"
-import "./style.css";
+import React, {useState} from "react";
+import { inputSearchStyle, focusInputStyle} from '../../styles'
 
 export const SearchInput = ({ value, onChange }) => {
+  const [style, setStyle] = useState(inputSearchStyle);
+
   return (
     <input
       type="text"
-      style={style.inputSearch}
+      style={style}
       placeholder="Search"
       value={value}
       onChange={onChange}
+      onSelect={() => setStyle(focusInputStyle)}
+      onBlur={() => setStyle(inputSearchStyle)}
     />
   );
 };
-
-const style = {
-  inputSearch: {
-    margin: "10px 20px",
-    height: 25,
-    background: "#f2f2f2",
-    fontSize: 12,
-    padding: "6px 26px 6px 30px",
-    border: "1px solid #f2f2f2",
-    borderRadius: 5,
-    backgroundImage: `url(${IconsetW})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "-6px -205px",
-     '&:focus': {
-       background: "#fff",
-       outline: "none",
-       border: "1px solid #b8b8b8"
-     }
-  }
-};
-
