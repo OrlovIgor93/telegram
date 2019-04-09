@@ -4,84 +4,84 @@ import Style from '../style.js'
 
 export const ContactList = () => (
     <div /*className="contact_wrap"*/>
-        <ul className="dialogs" style={Style.dialogsGroupClass}>
+        <ul className="dialogs dialogs_group">
             <li>
                 <div className="dialog">
-                    <div><Avatar id="group_avatar" style={{ height: 48, width: 48, backgroundColor: "coral" }}>im</Avatar></div>
+                    <div><Avatar name={"i m"} /></div>
                     <div className="dialogInfo">
-                        <div className="dialogName" style={Style.dialogNameGroupClass}>Ilona Menkui</div>
+                        <div className="dialogName dialogName_group">Ilona Menkui</div>
                     </div>
-                    <div style={Style.infoLastMessageClass}>
+                    <div className="infoLastMessage">
                         <div>Last seen recently</div>
                     </div>
                 </div>
             </li>
             <li>
                 <div className="dialog">
-                    <div><Avatar id="group_avatar" style={{ height: 48, width: 48, backgroundColor: "coral" }}>im</Avatar></div>
+                    <div><Avatar name={"i m"} /></div>
                     <div className="dialogInfo">
-                        <div className="dialogName" style={Style.dialogNameGroupClass}>Ilona Menkui</div>
+                        <div className="dialogName dialogName_group">Ilona Menkui</div>
                     </div>
-                    <div style={Style.infoLastMessageClass}>
+                    <div className="infoLastMessage">
                         <div>Last seen recently</div>
                     </div>
                 </div>
             </li>
             <li>
                 <div className="dialog">
-                    <div><Avatar id="group_avatar" style={{ height: 48, width: 48, backgroundColor: "coral" }}>im</Avatar></div>
+                    <div><Avatar name={"d p"} /></div>
                     <div className="dialogInfo">
-                        <div className="dialogName" style={Style.dialogNameGroupClass}>Ilona Menkui</div>
+                        <div className="dialogName dialogName_group">Dima Popov</div>
                     </div>
-                    <div style={Style.infoLastMessageClass}>
+                    <div className="infoLastMessage">
                         <div>Last seen recently</div>
                     </div>
                 </div>
             </li>
             <li>
                 <div className="dialog">
-                    <div><Avatar id="group_avatar" style={{ height: 48, width: 48, backgroundColor: "coral" }}>im</Avatar></div>
+                    <div><Avatar name={"l m"} /></div>
                     <div className="dialogInfo">
-                        <div className="dialogName" style={Style.dialogNameGroupClass}>Ilona Menkui</div>
+                        <div className="dialogName dialogName_group">Lera Milasha</div>
                     </div>
-                    <div style={Style.infoLastMessageClass}>
+                    <div className="infoLastMessage">
                         <div>Last seen recently</div>
                     </div>
                 </div>
             </li>
             <li>
                 <div className="dialog">
-                    <div><Avatar id="group_avatar" style={{ height: 48, width: 48, backgroundColor: "coral" }}>im</Avatar></div>
+                    <div><Avatar name={"l m"} /></div>
                     <div className="dialogInfo">
-                        <div className="dialogName" style={Style.dialogNameGroupClass}>Ilona Menkui</div>
+                        <div className="dialogName dialogName_group">Lera Milasha</div>
                     </div>
-                    <div style={Style.infoLastMessageClass}>
+                    <div className="infoLastMessage">
                         <div>Last seen recently</div>
                     </div>
                 </div>
             </li>
             <li>
-                        <div className="dialog">
-                            <div><Avatar id="group_avatar" style={{ height: 48, width: 48, backgroundColor: "coral" }}>im</Avatar></div>
-                            <div className="dialogInfo">
-                                <div className="dialogName" style={Style.dialogNameGroupClass}>Ilona Menkui</div>
-                            </div>
-                            <div style={Style.infoLastMessageClass}>
-                                <div>Last seen recently</div>
-                            </div>
-                        </div>
+                <div className="dialog">
+                    <div><Avatar name={"l m"} /></div>
+                    <div className="dialogInfo">
+                        <div className="dialogName dialogName_group">Lera Milasha</div>
+                    </div>
+                    <div className="infoLastMessage">
+                        <div>Last seen recently</div>
+                    </div>
+                </div>
             </li>
             <li>
-                        <div className="dialog">
-                            <div><Avatar id="group_avatar" style={{ height: 48, width: 48, backgroundColor: "coral" }}>im</Avatar></div>
-                            <div className="dialogInfo">
-                                <div className="dialogName" style={Style.dialogNameGroupClass}>Ilona Menkui</div>
-                            </div>
-                            <div style={Style.infoLastMessageClass}>
-                                <div>Last seen recently</div>
-                            </div>
-                        </div>
-                    </li>
+                <div className="dialog">
+                    <div><Avatar name={"l m"} /></div>
+                    <div className="dialogInfo">
+                        <div className="dialogName dialogName_group">Lera Milasha</div>
+                    </div>
+                    <div className="infoLastMessage">
+                        <div>Last seen recently</div>
+                    </div>
+                </div>
+            </li>
         </ul>
     </div>
 );
