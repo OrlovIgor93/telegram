@@ -1,5 +1,3 @@
-import React from "react";
-
 export const style = {
     wrapper: {
         width: 480 + 'px',

@@ -7,7 +7,11 @@ import {Typography} from "../MainPage/Typography";
 export const Description = () => (
     <div style={{display: 'flex'}}>
         <div style={style.logoTelegram}>
-            <Avatar style={{height: 48, width: 48}}>dp</Avatar>
+            <Avatar
+                medium
+                style={{ marginRight: 15 }}
+                name={"Valerie"}
+            />
         </div>
         <div style={{paddingTop: 30 + 'px'}}>
             <div><Typography variant="title">Name</Typography></div>
