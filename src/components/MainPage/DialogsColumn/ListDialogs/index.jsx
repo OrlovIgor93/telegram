@@ -1,18 +1,18 @@
 import React from "react";
 import { listDialogs } from "../../../../mock/listDialogs";
 import "./style.css";
-import { ListItem } from "../ListItem";
+import { DialogListItem } from "../DialogListItem";
 
 export const ListDialogs = () => (
-  <ul className="dialogs-list">
-    {listDialogs.map(({id, dialogInfo, lastMessage }) => (
-      <ListItem
-        key={id}
-        dialogInfo={dialogInfo}
-        lastMessage={lastMessage}
-      />
-    ))}
-  </ul>
-);
+         <ul className="dialogs-list">
+           {listDialogs.map(({ id, dialogInfo, lastMessage }) => (
+             <DialogListItem
+               key={id}
+               dialogInfo={dialogInfo}
+               lastMessage={lastMessage}
+             />
+           ))}
+         </ul>
+       );
 
 

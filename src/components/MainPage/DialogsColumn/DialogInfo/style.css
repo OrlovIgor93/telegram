@@ -6,17 +6,14 @@
   overflow: hidden;
 }
 
-.dialogName {
-  font-weight: bold;
-  line-height: 18px;
-  font-size: 18px;
-}
 .strechArea {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
 }
+
+
 .infoLastMessage {
   display: flex;
   flex-direction: column;
@@ -24,17 +21,4 @@
   align-items: flex-end;
   font-size: 12px;
 
-}
-
-.chip {
-  height: 18px;
-  width: 18px;
-  background-color: royalblue;
-  border-radius: 50%;
-  text-align: center;
-}
-
-.chipText {
-  line-height: 18px;
-  color: white;
 }

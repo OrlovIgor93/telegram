@@ -1,37 +1,40 @@
 import React from "react";
-import { Chip } from "../Chip";
+import { Chip } from "../../Chip";
 import { Title, BodyText, Caption } from "../../Typography";
 import { Avatar } from "../../../Avatar";
+import { VerticalWrap } from "../../VerticalWrap";
+import { HorizontalWrap } from "../../HorizontalWrap";
 
-import "./style.css";
+import {
+  dialogInfoStyle,
+  strechAreaStyle,
+  infoLastMessageStyle,
+  decorationOverflowStyle
+} from "../../styles";
 
 export const DialogInfo = ({ dialogInfo, lastMessage }) => (
-  <div className="dialogInfo">
-    <Avatar
-      medium
-      style={{ marginRight: 15 }}
-      src={dialogInfo.urlImg}
-      name={dialogInfo.name}
-    />
+         <HorizontalWrap style={dialogInfoStyle}>
+           <Avatar
+             medium
+             style={{ marginRight: 15 }}
+             src={dialogInfo.urlImg}
+             name={dialogInfo.name}
+           />
 
-    <div className="strechArea">
-      <Title style={style.decorationOverflow}>{dialogInfo.name}</Title>
-      <BodyText style={style.decorationOverflow}>{lastMessage.text}</BodyText>
-    </div>
-    <div className="infoLastMessage">
-      <Caption variant="caption">
-        {new Date(lastMessage.timeMessage).getFullYear()}
-      </Caption>
+           <VerticalWrap style={strechAreaStyle}>
+             <Title style={decorationOverflowStyle}>
+               {dialogInfo.name}
+             </Title>
+             <BodyText style={decorationOverflowStyle}>
+               {lastMessage.text}
+             </BodyText>
+           </VerticalWrap>
 
-      <Chip value={2} />
-    </div>
-  </div>
-);
-
-const style = {
-  decorationOverflow: {
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis"
-  }
-};
+           <VerticalWrap style={infoLastMessageStyle}>
+             <Caption variant="caption">
+               {new Date(lastMessage.timeMessage).getFullYear()}
+             </Caption>
+             <Chip value={2} />
+           </VerticalWrap>
+         </HorizontalWrap>
+       );

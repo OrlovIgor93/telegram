@@ -9,7 +9,7 @@ const getUserLetter = children => {
     : arrWord[0][0] + arrWord[1][0];
 };
 
-export const Avatar = ({  medium, big, style, src, name }) => {
+export const Avatar = ({ medium, big, style, src, name }) => {
   const userLetters = !src ? getUserLetter(name) : null;
 
   const stylesUsed = [
@@ -25,8 +25,8 @@ export const Avatar = ({  medium, big, style, src, name }) => {
   }, {});
 
   return src ? (
-    <img alt="avatar" style={ allStyle } src={src} />
+    <img alt="avatar" style={allStyle} src={src} />
   ) : (
-    <span style={ allStyle }> {userLetters} </span>
+    <span style={allStyle}> {userLetters} </span>
   );
 };

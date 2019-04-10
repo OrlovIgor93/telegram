@@ -1,12 +1,12 @@
 import React from "react";
-import { ListItem } from "../../DialogsColumn/ListItem";
+// import { ListItem } from "../../DialogsColumn/ListItem";
 
 import "./style.css";
 
 export const HistoryList = () => (
          <ul className="message-context">
            {dialogMessages.map(({ dialogInfo, lastMessage }) => (
-             <ListItem
+             <div
                key={lastMessage.timeMessage}
                dialogInfo={dialogInfo}
                lastMessage={lastMessage}

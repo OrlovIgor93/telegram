@@ -7,7 +7,7 @@ import {
 } from "./ComponentsContacts";
 
 import "./style.css";
-import "../MainPage/style.css";
+
 
 export const Contacts = () => (
     <Wrap>

@@ -6,7 +6,7 @@ import { Navigate } from './ComponentsGroup/Navigate';
 import Style from './style.js'
 
 import './style.css';
-import '../MainPage/style.css';
+
 
 export const GroupPage = () => (
     <Wrap>

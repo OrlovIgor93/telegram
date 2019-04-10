@@ -105,3 +105,56 @@ export const colors = {
     y: "gray",
     z: "lightgreen"
 };
+
+
+export const horizontalWrap = {
+    display: "flex",
+    flexDirection: "row"
+};
+
+export const verticalWrap = {
+    display: "flex",
+    flexDirection: "column"
+};
+
+export const wrapPageStyle = {
+    maxWidth: 1000,
+    minWidth: 600,
+    maxHeight: "95vh",
+    minHeight: "95vh"
+};
+
+export const pageContextStyle = {
+    height: "90vh",
+    background: "#fff"
+};
+
+export const dialogsColumnStyle = {
+    flex: "1 2 31%",
+    width: "31%",
+    justifyContent: "center",
+    borderRight: "2px solid #e2e2e2",
+};
+
+export const dialogInfoStyle = {
+    padding: "7px 14px",
+    justifyContent: "space-between",
+    overflow: "hidden"
+};
+
+export const strechAreaStyle = {
+    justifyContent: "space-between",
+    overflow: "hidden"
+};
+
+export const infoLastMessageStyle = {
+    justifyContent: "space-between",
+    alignItems: "flex-end"
+};
+
+export const decorationOverflowStyle = {
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis"
+};
+

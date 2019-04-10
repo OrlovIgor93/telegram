@@ -2,16 +2,18 @@ import React from "react";
 import { Header } from "../Header";
 import { DialogsColumn } from "./DialogsColumn";
 import { HistoryColumn } from "./HistoryColumn";
+import { VerticalWrap } from "./VerticalWrap";
+import { HorizontalWrap } from "./HorizontalWrap";
 
-import "./style.css";
+import { wrapPageStyle, pageContextStyle } from "./styles";
 
 export const MainPage = () => (
-  <div className="wrapPage">
+  <VerticalWrap style={wrapPageStyle}>
     <Header />
 
-    <div className="wrapPageContext">
+    <HorizontalWrap style={pageContextStyle}>
       <DialogsColumn />
       <HistoryColumn />
-    </div>
-  </div>
+    </HorizontalWrap>
+  </VerticalWrap>
 );

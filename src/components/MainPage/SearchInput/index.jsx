@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { inputSearchStyle, focusInputStyle} from '../../styles'
+import { inputSearchStyle, focusInputStyle} from '../styles'
 
 export const SearchInput = ({ value, onChange }) => {
   const [style, setStyle] = useState(inputSearchStyle);
