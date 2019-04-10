@@ -1,12 +1,13 @@
 import React from "react";
-import { ButtomPanelWrap } from "./Dialog";
+import { ButtomPanelWrap } from "./ButtomPanelWrap";
 import { HistoryList } from "./HistoryList";
+import { VerticalWrap } from "../VerticalWrap";
 
-import "./style.css";
+import { historyColumnStyle } from "../styles";
 
 export const HistoryColumn = () => (
-         <div className="history">
-           <ButtomPanelWrap />
-           {/* <HistoryList />  */}
-         </div>
-       );
+  <VerticalWrap style={historyColumnStyle}>
+    <ButtomPanelWrap />
+    <HistoryList /> 
+  </VerticalWrap>
+);

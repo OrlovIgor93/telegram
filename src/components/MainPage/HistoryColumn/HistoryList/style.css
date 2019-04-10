@@ -1,12 +1,14 @@
 .message-context {
   background-color: white;
-  overflow: auto;
+  
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column-reverse;
+      overflow-y: hidden;
+    overflow-x: hidden;
 }
-
+.message-context:hover{
+    overflow-y: scroll;
+}
 .message-context::-webkit-scrollbar {
   width: 15px;
 }

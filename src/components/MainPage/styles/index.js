@@ -136,6 +136,13 @@ export const dialogsColumnStyle = {
     borderRight: "2px solid #e2e2e2",
 };
 
+export const historyColumnStyle = {    
+    flex: "2 1 69%",
+    width: "69%",
+    flexDirection: "column-reverse",
+}
+
+
 export const dialogInfoStyle = {
     padding: "7px 14px",
     justifyContent: "space-between",
