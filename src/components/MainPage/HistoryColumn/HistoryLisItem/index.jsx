@@ -18,7 +18,6 @@ export const HistoryListItem = ({ dialogInfo, lastMessage }) => (
          <div className="dialog-item">
            <HorizontalWrap style={dialogInfoStyle}>
              <Avatar
-               medium
                style={{ marginRight: 15 }}
                src={dialogInfo.urlImg}
                name={dialogInfo.name}

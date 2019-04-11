@@ -1,20 +1,15 @@
 import React from "react";
 import { TextArea } from "./Textarea";
 import { VerticalWrap } from "../../VerticalWrap";
+import { ButtonsGroup } from "./ButtonsGroup"
 
 export const SendForm = () => (
   <form>
     <VerticalWrap style={Style}>
       <TextArea />
-      <div>
-        <div
-          style={{
-            height: 30,
-            width: 200,
-            backgroundColor: "gray"
-          }}
-        >Buttons Group</div>
-      </div>
+     
+        <ButtonsGroup />
+     
     </VerticalWrap>
   </form>
 );
