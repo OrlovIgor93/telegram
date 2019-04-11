@@ -1,10 +1,10 @@
 import React from 'react';
 
-import '../style.css'
+import Style from '../style.js'
 
 export const Navigate = () => (
-    <div className="foot_wrap_group">
-        <div className="new-contact">New contact</div>
+    <div style={Style.footWrapGroupClass}>
+        <div style={Style.newContactClass}>New contact</div>
     </div>
 );
 

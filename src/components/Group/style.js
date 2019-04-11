@@ -51,9 +51,9 @@ const style = {
         padding: "7px"
     },
     // li
-    liElement: {
-        listStyleType: "none"
-    },
+    liClass: {
+        listStyleType: "none",
+      },
     // .search_wrap
     searchWrapClass: {
         alignItems: "center",

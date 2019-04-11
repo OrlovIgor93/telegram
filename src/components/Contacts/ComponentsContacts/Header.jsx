@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-import '../style.css'
+import Style from '../style.js'
 
 export const Header = () => (
-    <div className="title_wrap_group">
-        <div className="contact-contacts">Contacts</div>
-        <div className="edit-contact">Edit</div>
-        <div className="close"><Link className="close" to="/">Close</Link></div>
+    <div style={Style.titleWrapGroupClass}>
+        <div style={Style.contactContactsClass}>Contacts</div>
+        <div style={Style.editContactClass}>Edit</div>
+        <div style={Style.closeClass}><Link style={Style.closeClass} to="/">Close</Link></div>
     </div>
 );
 

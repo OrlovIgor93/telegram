@@ -1,8 +1,10 @@
 import React from 'react';
-import { Header } from './ComponentsGroup/Header';
-import { Search } from './ComponentsGroup/Search';
-import { ContactList } from './ComponentsGroup/ContactList';
-import { Navigate } from './ComponentsGroup/Navigate';
+import {
+    ContactList,
+    Header,
+    Navigate,
+    Search
+} from "./ComponentsGroup";
 import Style from './style.js'
 
 import './style.css';

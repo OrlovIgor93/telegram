@@ -7,3 +7,5 @@ export const Navigate = () => (
         <div style={Style.nextGroupPageClass}>Next</div>
     </div>
 );
+
+export default Navigate

@@ -6,7 +6,7 @@ import {
     Search
 } from "./ComponentsContacts";
 
-import "./style.css";
+import Style from './style.js'
 
 
 export const Contacts = () => (
@@ -19,8 +19,8 @@ export const Contacts = () => (
 );
 
 export const Wrap = props => (
-    <div className="head_group">
-        <div className="wrap_group">
+    <div style={Style.headGroupClass}>
+        <div style={Style.wrapGroupClass}>
             {props.children}
         </div>
     </div >

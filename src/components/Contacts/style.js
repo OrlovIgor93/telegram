@@ -19,6 +19,10 @@ export const style = {
     color: "#dde8f1",
     padding: "19px"
   },
+
+  liClass: {
+    listStyleType: "none",
+  },
   // .close
   closeClass: {
     flex: "1",

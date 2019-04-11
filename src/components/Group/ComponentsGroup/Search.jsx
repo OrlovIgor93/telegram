@@ -7,3 +7,5 @@ export const Search = () => (
         <div style={Style.inputSearchClass}><input style={Style.inputSearchinputClass} type="search" placeholder="Search..." /></div>
     </div>
 );
+
+export default Search

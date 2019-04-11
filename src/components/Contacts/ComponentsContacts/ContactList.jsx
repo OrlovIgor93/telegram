@@ -1,84 +1,83 @@
 import React from 'react';
 import { Avatar } from "../../Avatar";
-
-import '../style.css'
+import Style from '../style.js'
 
 export const ContactList = () => (
-    <div className="contact_wrap">
-        <ul className="dialogs dialogs_group">
-            <li>
-                <div className="dialog">
+    <div /*className="contact_wrap"*/>
+        <ul className="dialogs" style={Style.dialogsGroupClass}>
+            <li style={Style.liClass}>
+                <div style={Style.dialogClass}>
                     <div><Avatar name={"i m"} /></div>
                     <div className="dialogInfo">
-                        <div className="dialogName dialogName_group">Ilona Menkui</div>
+                        <div className="dialogName" style={Style.dialogName_group}>Ilona Menkui</div>
                     </div>
-                    <div className="infoLastMessage">
+                    <div style={Style.infoLastMessageClass}>
                         <div>Last seen recently</div>
                     </div>
                 </div>
             </li>
-            <li>
-                <div className="dialog">
+            <li style={Style.liClass}>
+                <div style={Style.dialogClass}>
                     <div><Avatar name={"i m"} /></div>
                     <div className="dialogInfo">
-                        <div className="dialogName dialogName_group">Ilona Menkui</div>
+                        <div  style={Style.dialogName_group}>Ilona Menkui</div>
                     </div>
-                    <div className="infoLastMessage">
+                    <div style={Style.infoLastMessageClass}>
                         <div>Last seen recently</div>
                     </div>
                 </div>
             </li>
-            <li>
-                <div className="dialog">
+            <li style={Style.liClass}>
+                <div style={Style.dialogClass}>
                     <div><Avatar name={"d p"} /></div>
                     <div className="dialogInfo">
-                        <div className="dialogName dialogName_group">Dima Popov</div>
+                        <div  style={Style.dialogName_group}>Dima Popov</div>
                     </div>
-                    <div className="infoLastMessage">
+                    <div style={Style.infoLastMessageClass}>
                         <div>Last seen recently</div>
                     </div>
                 </div>
             </li>
-            <li>
-                <div className="dialog">
+            <li style={Style.liClass}>
+                <div style={Style.dialogClass}>
                     <div><Avatar name={"l m"} /></div>
                     <div className="dialogInfo">
-                        <div className="dialogName dialogName_group">Lera Milasha</div>
+                        <div  style={Style.dialogName_group}>Lera Milasha</div>
                     </div>
-                    <div className="infoLastMessage">
+                    <div style={Style.infoLastMessageClass}>
                         <div>Last seen recently</div>
                     </div>
                 </div>
             </li>
-            <li>
-                <div className="dialog">
+            <li style={Style.liClass}>
+                <div style={Style.dialogClass}>
                     <div><Avatar name={"l m"} /></div>
                     <div className="dialogInfo">
-                        <div className="dialogName dialogName_group">Lera Milasha</div>
+                        <div  style={Style.dialogName_group}>Lera Milasha</div>
                     </div>
-                    <div className="infoLastMessage">
+                    <div style={Style.infoLastMessageClass}>
                         <div>Last seen recently</div>
                     </div>
                 </div>
             </li>
-            <li>
-                <div className="dialog">
+            <li style={Style.liClass}>
+                <div style={Style.dialogClass}>
                     <div><Avatar name={"l m"} /></div>
                     <div className="dialogInfo">
-                        <div className="dialogName dialogName_group">Lera Milasha</div>
+                        <div  style={Style.dialogName_group}>Lera Milasha</div>
                     </div>
-                    <div className="infoLastMessage">
+                    <div style={Style.infoLastMessageClass}>
                         <div>Last seen recently</div>
                     </div>
                 </div>
             </li>
-            <li>
-                <div className="dialog">
+            <li style={Style.liClass}>
+                <div style={Style.dialogClass}>
                     <div><Avatar name={"l m"} /></div>
                     <div className="dialogInfo">
-                        <div className="dialogName dialogName_group">Lera Milasha</div>
+                        <div  style={Style.dialogName_group}>Lera Milasha</div>
                     </div>
-                    <div className="infoLastMessage">
+                    <div style={Style.infoLastMessageClass}>
                         <div>Last seen recently</div>
                     </div>
                 </div>
@@ -86,5 +85,6 @@ export const ContactList = () => (
         </ul>
     </div>
 );
+
 
 export default ContactList

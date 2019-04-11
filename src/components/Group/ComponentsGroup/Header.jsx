@@ -8,3 +8,5 @@ export const Header = () => (
         <div style={Style.closeGroupPageClass}><Link style={Style.closeGroupPageClass} to="/">Close</Link></div>
     </div>
 );
+
+export default Header
