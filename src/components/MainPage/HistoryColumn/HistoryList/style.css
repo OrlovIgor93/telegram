@@ -1,11 +1,9 @@
+
 .message-context {
-  background-color: white;
-  
-  margin: 0;
-  padding: 0;
-      overflow-y: hidden;
-    overflow-x: hidden;
+ 
+  overflow: auto;
 }
+
 .message-context:hover{
     overflow-y: scroll;
 }

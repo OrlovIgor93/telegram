@@ -1,23 +1,25 @@
 import React from "react";
-// import { ListItem } from "../../DialogsColumn/ListItem";
-
+import { HistoryListItem } from "../HistoryLisItem";
+import { VerticalWrap } from "../../VerticalWrap";
 import "./style.css";
 
 export const HistoryList = () => (
-         
-           <ul className="message-context">
-             {dialogMessages.map(({ profileName, dialogInfo }) => (
-               <li key={dialogInfo.timeMessage}>
-                 <h2>{profileName.name}</h2>
-                 <h2>{profileName.url}</h2>
-                 <h2>{dialogInfo.timeMessage}</h2>
-                 <h2>{dialogInfo.text}</h2>
-               </li>
-             ))}
-           </ul>
-         
-       );
-
+  <VerticalWrap className="message-context" style={buttomPanelWrap}>
+    {dialogMessages.map(({ profileName, dialogInfo }) => (
+      <HistoryListItem
+        key={dialogInfo.timeMessage}
+        dialogInfo={profileName}
+        lastMessage={dialogInfo}
+      />
+    ))}
+  </VerticalWrap>
+);
+export const buttomPanelWrap = {
+  margin: "0 auto",
+  padding: "0 15px 0",
+  overflow: "auto",
+  flexDirection: "column-reverse"
+};
 
 const dialogMessages = [
   {
@@ -34,7 +36,7 @@ const dialogMessages = [
     },
     dialogInfo: {
       timeMessage: new Date().getTime(),
-      text: `Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+      text: ` ipsum dolor sit amet consectetur adipisicing elit.
          Quidem quibusdam laborum incidunt ducimus deleniti, nulla 
          consequuntur numquam sequi! Hic at amet vero placeat voluptas 
          fuga laudantium dolorum labore asperiores quas!`

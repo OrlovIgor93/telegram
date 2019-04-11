@@ -22,5 +22,6 @@
   border: 0;
   border-bottom: 2px solid #64b7f7;
   font-size: 14px;
-  flex: 0 1 500px;
+  height: 50;
+  min-height: 50;
 }

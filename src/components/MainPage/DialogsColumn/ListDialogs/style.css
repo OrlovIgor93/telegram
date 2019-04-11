@@ -5,11 +5,10 @@
   padding: 0;
   overflow-y: hidden;
   overflow-x: hidden;
+  
 }
 
 .dialogs-list:hover {
-  position: sticky;
-  right: -2;
   overflow-y: scroll;
 }
 .dialogs-list::-webkit-scrollbar {
