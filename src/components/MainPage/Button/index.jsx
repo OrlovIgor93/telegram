@@ -1,17 +1,25 @@
 import React from "react";
 
 export const Button = ({ children, onClick, style }) => {
+
+    const stylesUsed = [
+      defaultButtonStyle,
+      style
+    ];
+
+    const allStyle = stylesUsed.reduce(function(prev, curr) {
+      return { ...prev, ...curr };
+    }, {});
+
   return (
-    <div style={defaultButtonStyle} onClick={onClick}>
+    <div style={allStyle} onClick={onClick}>
       {children}
     </div>
   );
 };
 
 export const defaultButtonStyle = {
-  height: 15,
-  width: 15,
-  backgroundColor: "green",
+   display: "inline-block",
   border: "none",
   color: "#fff",
   cursor: "pointer"

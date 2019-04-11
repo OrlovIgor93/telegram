@@ -4,11 +4,9 @@ import { Avatar } from "../../../Avatar";
 import { SendForm } from "../SendForm";
 import { HorizontalWrap } from "../../HorizontalWrap";
 
-import { VerticalWrap } from "../../VerticalWrap";
-
 import "./style.css";
 
-export const ButtomPanelWrap = () => (
+export const BottomPanelWrap = () => (
          <div style={buttomPanelWrap}>
            <HorizontalWrap>
              <Avatar
