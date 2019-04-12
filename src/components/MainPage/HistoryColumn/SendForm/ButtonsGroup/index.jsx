@@ -19,12 +19,8 @@ export const ButtonsGroup = () => (
 
 const EmomojiGroupButton = () => (
   <HorizontalWrap>
-    <Button
-      style={{ ...commonEmojiStyle, backgroundPosition: "-480px -60px" }}
-    />
-    <Button
-      style={{ ...commonEmojiStyle, backgroundPosition: "-200px -120px" }}
-    />
+    <Button style={{ ...commonEmojiStyle, backgroundPosition: "-480px -60px" }} />
+    <Button style={{ ...commonEmojiStyle, backgroundPosition: "-200px -120px" }} />
     <Button style={{ ...commonEmojiStyle, backgroundPosition: "-120px 0px" }} />
     <Button style={{ ...commonEmojiStyle, backgroundPosition: "-140px 0px" }} />
     <Button style={{ ...commonEmojiStyle, backgroundPosition: "-440px 0px" }} />

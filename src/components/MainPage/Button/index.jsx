@@ -1,6 +1,8 @@
 import React from "react";
 
-export const Button = ({ children, onClick, style }) => {
+import { Link } from "react-router-dom";
+
+export const Button = ({ children, onClick, style, to }) => {
 
     const stylesUsed = [
       defaultButtonStyle,
@@ -11,12 +13,22 @@ export const Button = ({ children, onClick, style }) => {
       return { ...prev, ...curr };
     }, {});
 
-  return (
+  return to ? (
+    <div style={allStyle} onClick={onClick}>      
+        <Link style={allStyle} to={to}>
+          {children}
+        </Link>      
+    </div>
+  ) : (
     <div style={allStyle} onClick={onClick}>
-      {children}
+      {children} 
     </div>
   );
 };
+
+
+
+
 
 export const defaultButtonStyle = {
    display: "inline-block",
