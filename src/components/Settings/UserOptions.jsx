@@ -4,7 +4,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
-import DraftsIcon from '@material-ui/icons/Drafts';
+import PhotoIcon from '@material-ui/icons/Photo';
 
 export const UserOptions = () => {
     return (
@@ -13,7 +13,7 @@ export const UserOptions = () => {
                 <Divider/>
                 <ListItem button>
                     <ListItemIcon>
-                        <DraftsIcon/>
+                        <PhotoIcon/>
                     </ListItemIcon>
                     <ListItemText primary="Set avatar photo"/>
                 </ListItem>
