@@ -1,18 +1,13 @@
 import React from 'react';
-// import {LeraStyle} from "../LeraStyles/styles";
+import Switches from "../Settings/Switches";
 
 export const SettingsItem = ({title}) => (
-        <div className="box">
-            <div>
-                <p>{title}</p>
-            </div>
-            <div>
-                <label className="switch">
-                    <input type="checkbox"/>
-                    <span className="slider round"/>
-                </label>
-            </div>
+    <div className="box">
+        <div>
+            <p>{title}</p>
         </div>
+        <Switches/>
+    </div>
 );
 export const NotifySettings = () => (
     <div>

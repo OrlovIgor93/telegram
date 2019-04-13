@@ -21,7 +21,7 @@ export const style = {
     },
     logoTelegram: {
         display: 'block',
-        padding: 30 + 'px'
+        padding: '30px'
     },
     titles: {
         display: 'flex',
@@ -52,9 +52,24 @@ export const style = {
         backgroundPosition: -12 + 'px' - 10 + 'px',
         marginTop: 3 + 'px',
         display: 'inline-block',
-        marginLeft: -64 + 'px',
+        marginLeft: '-64 + px',
         position: 'absolute'
-    }
+    },
+    iconPhone: {
+        width: 18+'px',
+        height: 18+'px',
+        backgroundImage: 'url(../../img/icons/ProfileIcons.png)',
+        backgroundRepeat: 'noRepeat',
+        backgroundPosition: '-12px -10px',
+        marginTop: 3+'px',
+        display: 'inlineBlock',
+        marginLeft: -64+'px',
+        position: 'absolute'
+    },
+    // export const iconUser = {
+    //     ...iconPhone,
+    //     backgroundPosition: '-12px -90px',
+    // };
     // Switch: {
     //     Box: {
     //         whiteSpace: 'nowrap',

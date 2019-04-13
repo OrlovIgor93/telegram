@@ -9,11 +9,6 @@ export const Titles = () => (
             <Typography variant="title">Settings</Typography>
         </div>
         <div style={style.linksRight}>
-            <Link to="/settings">
-                <Typography variant='title2'>Edit</Typography>
-            </Link>
-        </div>
-        <div>
             <Link to="/">
                 <Typography variant='title2'>Close</Typography>
             </Link>
