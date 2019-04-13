@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 import {Link} from "react-router-dom";
 
 import {Description} from "../Settings/Description"
