@@ -1,13 +1,15 @@
 import React from "react";
-import "./style.css";
 import {style} from "../LeraStyles/style";
-import {UserOptions} from "../Settings/UserOptions";
+
 import PersonIcon from '@material-ui/icons/Person';
 import PhoneIcon from '@material-ui/icons/Phone';
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import List from "@material-ui/core/List";
+import DraftsIcon from '@material-ui/icons/Drafts';
+import DeleteIcon from '@material-ui/icons/DeleteOutlined';
+import {Divider} from "@material-ui/core";
 
 export const ContactBody = () => {
     return (
@@ -25,8 +27,20 @@ export const ContactBody = () => {
                     </ListItemIcon>
                     <ListItemText primary="@username"/>
                 </ListItem>
+                <Divider/>
+                <ListItem button>
+                    <ListItemIcon>
+                        <DraftsIcon/>
+                    </ListItemIcon>
+                    <ListItemText primary="Write a message"/>
+                </ListItem>
+                <ListItem button>
+                    <ListItemIcon>
+                        <DeleteIcon/>
+                    </ListItemIcon>
+                    <ListItemText primary="Delete contact"/>
+                </ListItem>
             </List>
-            <UserOptions/>
         </div>
     )
 };

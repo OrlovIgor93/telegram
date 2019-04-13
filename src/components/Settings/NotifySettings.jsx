@@ -1,17 +1,16 @@
 import React from 'react';
 import Switches from "../Settings/Switches";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import List from "@material-ui/core/List";
 
-export const SettingsItem = ({title}) => (
-    <div className="box">
-        <div>
-            <p>{title}</p>
-        </div>
-        <Switches/>
-    </div>
-);
 export const NotifySettings = () => (
-    <div>
-        <SettingsItem title="Dark theme"/>
-        <SettingsItem title="Bright theme"/>
-    </div>
+
+    <List>
+        <ListItem button>
+            <ListItemText primary="Dark theme"/>
+            <Switches/>
+        </ListItem>
+    </List>
 );
+

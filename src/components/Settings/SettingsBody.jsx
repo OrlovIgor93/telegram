@@ -8,7 +8,7 @@ import {UserOptions} from "./UserOptions";
 export const SettingsBody = () => (
     <div style={style.bodyBackground}>
         <ProfileInfo/>
-        <NotifySettings/>
         <UserOptions/>
+        <NotifySettings/>
     </div>
 );
