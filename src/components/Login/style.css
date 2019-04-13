@@ -1,28 +1,19 @@
 .head_login {
-    display: flex;
-    justify-content: center;
-    background-color: #5580a3;
-    padding: 0 0 190px 0;
-    position: relative;
+    flex-direction: column;
 }
 
 .wrap_login {
     overflow: hidden;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    background-size: contain;
+    margin-top: 80px;
 }
 
 body {
-    margin: 0;
     padding: 0;
     background-color: #E7EBF0;
 }
 
-p {
+.p_login {
     color: gray;
     font-size: 15px;
 }
@@ -31,6 +22,12 @@ p {
     text-align: right;
     font-weight: bold;
     color: #5580a3;
+}
+
+.name_title {
+    color: white;
+    text-align: left;
+    font-size: 18px;
 }
 
 .welcome-footer {
@@ -48,12 +45,6 @@ A:link, A:visited, A:active {
     text-decoration: none;
 }
 
-.name_title {
-    color: white;
-    text-align: left;
-    font-size: 18px;
-}
-
 .next_login {
     color: white;
     font-size: 17px;
@@ -64,7 +55,7 @@ A:link, A:visited, A:active {
     display: flex;
     justify-content: space-between;
     padding: 4%;
-    color: #5580a3;
+    background-color: #5580a3;
     height: 30px;
 }
 
@@ -74,7 +65,7 @@ A:link, A:visited, A:active {
     padding-right: 20px;
 }
 
-input {
+.input_login {
     border: none;
     border-bottom: 2px solid lightgray;
 }

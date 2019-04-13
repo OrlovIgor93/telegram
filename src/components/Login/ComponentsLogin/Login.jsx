@@ -18,8 +18,8 @@ export const Login = () => (
                     <option>Neverland</option>
                     <option>Russia</option>
                 </select>
-                    <input className="code_input" defaultValue={'+375'}/>
-                    <input type="number" className="telephone_input"/>
+                    <input className="code_input input_login" defaultValue={'+375'}/>
+                    <input type="number" className="telephone_input input_login"/>
             </div>
         </div>
     </div>);
