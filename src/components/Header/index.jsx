@@ -7,7 +7,10 @@ import { Button } from "../MainPage/Button";
 import IconsetW from "../../img/icons/IconsetW.png";
 import "./style.css";
 
-export const Header = () => (
+
+
+
+export const HeaderTelegram = () => (
   <HorizontalWrap style={headerStyle}>
     <div style={mainMenuStyle}>
       <Link className="navButton" to="/about">
