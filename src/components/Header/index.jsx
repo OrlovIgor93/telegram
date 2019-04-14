@@ -14,8 +14,8 @@ export const Header = () => (
         <SubTitle style={{ padding: 5 }}>About</SubTitle>
       </Link>
 
-      <Link className="navButton" to="/contact">
-        <SubTitle style={{ padding: 5 }}>User</SubTitle>
+      <Link className="navButton" to="/profile">
+        <SubTitle style={{ padding: 5 }}>Profile</SubTitle>
       </Link>
 
       <Link className="navButton" to="contact">

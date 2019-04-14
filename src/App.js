@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from "react-router-dom";
 
 import { User } from './components/User'
+import { Profile } from './components/MyProfile'
 import { MainPage } from './components/MainPage'
 import { About } from './components/About'
 import { Contacts } from "./components/Contacts"
@@ -21,6 +22,7 @@ class App extends Component {
         <Route path="/login" component={LoginPage} />
         <Route path="/group" component={GroupPage} />
         <Route path="/settings" component={Settings} />
+        <Route path="/profile" component={Profile}/>
       </Switch>
     );
   }
