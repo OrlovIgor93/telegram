@@ -15,18 +15,23 @@ export const avatar = {
     flex: "0 0 auto",
 };
 
+export const avatarSmall = {
+    height: 42,
+    width: 42,
+    color: "#fff",
+};
+
 export const avatarMedium = {
-    ...avatar,
+    ...avatarSmall,
     height: 48,
     width: 48,
 };
 
 export const avatarBig = {
-    ...avatar,
+    ...avatarSmall,
     height: 56,
     width: 56,
 };
-
 export const chipStyle = {
     display: "inline-flex",
     minWidth: 11,
@@ -157,7 +162,8 @@ export const strechAreaStyle = {
 
 export const infoLastMessageStyle = {
     justifyContent: "space-between",
-    alignItems: "flex-end"
+    alignItems: "flex-end",
+    paddingRight: 10,
 };
 
 export const decorationOverflowStyle = {
