@@ -14,7 +14,7 @@ export const GroupPage = () => (
     <Wrap>
         <Header />
         <Search />
-        <ContactList />
+        <ContactList editMode={false} />
         <Navigate />
     </Wrap>
 );

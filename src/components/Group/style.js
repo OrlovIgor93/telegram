@@ -1,4 +1,8 @@
 const style = {
+    hidden: {
+        display: "none",
+    },
+
     // .wrap_group
     wrapGroupClass: {
         height: "65px",
