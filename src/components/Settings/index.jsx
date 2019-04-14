@@ -1,12 +1,12 @@
 import React from "react";
 import {SettingsHeader} from "./SettingsHeader"
 import {SettingsBody} from "./SettingsBody"
-import PaperSheet from "../PaperSheet/PaperSheet";
+import Paper from '@material-ui/core/Paper';
 
 export const Settings = () => (
-    <PaperSheet>
+    <Paper style={{ padding:0, width:'480px'}} elevation={1}>
         <SettingsHeader/>
         <SettingsBody/>
-    </PaperSheet>
+    </Paper>
 );
 

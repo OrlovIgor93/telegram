@@ -2,12 +2,14 @@ import React from "react";
 
 import {ContactHeading} from "./ContactHeading";
 import {ContactBody} from "./ContactBody";
-import PaperSheet from "../PaperSheet/PaperSheet";
+import Paper from '@material-ui/core/Paper';
 
 export const User = () => (
-    <PaperSheet>
+
+    <Paper style={{padding: 0, width: '480px'}} elevation={1}>
         <ContactHeading/>
         <ContactBody/>
-    </PaperSheet>
-        );
+    </Paper>
+);
+
 

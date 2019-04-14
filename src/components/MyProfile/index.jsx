@@ -1,13 +1,13 @@
 import React from "react";
 
-import {ProfileHeading} from "./ProfileHeading"
+import {ProfileHeading} from "./ProfileHeading";
 import {ProfileBody} from "./ProfileBody";
-import PaperSheet from "../PaperSheet/PaperSheet";
+import Paper from '@material-ui/core/Paper';
 
 export const Profile = () => (
-    <PaperSheet>
+    <Paper style={{ padding:0, width:'480px'}} elevation={1}>
         <ProfileHeading/>
         <ProfileBody/>
-    </PaperSheet>
+    </Paper>
 );
 
