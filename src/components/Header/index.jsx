@@ -7,15 +7,18 @@ import { Button } from "../MainPage/Button";
 import IconsetW from "../../img/icons/IconsetW.png";
 import "./style.css";
 
-export const Header = () => (
+
+
+
+export const HeaderTelegram = () => (
   <HorizontalWrap style={headerStyle}>
     <div style={mainMenuStyle}>
       <Link className="navButton" to="/about">
         <SubTitle style={{ padding: 5 }}>About</SubTitle>
       </Link>
 
-      <Link className="navButton" to="/contact">
-        <SubTitle style={{ padding: 5 }}>User</SubTitle>
+      <Link className="navButton" to="/profile">
+        <SubTitle style={{ padding: 5 }}>Profile</SubTitle>
       </Link>
 
       <Link className="navButton" to="contact">

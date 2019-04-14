@@ -1,20 +1,25 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
+import PhotoIcon from '@material-ui/icons/Photo';
 
-export const UserOptions = () => (
+export const UserOptions = () => {
+    return (
+        <div>
+            <List component="nav">
+                <Divider/>
+                <ListItem button>
+                    <ListItemIcon>
+                        <PhotoIcon/>
+                    </ListItemIcon>
+                    <ListItemText primary="Set avatar photo"/>
+                </ListItem>
+                <Divider/>
+            </List>
+        </div>
+    )
+};
 
-    <ul className="options">
-        <li style={{listStyle: 'none', lineHeight: '2'}}>
-            <Link to="/">Share contact</Link>
-        </li>
-        <li style={{listStyle: 'none', lineHeight: '2'}}>
-            <Link to="/">Delete contact</Link>
-        </li>
-        <li style={{listStyle: 'none', lineHeight: '2'}}>
-            <Link to="/">Clear history</Link>
-        </li>
-        <li style={{listStyle: 'none', lineHeight: '2'}}>
-            <Link to="/">Delete conversation</Link>
-        </li>
-    </ul>
-);

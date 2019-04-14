@@ -3,7 +3,6 @@ import React from "react";
 import {style} from "../LeraStyles/style";
 import {Typography} from "../MainPage/Typography";
 
-
 export const Description = () => (
     <div style={{display: 'flex'}}>
         <div style={style.logoTelegram}>

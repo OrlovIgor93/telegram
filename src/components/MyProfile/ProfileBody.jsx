@@ -8,10 +8,9 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import List from "@material-ui/core/List";
 import DraftsIcon from '@material-ui/icons/Drafts';
-import DeleteIcon from '@material-ui/icons/DeleteOutlined';
 import {Divider} from "@material-ui/core";
 
-export const ContactBody = () => {
+export const ProfileBody = () => {
     return (
         <div style={style.bodyBackground} >
             <List component="nav">
@@ -32,13 +31,7 @@ export const ContactBody = () => {
                     <ListItemIcon>
                         <DraftsIcon/>
                     </ListItemIcon>
-                    <ListItemText primary="Write a message"/>
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <DeleteIcon/>
-                    </ListItemIcon>
-                    <ListItemText primary="Delete contact"/>
+                    <ListItemText primary="Change my info"/>
                 </ListItem>
             </List>
         </div>
