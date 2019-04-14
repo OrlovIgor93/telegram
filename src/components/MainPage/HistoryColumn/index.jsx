@@ -5,9 +5,9 @@ import { VerticalWrap } from "../VerticalWrap";
 
 import { historyColumnStyle } from "../styles";
 
-export const HistoryColumn = () => (
-  <VerticalWrap style={historyColumnStyle}>
-    <BottomPanelWrap />
-    <HistoryList />
-  </VerticalWrap>
-);
+export const HistoryColumn = ({ messagesActiveDialog }) => (
+         <VerticalWrap style={historyColumnStyle}>
+           <BottomPanelWrap />
+           <HistoryList messagesActiveDialog={messagesActiveDialog} />
+         </VerticalWrap>
+       );

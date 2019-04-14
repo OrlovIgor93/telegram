@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { listDialogs } from "../../../../mock/listDialogs";
 import DialogListItem from "../DialogListItem/DialogLisItem";
 import { withStyles } from "@material-ui/core/styles";
 import List from "@material-ui/core/List";
@@ -29,26 +28,36 @@ const styles = theme => ({
 });
 
 class DialogsList extends React.Component {
-  state = {
-    selectedIndex: 1
-  };
+ 
+   state = {
+      selectedIndex: 1,
+   };
 
   handleListItemClick = (event, index) => {
     this.setState({ selectedIndex: index });
   };
 
-  render() {
-    const { classes } = this.props;
+  getprops = () => {
+    console.log("props", this.props);
+  };
 
+  render() {
+    const { classes, listUserDialogs } = this.props;
+    // const listUserDialogs = this.props;
+ 
     return (
       <List className={classes.dialogsList} component="nav">
-        {listDialogs.map(({ id, dialogInfo, lastMessage }) => (
-          <DialogListItem
-            key={id}
-            dialogInfo={dialogInfo}
-            lastMessage={lastMessage}
-          />
-        ))}
+        {listUserDialogs.map(
+          ({ id, name, imgUrl, lastMessage, timeLastMessage }) => (
+            <DialogListItem
+              key={id}
+              name={name}
+              imgUrl={imgUrl}
+              lastMessage={lastMessage}
+              timeLastMessage={timeLastMessage}
+            />
+          )
+        )}
       </List>
     );
   }

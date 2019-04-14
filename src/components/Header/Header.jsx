@@ -1,16 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import LeftMenu from "../MainPage/LeftMenu/LeftMenu";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
-import SearchIcon from "@material-ui/icons/Search";
 import Telegram from "../../../src/img/Telegram.svg";
-
-import { Link } from "react-router-dom";
-import { Title, SubTitle, BodyText } from "../MainPage/Typography";
+import { Title,  BodyText } from "../MainPage/Typography";
 import { Button } from "../MainPage/Button";
 
 import IconsetW from "../../img/icons/IconsetW.png";

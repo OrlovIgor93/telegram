@@ -4,9 +4,9 @@ import { VerticalWrap } from "../VerticalWrap";
 import DialogsList from "./DialogsList/DialogsList";
 import { dialogsColumnStyle } from "../styles";
 
-export const DialogsColumn = () => (
-  <VerticalWrap style={dialogsColumnStyle}>
-    <SearchInput />
-    <DialogsList />
-  </VerticalWrap>
-);
+export const DialogsColumn = ({ listUserDialogs }) => (
+         <VerticalWrap style={dialogsColumnStyle}>
+           <SearchInput />
+           <DialogsList listUserDialogs={listUserDialogs} />
+         </VerticalWrap>
+       );

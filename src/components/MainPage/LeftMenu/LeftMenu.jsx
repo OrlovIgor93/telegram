@@ -77,7 +77,12 @@ class MenuListComposition extends React.Component {
             <MenuIcon />
           </IconButton>
 
-          <Popper open={open} anchorEl={this.anchorEl} transition disablePortal>
+          <Popper
+            open={open}
+            anchorEl={this.anchorEl}
+            transition
+            disablePortal
+          >
             {({ TransitionProps, placement }) => (
               <Grow
                 {...TransitionProps}
@@ -136,6 +141,7 @@ class MenuListComposition extends React.Component {
                         <a
                           href="https://github.com/OrlovIgor93/telegram/tree/develop/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <ListItemText
                             classes={{ primary: classes.primary }}

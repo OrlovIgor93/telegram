@@ -1,43 +1,32 @@
 import React from "react";
-import { Chip } from "../../Chip";
-import { Title, BodyText, Caption } from "../../Typography";
-import { Avatar } from "../../../Avatar";
+import { BodyText, Caption } from "../../Typography";
+import  { AvatarApp }  from "../../../Avatar/Avatar";
 import { VerticalWrap } from "../../VerticalWrap";
 import { HorizontalWrap } from "../../HorizontalWrap";
 
-// import {
-  
-  
-  
-  
-// } from "../../styles";
-
 import "./style.css";
 
-export const HistoryListItem = ({ dialogInfo, lastMessage }) => (
+export const HistoryListItem = ({ id, areYouAuthor, lastMessage }) => (
          <div className="dialog-item">
            <HorizontalWrap style={dialogInfoStyle}>
-             <Avatar
-               style={{ marginRight: 15 }}
-               src={dialogInfo.urlImg}
-               name={dialogInfo.name}
-             />
+             {areYouAuthor ? (
+               <AvatarApp
+                 style={{ marginRight: 15 }}
+                 src={null}
+                 name={"XZ"}
+               />
+             ) : null}
 
              <VerticalWrap style={strechAreaStyle}>
-               <Title>
-                 {dialogInfo.name}
-               </Title>
-               <BodyText style={{maxWidth: 400}}>
-                 {lastMessage.text}
+               {/* <Title>{dialogInfo.name}</Title> */}
+               <BodyText style={{ maxWidth: 400 }}>
+                 {lastMessage}
                </BodyText>
              </VerticalWrap>
 
-             
-               <Caption style={{marginLeft: "auto"}} variant="caption">
-                 {new Date(lastMessage.timeMessage).getFullYear()}
-               </Caption>
-               
-             
+             <Caption style={{ marginLeft: "auto" }} variant="caption">
+               {new Date(id).toLocaleTimeString()}
+             </Caption>
            </HorizontalWrap>
          </div>
        );

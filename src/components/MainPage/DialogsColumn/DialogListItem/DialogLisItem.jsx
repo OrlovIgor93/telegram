@@ -27,18 +27,18 @@ const styles = theme => ({
   },
   listItemText: {
     padding: 0
-  }
+  },
 });
 
-function DialogLisItem({ dialogInfo, lastMessage, classes }) {
+function DialogLisItem({ id, name, imgUrl, lastMessage, timeLastMessage , classes }) {
   return (
     <ListItem button alignItems="flex-start">
       <ListItemAvatar>
         <AvatarApp
           medium
           style={{ marginRight: 15 }}
-          src={dialogInfo.urlImg}
-          name={dialogInfo.name}
+          src={imgUrl}
+          name={name}
         />
       </ListItemAvatar>
       <ListItemText
@@ -47,7 +47,7 @@ function DialogLisItem({ dialogInfo, lastMessage, classes }) {
           noWrap: true,
           gutterBottom: true
         }}
-        primary={dialogInfo.name}
+        primary={name}
         secondaryTypographyProps={{
           className: classes.overflowStyleMessage
         }}
@@ -60,7 +60,7 @@ function DialogLisItem({ dialogInfo, lastMessage, classes }) {
               component="span"
               color="textPrimary"
             >
-              {dialogInfo.name}:&nbsp;
+              {name}:&nbsp;
             </Typography>
             <Typography
               inline
@@ -68,7 +68,7 @@ function DialogLisItem({ dialogInfo, lastMessage, classes }) {
               component="span"
               className={classes.colorTextLastMessage}
             >
-              {lastMessage.text}
+              {lastMessage}
             </Typography>
           </React.Fragment>
         }
@@ -80,7 +80,7 @@ function DialogLisItem({ dialogInfo, lastMessage, classes }) {
             style={{ paddingBottom: 10, color: "#9c9c9c" }}
             variant="caption"
           >
-            {new Date(lastMessage.timeMessage).toLocaleTimeString()}
+            {new Date(timeLastMessage).toLocaleTimeString()}
           </Typography>
           <Chip value={2} />
         </VerticalWrap>
