@@ -7,7 +7,7 @@ export const Footer = () =>
     <div className="footer_wrap">
     <div style={style.footerLinks}>
         <Link to="/settings">Settings</Link>
-        <Link to="/contact" style={style.linksRight}>Profile</Link>
+        <Link to="/profile" style={style.linksRight}>Profile</Link>
     </div>
 </div>;
 

@@ -1,12 +1,12 @@
 import React from "react";
 import {SettingsHeader} from "./SettingsHeader"
 import {SettingsBody} from "./SettingsBody"
-import {Wrapper} from "../About";
+import PaperSheet from "../PaperSheet/PaperSheet";
 
 export const Settings = () => (
-    <Wrapper>
+    <PaperSheet>
         <SettingsHeader/>
         <SettingsBody/>
-    </Wrapper>
+    </PaperSheet>
 );
 

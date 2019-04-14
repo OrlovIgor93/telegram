@@ -2,12 +2,12 @@ import React from "react";
 
 import {ProfileHeading} from "./ProfileHeading"
 import {ProfileBody} from "./ProfileBody";
-import {Wrapper} from "../About";
+import PaperSheet from "../PaperSheet/PaperSheet";
 
 export const Profile = () => (
-    <Wrapper>
+    <PaperSheet>
         <ProfileHeading/>
         <ProfileBody/>
-    </Wrapper>
+    </PaperSheet>
 );
 

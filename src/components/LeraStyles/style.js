@@ -6,8 +6,7 @@ export const style = {
         margin: 'auto'
     },
     description: {
-        paddingLeft: 60 + 'px',
-        paddingTop: 20 + 'px'
+        padding: '20px 60px',
     },
     bodyBackground: {
         background: "white"

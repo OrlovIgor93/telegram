@@ -2,12 +2,12 @@ import React from "react";
 
 import {ContactHeading} from "./ContactHeading";
 import {ContactBody} from "./ContactBody";
-import {Wrapper} from "../About";
+import PaperSheet from "../PaperSheet/PaperSheet";
 
 export const User = () => (
-    <Wrapper>
+    <PaperSheet>
         <ContactHeading/>
         <ContactBody/>
-    </Wrapper>
-);
+    </PaperSheet>
+        );
 

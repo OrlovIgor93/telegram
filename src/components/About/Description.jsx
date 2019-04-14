@@ -5,7 +5,7 @@ import {style} from "../LeraStyles/style";
 export const Description = () => (
 <div style={{display: 'flex'}}>
     <div style={style.logoTelegram}>
-        <img src="https://web.telegram.org/img/Telegram72.png" alt="logo"/>
+        <img src={require('./Telegram72.png')} alt="logo" />
     </div>
     <div style={{paddingTop: '40px'}}>
         <div>
