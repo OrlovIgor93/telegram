@@ -52,6 +52,7 @@ A:link, A:visited, A:active {
 }
 
 .title_login {
+    align-items: center;
     display: flex;
     justify-content: space-between;
     padding: 4%;
@@ -59,7 +60,7 @@ A:link, A:visited, A:active {
     height: 30px;
 }
 
-.title_login img {
+.title_login_img {
     width: 30px;
     height: auto;
     padding-right: 20px;

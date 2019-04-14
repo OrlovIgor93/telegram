@@ -75,7 +75,7 @@ const style = {
     dialogNameGroupClass: {
         fontWeight: "bold",
         fontSize: "14px",
-        marginLeft: "25px",
+        marginLeft: "20px",
     },
     // .infoLastMessage
     infoLastMessageClass: {
