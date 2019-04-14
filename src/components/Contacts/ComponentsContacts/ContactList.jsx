@@ -1,9 +1,9 @@
-import React from 'react';
+/*import React from 'react';
 import { Avatar } from "../../Avatar";
 import Style from '../style.js'
 
 export const ContactList = () => (
-    <div /*className="contact_wrap"*/>
+    <div className="contact_wrap">
         <ul className="dialogs" style={Style.dialogsGroupClass}>
             <li style={Style.liClass}>
                 <div style={Style.dialogClass}>
@@ -88,3 +88,4 @@ export const ContactList = () => (
 
 
 export default ContactList
+*/

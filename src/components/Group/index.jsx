@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-    ContactList,
     Header,
     Navigate,
     Search
 } from "./ComponentsGroup";
+import { ContactList } from './ComponentsGroup/ContactList'
 import Style from './style.js'
 
 import './style.css';

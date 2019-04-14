@@ -1,10 +1,10 @@
 import React from "react";
 import {
-    ContactList,
     Header,
     Navigate,
     Search
 } from "./ComponentsContacts";
+import ContactList from '../Group/ComponentsGroup/ContactList'
 
 import Style from './style.js'
 

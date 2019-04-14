@@ -25,15 +25,24 @@ const style = {
     },
     // .dialogs_group
     dialogsGroupClass: {
+        alignItems: "center",
         padding: "5px",
         backgroundColor: "#fff",
         margin: "0px"
     },
+    wrapContactList: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+    },
     // .dialog
     dialogClass: {
+        alignItems: "center",
         margin: "0 20px 15px 5px",
         display: "flex",
-        flexDirection: "row"
+        flexDirection: "row",
+        justifyContent: "space-between",
     },
     // .title_wrap_group_page
     titleWrapGroupPageClass: {
@@ -53,7 +62,7 @@ const style = {
     // li
     liClass: {
         listStyleType: "none",
-      },
+    },
     // .search_wrap
     searchWrapClass: {
         alignItems: "center",
@@ -64,7 +73,9 @@ const style = {
     },
     // .dialogName_group
     dialogNameGroupClass: {
-        fontSize: "14px"
+        fontWeight: "bold",
+        fontSize: "14px",
+        marginLeft: "25px",
     },
     // .infoLastMessage
     infoLastMessageClass: {
