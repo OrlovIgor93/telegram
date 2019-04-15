@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import ListItem from "@material-ui/core/ListItem";
@@ -27,12 +27,36 @@ const styles = theme => ({
   },
   listItemText: {
     padding: 0
-  },
+  }
 });
 
-function DialogLisItem({ id, name, imgUrl, lastMessage, timeLastMessage , classes }) {
+function DialogLisItem({
+  selectedIndex,
+  setSelectedIndex,
+  id,
+  name,
+  imgUrl,
+  lastMessage,
+  timeLastMessage,
+  classes
+}) {
+  //const [selectedItem, changeSelectItem] = useState(false);
+  const [selected, setSelectedDialog] = useState(false);
+  const handleListItemClick = id => {
+    setSelectedIndex(id);
+    setSelectedDialog(true);
+    console.log(id);
+    console.log(new Date());
+  };
+
   return (
-    <ListItem button alignItems="flex-start">
+    <ListItem
+      id={id}
+      button
+      selected={selected}
+      onClick={() => handleListItemClick(id)}
+      alignItems="flex-start"
+    >
       <ListItemAvatar>
         <AvatarApp
           medium

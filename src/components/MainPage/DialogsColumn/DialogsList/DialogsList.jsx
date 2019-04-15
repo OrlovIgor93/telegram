@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import DialogListItem from "../DialogListItem/DialogLisItem";
 import { withStyles } from "@material-ui/core/styles";
@@ -27,41 +27,38 @@ const styles = theme => ({
   //https://stackoverflow.com/questions/53772429/material-ui-how-can-i-style-the-scrollbar-with-css-in-js
 });
 
-class DialogsList extends React.Component {
+const DialogsList = ({
+  classes,
+  listUserDialogs,
+}) => {
+  const [selectedIndex, setSelectedIndex] = useState();
+
  
-   state = {
-      selectedIndex: 1,
-   };
-
-  handleListItemClick = (event, index) => {
-    this.setState({ selectedIndex: index });
-  };
-
-  getprops = () => {
-    console.log("props", this.props);
-  };
-
-  render() {
-    const { classes, listUserDialogs } = this.props;
-    // const listUserDialogs = this.props;
- 
-    return (
-      <List className={classes.dialogsList} component="nav">
-        {listUserDialogs.map(
-          ({ id, name, imgUrl, lastMessage, timeLastMessage }) => (
-            <DialogListItem
-              key={id}
-              name={name}
-              imgUrl={imgUrl}
-              lastMessage={lastMessage}
-              timeLastMessage={timeLastMessage}
-            />
-          )
-        )}
-      </List>
-    );
-  }
+const setActiveDialog =(id)=>{
+  setSelectedIndex(id);
+  console.log(id);
+  console.log(new Date());
 }
+
+  return (
+    <List className={classes.dialogsList} component="nav">
+      {listUserDialogs.map(
+        ({ id, name, imgUrl, lastMessage, timeLastMessage }) => (
+          <DialogListItem
+            key={id}
+            id={id}
+            name={name}
+            imgUrl={imgUrl}
+            lastMessage={lastMessage}
+            timeLastMessage={timeLastMessage}
+            selectedIndex={selectedIndex}
+            setSelectedIndex={setActiveDialog}
+          />
+        )
+      )}
+    </List>
+  );
+};
 
 DialogsList.propTypes = {
   classes: PropTypes.object.isRequired
