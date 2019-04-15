@@ -17,7 +17,8 @@ export const style = {
   contactContactsClass: {
     flex: "8",
     color: "#dde8f1",
-    padding: "19px"
+    padding: "19px",
+    cursor: 'default'
   },
 
   liClass: {
@@ -33,7 +34,8 @@ export const style = {
   editContactClass: {
     flex: "1",
     color: "#dde8f1",
-    padding: "19px"
+    padding: "19px",
+    cursor: 'pointer'
   },
   // .dialogs_group
   dialogsGroupClass: {
@@ -105,8 +107,34 @@ export const style = {
     fontSize: "14px",
     color: "#5580a3",
     textAlign: "right",
-    padding: "15px"
-  }
+    padding: "15px",
+    cursor: 'pointer'
+  },
+  headerNewContact: {
+    display: 'flex',
+    justifyContent: "space-between",
+  },
+  paperNewContact: {
+    display: 'flex',
+    flexDirection: "column",
+    justifyContent: 'space-beetwen',
+  },
+  inputNewContact: {
+    marginTop: '30px',
+    width: '300px',
+    height: '30px',
+    border: "none",
+    borderBottom: "1px solid lightgray",
+  },
+  footAddContactClass: {
+    marginTop: '55px',
+    display: "flex",
+    justifyContent: "space-around",
+    backgroundColor: "#fff",
+    font: "13px/18px Tahoma,sans-serif,Arial,Helvetica",
+    fontWeight: "bold",
+    textTransform: "uppercase"
+  },
 }
 
 export default style;

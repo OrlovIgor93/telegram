@@ -10,6 +10,7 @@ import { Contacts } from "./components/Contacts"
 import { GroupPage } from "./components/Group"
 import { LoginPage } from "./components/Login";
 import { Settings } from "./components/Settings";
+import { AddNewContact } from './components/Contacts/ComponentsContacts';
 
 class App extends Component {
   render() {
@@ -22,7 +23,8 @@ class App extends Component {
         <Route path="/login" component={LoginPage} />
         <Route path="/group" component={GroupPage} />
         <Route path="/settings" component={Settings} />
-        <Route path="/profile" component={Profile}/>
+        <Route path="/profile" component={Profile} />
+        <Route path="/addnewcontact" component={AddNewContact} />
       </Switch>
     );
   }
