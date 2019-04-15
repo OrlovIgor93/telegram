@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import Header from "../Header/Header";
 import { DialogsColumn } from "./DialogsColumn";
 import { HistoryColumn } from "./HistoryColumn";
@@ -12,7 +12,7 @@ import { wrapPageStyle, pageContextStyle } from "./styles";
 
 export const MainPage = () => {
   const [listUserDialogs, filterListDialogs] = useState(listDialogs);
-  const [messagesActiveDialog, changeListMessages] = useState(activeDialog);
+  const [messagesActiveDialog, changeActiveDialog] = useState(activeDialog);
   const [profileInfo, changeProfileInfo] = useState(accountData);
 
 

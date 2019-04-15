@@ -5,16 +5,16 @@ import DialogsList from "./DialogsList/DialogsList";
 import { dialogsColumnStyle } from "../styles";
 
 export const DialogsColumn = ({
-         listUserDialogs,
-         selectedIndex,
-         handleListItemClick
-       }) => (
-         <VerticalWrap style={dialogsColumnStyle}>
-           <SearchInput />
-           <DialogsList
-             listUserDialogs={listUserDialogs}
-             selectedIndex={selectedIndex}
-             handleListItemClick={handleListItemClick}
-           />
-         </VerticalWrap>
-       );
+  listUserDialogs,
+  selectedIndex,
+  handleListItemClick
+}) => (
+  <VerticalWrap style={dialogsColumnStyle}>
+    <SearchInput />
+    <DialogsList
+      listUserDialogs={listUserDialogs}
+      selectedIndex={selectedIndex}
+      handleListItemClick={handleListItemClick}
+    />
+  </VerticalWrap>
+);

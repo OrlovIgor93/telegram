@@ -6,10 +6,8 @@ import { VerticalWrap } from "../VerticalWrap";
 import { historyColumnStyle } from "../styles";
 
 export const HistoryColumn = ({ messagesActiveDialog, profileInfo }) => (
-         <VerticalWrap style={historyColumnStyle}>
-           <BottomPanelWrap profileInfo={profileInfo} />
-         { (() => { console.log("-colunmHistory",profileInfo) })()  }
-
-           <HistoryList messagesActiveDialog={messagesActiveDialog} />
-         </VerticalWrap>
-       );
+  <VerticalWrap style={historyColumnStyle}>
+    <BottomPanelWrap profileInfo={profileInfo} />
+    <HistoryList messagesActiveDialog={messagesActiveDialog} />
+  </VerticalWrap>
+);
