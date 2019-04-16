@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import AppBar from "@material-ui/core/AppBar";
 import LeftMenu from "../MainPage/LeftMenu/LeftMenu";
+import { Button } from "../MainPage/Button";
+
+import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import Telegram from "../../../src/img/Telegram.svg";
-import { Title,  BodyText } from "../MainPage/Typography";
-import { Button } from "../MainPage/Button";
 
 import IconsetW from "../../img/icons/IconsetW.png";
 
@@ -41,10 +41,12 @@ function Header(props) {
         </HorizontalWrap>
         <HorizontalWrap style={rightWrapperButons}>
           <Button to="/contact" style={dialogButtonName}>
-            <Title style={{ color: "#fff", padding: "0px 10px" }}>
+            <Typography noWrap style={{ color: "#fff", padding: "0px 10px" }}>
               Liza Smitt
-            </Title>
-            <BodyText style={{ color: "#b9cfe3" }}>online</BodyText>
+            </Typography>
+            {/* <Typography noWrap style={{ color: "#b9cfe3" }}>
+              online
+            </Typography> */}
           </Button>
           <Button style={rightMenuButtonStyle}>
             {" "}
