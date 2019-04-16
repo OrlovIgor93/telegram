@@ -19,6 +19,7 @@ export const avatarSmall = {
     height: 42,
     width: 42,
     color: "#fff",
+    backgroundColor: '#fff',
 };
 
 export const avatarMedium = {

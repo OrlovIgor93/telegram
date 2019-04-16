@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AvatarApp } from "../../../Avatar/Avatar";
 import { SendForm } from "../SendForm";
 import { HorizontalWrap } from "../../HorizontalWrap";
@@ -12,7 +12,12 @@ export const BottomPanelWrap = ({
        }) => (
          <div style={buttomPanelWrap}>
            <HorizontalWrap>
-             <Link to="settings">
+             <NavLink
+               to={{
+                 pathname: "/settings",
+                 state: { imgurl: img, name: fullName }
+               }}
+             >
                <AvatarApp
                  big
                  style={{ marginRight: 20 }}
@@ -20,16 +25,21 @@ export const BottomPanelWrap = ({
                  name={fullName}
                  // name={profileInfo.fullName}
                />
-             </Link>
+             </NavLink>
              <SendForm />
-             <Link to="contact">
+             <NavLink
+               to={{
+                 pathname: "/contact",
+                 state: { imgurl: imgUrl, name: name }
+               }}
+             >
                <AvatarApp
                  big
                  style={{ marginLeft: 20 }}
                  src={imgUrl}
                  name={name}
                />
-             </Link>
+             </NavLink>
            </HorizontalWrap>
          </div>
        );

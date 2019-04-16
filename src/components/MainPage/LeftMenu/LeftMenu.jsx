@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import IconButton from "@material-ui/core/IconButton";
@@ -24,7 +24,7 @@ const styles = () => ({
   }
 });
 
-const LeftMenu = ({ classes }) => {
+const LeftMenu = ({ profileInfo, classes }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   return (
     <div className={classes.root}>
@@ -79,13 +79,18 @@ const LeftMenu = ({ classes }) => {
             <ListItemIcon className={classes.icon}>
               <SettingsIcon />
             </ListItemIcon>
-            <Link to="/contact">
+            <NavLink
+              to={{
+                pathname: "/settings",
+                state: { imgurl: profileInfo.img, name: profileInfo.fullName }
+              }}
+            >
               <ListItemText
                 classes={{ primary: classes.primary }}
                 inset
                 primary="Settings"
               />
-            </Link>
+            </NavLink>
           </MenuItem>
 
           <MenuItem className={classes.menuItem}>

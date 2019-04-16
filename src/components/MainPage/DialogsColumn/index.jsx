@@ -1,5 +1,5 @@
 import React from "react";
-import { SearchInput } from "../SearchInput";
+import SearchInput from "../SearchInput";
 import { VerticalWrap } from "../VerticalWrap";
 import DialogsList from "./DialogsList/DialogsList";
 import { dialogsColumnStyle } from "../styles";
@@ -7,10 +7,15 @@ import { dialogsColumnStyle } from "../styles";
 export const DialogsColumn = ({
          listUserDialogs,
          selectedIndex,
-         setActiveDialog
+         setActiveDialog,
+         valueSearchInput,
+         onChangeSearchInput
        }) => (
          <VerticalWrap style={dialogsColumnStyle}>
-           <SearchInput />
+           <SearchInput
+             valueSearchInput={valueSearchInput}
+             onChangeSearchInput={onChangeSearchInput}
+           />
            <DialogsList
              listUserDialogs={listUserDialogs}
              setActiveDialog={setActiveDialog}

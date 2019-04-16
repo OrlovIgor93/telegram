@@ -16,6 +16,7 @@ export const MainPage = () => {
   const [profileInfo, changeProfileInfo] = useState(accountData);
   const [selectedIndex, setSelectedIndex] = useState();
   const [activeDialogInfo, setActiveDialogInfo] = useState({});
+  const [valueSearchInput, setValueSearchInput] = useState('');
 
   const setActiveDialog = id => {
 
@@ -28,14 +29,30 @@ export const MainPage = () => {
     setActiveDialogInfo(listDialogs.find(dialog => dialog.id === id));
   };
 
+  const onChangeSearchInput = ({ target: { value } }) => {
+    setValueSearchInput(value);
+    console.log(setValueSearchInput);
+  };
+
+  const changeDialogListView =() =>{
+    return (listUserDialogs.filter((el) => {
+           return  (el.name.indexOf(valueSearchInput)) !==-1}))
+  }
+
   return (
     <VerticalWrap style={wrapPageStyle}>
-      <Header activeDialogInfo={activeDialogInfo} />
+      <Header profileInfo={profileInfo} activeDialogInfo={activeDialogInfo} />
       <HorizontalWrap style={pageContextStyle}>
         <DialogsColumn
-          listUserDialogs={listUserDialogs}
+          listUserDialogs={
+            setValueSearchInput === ""
+              ? listUserDialogs
+              : changeDialogListView()
+          }
           setActiveDialog={setActiveDialog}
           selectedIndex={selectedIndex}
+          valueSearchInput={valueSearchInput}
+          onChangeSearchInput={onChangeSearchInput}
         />
 
         <HistoryColumn

@@ -28,13 +28,13 @@ const styles = () => ({
   }
 });
 
-function Header(props) {
-  const { classes } = props;
+function Header({ profileInfo , classes}) {
+ 
   return (
     <AppBar position="static">
       <HorizontalWrap style={headerStyle}>
         <HorizontalWrap style={mainMenuStyle}>
-          <LeftMenu />
+          <LeftMenu profileInfo={profileInfo} />
           <div style={{ display: "flex" }}>
             <img className={classes.logoImage} src={`${Telegram}`} alt="" />
           </div>
