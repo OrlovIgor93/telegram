@@ -89,7 +89,7 @@ class MenuListComposition extends React.Component {
                 id="menu-list-grow"
                 style={{
                   transformOrigin:
-                    placement === "bottom" ? "center top" : "center bottom"
+                    placement === "bottom" ? "top" : " bottom"
                 }}
               >
                 <Paper>

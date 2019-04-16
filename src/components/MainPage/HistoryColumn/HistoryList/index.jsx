@@ -4,7 +4,11 @@ import { VerticalWrap } from "../../VerticalWrap";
 
 import "./style.css";
 
-export const HistoryList = ({ messagesActiveDialog }) => (
+export const HistoryList = ({
+  messagesActiveDialog,
+  profileInfo,
+  activeDialogInfo
+}) => (
   <VerticalWrap className="message-context" style={buttomPanelWrap}>
     {messagesActiveDialog.map(({ id, areYouAuthor, lastMessage }) => (
       <HistoryListItem
@@ -12,6 +16,8 @@ export const HistoryList = ({ messagesActiveDialog }) => (
         id={id}
         areYouAuthor={areYouAuthor}
         lastMessage={lastMessage}
+        profileInfo={profileInfo}
+        activeDialogInfo={activeDialogInfo}
       />
     ))}
   </VerticalWrap>

@@ -1,5 +1,4 @@
 
-.dialog-item:hover {
-  background-color: lightgray;
+.dialog-item:hover {  
   cursor: pointer;
 }

@@ -144,8 +144,8 @@ export const dialogsColumnStyle = {
 export const historyColumnStyle = {    
     flex: "2 1 69%",
     width: "69%",
-    justifyContent: "center",
     flexDirection: "column-reverse",
+    justifyContent: "flex-start"
 }
 
 

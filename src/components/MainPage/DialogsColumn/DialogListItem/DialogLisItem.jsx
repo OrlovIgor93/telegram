@@ -13,7 +13,7 @@ import { Chip } from "../../Chip";
 import { AvatarApp } from "../../../Avatar/Avatar";
 import { VerticalWrap } from "../../VerticalWrap";
 
-const styles = theme => ({
+const styles = () => ({
   colorAuthorLastMessage: {
     color: "#3a6d99"
   },
@@ -30,7 +30,7 @@ const styles = theme => ({
   }
 });
 
-function DialogLisItem({ 
+const DialogLisItem =({ 
   id,
   name,
   imgUrl,
@@ -39,14 +39,7 @@ function DialogLisItem({
    selectedIndex,
   setSelectedIndex,
   classes,
-}) {
- 
-  // const handleListItemClick = (id) => {
-  //   setSelectedIndex(id);
-  // };
-
-
-  return (
+}) =>(
     <ListItem
       id={id}
       button
@@ -108,7 +101,7 @@ function DialogLisItem({
       </ListItemSecondaryAction>
     </ListItem>
   );
-}
+
 
 DialogLisItem.propTypes = {
   classes: PropTypes.object.isRequired
