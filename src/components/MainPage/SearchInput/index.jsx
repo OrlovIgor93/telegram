@@ -22,24 +22,23 @@ const styles = () => ({
   searchIcon: {
     display: "flex",
     color: "#bfbfbf",
-    paddingRight: "10px",
+    paddingRight: "10px"
   }
 });
 
-export const SearchInput = ({ valueSearchInput, onChangeSearchInput, classes }) => {
-         return (
-           <div className={classes.search}>
-             <div className={classes.searchIcon}>
-               <SearchIcon />
-             </div>
-             <InputBase
-               value={valueSearchInput}
-               onChange={onChangeSearchInput}
-               placeholder="Search…"
-             />
-           </div>
-         );
-       };
+export const SearchInput = ({ onChangeSearchInput, classes }) => {
+  return (
+    <div className={classes.search}>
+      <div className={classes.searchIcon}>
+        <SearchIcon />
+      </div>
+      <InputBase
+        onChange={event => onChangeSearchInput(event)}
+        placeholder="Search…"
+      />
+    </div>
+  );
+};
 
 SearchInput.propTypes = {
   classes: PropTypes.object.isRequired

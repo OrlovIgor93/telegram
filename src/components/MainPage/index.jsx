@@ -11,33 +11,39 @@ import { accountData } from "../../mock/accountData";
 import { wrapPageStyle, pageContextStyle } from "./styles";
 
 export const MainPage = () => {
-  const [listUserDialogs, filterListDialogs] = useState(listDialogs);
+  const [listUserDialogs, setListUserDialogs] = useState(listDialogs);
   const [messagesActiveDialog, changeActiveDialog] = useState([]);
   const [profileInfo, changeProfileInfo] = useState(accountData);
   const [selectedIndex, setSelectedIndex] = useState();
   const [activeDialogInfo, setActiveDialogInfo] = useState({});
-  const [valueSearchInput, setValueSearchInput] = useState('');
+  const [valueSearchInput, setValueSearchInput] = useState("");
+  const [filteredList, setFilteredList] = useState();
 
   const setActiveDialog = id => {
-
     // Random messages --- crutch
     const randomMessages = activeDialog.filter((el, i, arr) => {
       return arr.indexOf(el) % id === 0;
     });
     setSelectedIndex(id);
     changeActiveDialog(randomMessages);
+    setValueSearchInput("");
     setActiveDialogInfo(listDialogs.find(dialog => dialog.id === id));
   };
 
   const onChangeSearchInput = ({ target: { value } }) => {
+    changeDialogListView(value);
     setValueSearchInput(value);
-    console.log(setValueSearchInput);
   };
 
-  const changeDialogListView =() =>{
-    return (listUserDialogs.filter((el) => {
-           return  (el.name.indexOf(valueSearchInput)) !==-1}))
-  }
+  const changeDialogListView = value => {
+    const valueToLower = value.toLowerCase();
+
+    const filterDialogs = listUserDialogs.filter(
+      el => el.name.toLowerCase().indexOf(valueToLower) !== -1
+    );
+
+    setFilteredList(filterDialogs);
+  };
 
   return (
     <VerticalWrap style={wrapPageStyle}>
@@ -45,13 +51,11 @@ export const MainPage = () => {
       <HorizontalWrap style={pageContextStyle}>
         <DialogsColumn
           listUserDialogs={
-            setValueSearchInput === ""
-              ? listUserDialogs
-              : changeDialogListView()
+            valueSearchInput === "" ? listUserDialogs : filteredList
           }
+          valueSearchInput={valueSearchInput}
           setActiveDialog={setActiveDialog}
           selectedIndex={selectedIndex}
-          valueSearchInput={valueSearchInput}
           onChangeSearchInput={onChangeSearchInput}
         />
 

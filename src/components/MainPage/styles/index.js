@@ -138,7 +138,7 @@ export const pageContextStyle = {
 export const dialogsColumnStyle = {
     flex: "1 2 31%",
     width: "31%",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     borderRight: "2px solid #e2e2e2",
 };
 
