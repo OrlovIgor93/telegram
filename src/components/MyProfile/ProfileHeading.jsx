@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
-
-import {Description} from "../Settings/Description"
+import CloseIcon from '@material-ui/icons/Close'
+import {Description} from "./Description"
 import {style} from "../LeraStyles/style";
 
 export const ProfileHeading = () => (
@@ -13,7 +13,9 @@ export const ProfileHeading = () => (
         <div style={style.titles}>
             <div>My Profile</div>
              <div style={style.linksRight}>
-                <Link to="/">Close</Link></div>
+                 <Link to="/">
+                     <CloseIcon style={{color:'white'}}/>
+                 </Link></div>
         </div>
         <Description/>
     </div>

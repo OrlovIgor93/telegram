@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
-
-import {Description} from "../Settings/Description"
+import CloseIcon from '@material-ui/icons/Close'
+import {Description} from "./Description"
 import {style} from "../LeraStyles/style";
 
 export const ContactHeading = ({ imgurl, name }) => (
@@ -18,7 +18,9 @@ export const ContactHeading = ({ imgurl, name }) => (
            <div style={style.titles}>
              <div>Contact Info</div>
              <div style={style.linksRight}>
-               <Link to="/">Close</Link>
+               <Link to="/">
+                   <CloseIcon style={{color:'white'}}/>
+               </Link>
              </div>
            </div>
            <Description imgurl={imgurl} name={name} />

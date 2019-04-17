@@ -11,6 +11,10 @@ export const style = {
     bodyBackground: {
         background: "white"
     },
+    bodyBackgroundDark: {
+        background: "black",
+        color: "white"
+    },
     bodyMargins: {
         marginTop: 19 + 'px',
         marginRight: 0,
@@ -65,52 +69,4 @@ export const style = {
         marginLeft: -64+'px',
         position: 'absolute'
     },
-    // export const iconUser = {
-    //     ...iconPhone,
-    //     backgroundPosition: '-12px -90px',
-    // };
-    // Switch: {
-    //     Box: {
-    //         whiteSpace: 'nowrap',
-    //     },
-    //     Boxdiv: {
-    //         marginLeft: 100 + 'px',
-    //         width: 33 + '%',
-    //         display: 'inlineBlock',
-    //     },
-    //     Switch: {
-    //         position: 'relative',
-    //         display: 'inlineBlock',
-    //         width: 54 + 'px',
-    //         height: 20 + 'px',
-    //     },
-    //     Slider: {
-    //         position: 'absolute',
-    //         cursor: 'pointer',
-    //         top: 0,
-    //         left: 0,
-    //         right: 0,
-    //         bottom: 0,
-    //         backgroundColor: '#ccc',
-    //         WebkitTransition: .4 + 's',
-    //         transition: .4 + 's',
-    //     },
-    //     SliderBefore: {
-    //         position: 'absolute',
-    //         content: "",
-    //         height: 20 + 'px',
-    //         width: 20 + 'px',
-    //         left: 4 + 'px',
-    //         backgroundColor: 'white',
-    //         webkitTransition: .4 + 's',
-    //         transition: .4 + 's',
-    //     },
-    //     SwitchInput: {
-    //         opacity: 0,
-    //         width: 0,
-    //         height: 0,
-    //     }
-    //
-    // }
-
 };
