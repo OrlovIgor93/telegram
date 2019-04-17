@@ -5,7 +5,8 @@ export const listDialogs = [
   "phone": "+66 987 855 6275",
   "imgUrl": "https://robohash.org/atetlabore.png?size=50x50&set=set1",
   "lastMessage": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl.",
-  "timeLastMessage": "2018-10-16T00:25:12Z"
+  "timeLastMessage": "2018-10-16T00:25:12Z",
+  
 }, {
   "id": 2,
   "name": "Von Keppy",

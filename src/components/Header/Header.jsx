@@ -28,7 +28,7 @@ const styles = () => ({
   }
 });
 
-function Header({ profileInfo , classes}) {
+function Header({ activeDialogInfo, profileInfo , classes}) {
  
   return (
     <AppBar position="static">
@@ -41,8 +41,8 @@ function Header({ profileInfo , classes}) {
         </HorizontalWrap>
         <HorizontalWrap style={rightWrapperButons}>
           <Button to="/contact" style={dialogButtonName}>
-            <Typography noWrap style={{ color: "#fff", padding: "0px 10px" }}>
-              Liza Smitt
+            <Typography varint="title1" noWrap style={{ color: "#fff", padding: "0px 10px" }}>
+              {activeDialogInfo.name}
             </Typography>
             {/* <Typography noWrap style={{ color: "#b9cfe3" }}>
               online

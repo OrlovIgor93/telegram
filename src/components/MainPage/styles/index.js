@@ -115,7 +115,7 @@ export const colors = {
 
 export const horizontalWrap = {
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",    
 };
 
 export const verticalWrap = {
