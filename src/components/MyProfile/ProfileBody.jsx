@@ -1,6 +1,5 @@
 import React from "react";
 import {style} from "../LeraStyles/style";
-
 import PersonIcon from '@material-ui/icons/Person';
 import PhoneIcon from '@material-ui/icons/Phone';
 import ListItem from "@material-ui/core/ListItem";

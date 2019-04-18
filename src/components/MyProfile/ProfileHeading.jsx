@@ -12,10 +12,10 @@ export const ProfileHeading = () => (
     }}>
         <div style={style.titles}>
             <div>My Profile</div>
-             <div style={style.linksRight}>
-                 <Link to="/">
-                     <CloseIcon style={{color:'white'}}/>
-                 </Link></div>
+            <div style={style.linksRight}>
+                <Link to="/">
+                    <CloseIcon style={{color: 'white'}}/>
+                </Link></div>
         </div>
         <Description/>
     </div>
