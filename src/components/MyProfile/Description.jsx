@@ -9,7 +9,7 @@ export const Description = () => (
              <AvatarApp
                big
                style={{ marginRight: 15 }}
-               name="Name"
+               name="Valerie"
              />
            </div>
            <div style={{ paddingTop: 30 + "px" }}>
