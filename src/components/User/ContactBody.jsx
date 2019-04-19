@@ -19,7 +19,7 @@ export const ContactBody = () => {
                     <ListItemIcon>
                         <PhoneIcon/>
                     </ListItemIcon>
-                    <ListItemText primary="+37529 1234567"/>
+                    <ListItemText primary="+375229880111"/>
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
