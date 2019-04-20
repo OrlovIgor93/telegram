@@ -8,29 +8,32 @@ import ListItemText from "@material-ui/core/ListItemText";
 import List from "@material-ui/core/List";
 import {Divider} from "@material-ui/core";
 
-export const ProfileBody = ({phoneNumber = '+375291234567', userName, email}) => {
+export const ProfileBody = ({phone, name, username}) => {
     return (
         <div style={style.bodyBackground}>
-            <List component="nav">
-                <ListItem button>
+            <List>
+                <ListItem>
                     <ListItemIcon>
                         <PhoneIcon/>
                     </ListItemIcon>
-                    <ListItemText primary={phoneNumber}/>
+                    <ListItemText primary={phone}
+                                  secondary="contact phone number"/>
                 </ListItem>
                 <Divider/>
-                <ListItem button>
+                <ListItem>
                     <ListItemIcon>
                         <PersonIcon/>
                     </ListItemIcon>
-                    <ListItemText primary={email}/>
+                    <ListItemText primary={username}
+                                  secondary="contact name"/>
                 </ListItem>
                 <Divider/>
-                <ListItem button>
+                <ListItem>
                     <ListItemIcon>
                         <PersonIcon/>
                     </ListItemIcon>
-                    <ListItemText primary={userName}/>
+                    <ListItemText primary={"@"+ name.toLowerCase()}
+                                  secondary="contact username"/>
                 </ListItem>
             </List>
         </div>

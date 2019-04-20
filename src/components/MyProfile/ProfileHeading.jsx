@@ -4,7 +4,7 @@ import CloseIcon from '@material-ui/icons/Close'
 import {Description} from "./Description"
 import {style} from "../LeraStyles/style";
 
-export const ProfileHeading = () => (
+export const ProfileHeading = ({user}) => (
     <div style={{
         backgroundColor: 'rgb(85, 128, 163)',
         color: '#fff',
@@ -17,6 +17,6 @@ export const ProfileHeading = () => (
                     <CloseIcon style={{color: 'white'}}/>
                 </Link></div>
         </div>
-        <Description/>
+        <Description user={user}/>
     </div>
 );

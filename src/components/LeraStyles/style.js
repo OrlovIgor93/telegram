@@ -9,7 +9,11 @@ export const style = {
         padding: '20px 60px',
     },
     bodyBackground: {
-        background: "white"
+        background: "white",
+        width: "60%",
+        display: 'flex',
+        justifyContent: 'center'
+
     },
     bodyBackgroundDark: {
         background: "black",
