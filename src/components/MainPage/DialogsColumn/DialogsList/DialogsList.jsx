@@ -24,7 +24,7 @@ const DialogsList = ({
 }) => (
     <List className={classes.dialogsList} component="nav">
       {listUserDialogs.map(
-        ({ id, name, imgUrl, lastMessage, timeLastMessage }) => {
+        ({ id, name, imgUrl, lastMessage, timeLastMessage, numberOfUnreadMessages }) => {
           return (
             <DialogListItem
               key={id}
@@ -34,7 +34,8 @@ const DialogsList = ({
               lastMessage={lastMessage}
               timeLastMessage={timeLastMessage}
               selectedIndex={selectedIndex}
-              setSelectedIndex={setActiveDialog}            
+              setSelectedIndex={setActiveDialog}
+              numberOfUnreadMessages={numberOfUnreadMessages}
             />
           );
         }
