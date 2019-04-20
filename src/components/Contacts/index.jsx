@@ -26,7 +26,7 @@ export class Contacts extends React.Component {
                     <div style={Style.contactContactsClass}>Contacts</div>
                     <div style={Style.editContactClass} onClick={() => this.setState({ editMode: !this.state.editMode })}>Edit</div>
                     <div style={Style.closeClass}>
-                        <Link style={Style.closeClass} to="/">Close</Link>
+                        <Link style={Style.closeClass} to="/home">Close</Link>
                     </div>
                 </Header>
                 <Search />

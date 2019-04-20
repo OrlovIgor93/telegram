@@ -10,7 +10,7 @@ export const Header = () => (
     </div>
     <div className="name_title">Telegram</div>
     <div className="next_login">
-      <Link className="next_wrap_login" style={{color: 'white'}} to="/">
+      <Link className="next_wrap_login" style={{color: 'white'}} to="/home">
         Next &gt;
              </Link>
     </div>
