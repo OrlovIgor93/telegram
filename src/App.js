@@ -24,7 +24,6 @@ class App extends Component {
         <Route path="/group" component={GroupPage} />
         <Route path="/settings" component={Settings} />
         <Route path="/profile" component={Profile} />
-        <Route path="/addnewcontact" component={AddNewContact} />
       </Switch>
     );
   }

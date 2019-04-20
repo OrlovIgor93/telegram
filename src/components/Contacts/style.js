@@ -110,22 +110,6 @@ export const style = {
     padding: "15px",
     cursor: 'pointer'
   },
-  headerNewContact: {
-    display: 'flex',
-    justifyContent: "space-between",
-  },
-  paperNewContact: {
-    display: 'flex',
-    flexDirection: "column",
-    justifyContent: 'space-beetwen',
-  },
-  inputNewContact: {
-    marginTop: '30px',
-    width: '300px',
-    height: '30px',
-    border: "none",
-    borderBottom: "1px solid lightgray",
-  },
   footAddContactClass: {
     marginTop: '55px',
     display: "flex",
