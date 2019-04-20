@@ -5,16 +5,17 @@ import {ContactBody} from "./ContactBody";
 import Paper from '@material-ui/core/Paper';
 
 export const User = props => (
-         <Paper style={{ padding: 0, width: "480px" }} elevation={1}>
-           {(() => {
-             console.log("----User", props);
-           })()}
-           <ContactHeading
-             imgurl={props.history.location.state.imgurl}
-             name={props.history.location.state.name}
-           />
-           <ContactBody />
-         </Paper>
-       );
-
+    <Paper style={{padding: 0, width: "480px"}} elevation={1}>
+        {(() => {
+            console.log("----User", props);
+        })()}
+        <ContactHeading
+            imgurl={props.history.location.state.imgurl}
+            name={props.history.location.state.name}
+        />
+        <ContactBody name={props.history.location.state.name}
+                     phone={props.history.location.state.phone}
+        />
+    </Paper>
+);
 

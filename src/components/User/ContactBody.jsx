@@ -11,21 +11,23 @@ import DraftsIcon from '@material-ui/icons/Drafts';
 import DeleteIcon from '@material-ui/icons/DeleteOutlined';
 import {Divider} from "@material-ui/core";
 
-export const ContactBody = () => {
+export const ContactBody = ({name, phone='+375297654321'}) => {
     return (
         <div style={style.bodyBackground} >
-            <List component="nav">
-                <ListItem button>
+            <List>
+                <ListItem>
                     <ListItemIcon>
                         <PhoneIcon/>
                     </ListItemIcon>
-                    <ListItemText primary="+375229880111"/>
+                    <ListItemText primary={phone}
+                    secondary="user's phone number"/>
                 </ListItem>
-                <ListItem button>
+                <ListItem>
                     <ListItemIcon>
                         <PersonIcon/>
                     </ListItemIcon>
-                    <ListItemText primary="@username"/>
+                    <ListItemText primary={name}
+                                  secondary="user's name"/>
                 </ListItem>
                 <Divider/>
                 <ListItem button>
