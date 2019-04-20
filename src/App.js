@@ -16,11 +16,11 @@ class App extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" component={MainPage} />
+        <Route exact path="/" component={LoginPage} />
         <Route path="/contact" component={User} />
         <Route path="/about" component={About} />
         <Route path="/contacts" component={Contacts} />
-        <Route path="/login" component={LoginPage} />
+        <Route path="/home" component={MainPage} />
         <Route path="/group" component={GroupPage} />
         <Route path="/settings" component={Settings} />
         <Route path="/profile" component={Profile} />
