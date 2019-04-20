@@ -1,17 +1,12 @@
 export const countryCode = [
     {
-        "code": "+7 840",
-        "name": "Abkhazia",
-        "phoneLenght": 7
-    },
-    {
-        "code": "+93",
-        "name": "Afghanistan",
+        "code": "+7",
+        "name": "Russia",
         "phoneLenght": 9
     },
     {
-        "code": "+355",
-        "name": "Albania",
+        "code": "+123",
+        "name": "Neverland",
         "phoneLenght": 8
     },
 
