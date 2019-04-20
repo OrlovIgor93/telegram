@@ -10,9 +10,6 @@ export const style = {
     },
     bodyBackground: {
         background: "white",
-        width: "60%",
-        display: 'flex',
-        justifyContent: 'center'
 
     },
     bodyBackgroundDark: {

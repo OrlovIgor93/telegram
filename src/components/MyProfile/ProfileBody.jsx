@@ -17,7 +17,7 @@ export const ProfileBody = ({phone, name, username}) => {
                         <PhoneIcon/>
                     </ListItemIcon>
                     <ListItemText primary={phone}
-                                  secondary="contact phone number"/>
+                                  secondary="your phone number"/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
@@ -25,7 +25,7 @@ export const ProfileBody = ({phone, name, username}) => {
                         <PersonIcon/>
                     </ListItemIcon>
                     <ListItemText primary={username}
-                                  secondary="contact name"/>
+                                  secondary="your name"/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
@@ -33,7 +33,7 @@ export const ProfileBody = ({phone, name, username}) => {
                         <PersonIcon/>
                     </ListItemIcon>
                     <ListItemText primary={"@"+ name.toLowerCase()}
-                                  secondary="contact username"/>
+                                  secondary="your username"/>
                 </ListItem>
             </List>
         </div>
