@@ -142,7 +142,7 @@ export const dialogsColumnStyle = {
     borderRight: "2px solid #e2e2e2",
 };
 
-export const historyColumnStyle = {    
+export const historyColumnStyle = {
     flex: "2 1 69%",
     width: "69%",
     flexDirection: "column-reverse",
@@ -165,6 +165,7 @@ export const infoLastMessageStyle = {
     justifyContent: "space-between",
     alignItems: "flex-end",
     paddingRight: 10,
+    height: "100%",
 };
 
 export const decorationOverflowStyle = {
