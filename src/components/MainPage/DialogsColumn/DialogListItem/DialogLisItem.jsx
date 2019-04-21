@@ -11,7 +11,6 @@ import {infoLastMessageStyle} from "../../styles";
 
 import {Chip} from "../../Chip";
 import {AvatarApp} from "../../../Avatar/Avatar";
-import {VerticalWrap} from "../../VerticalWrap";
 
 const styles = () => ({
     colorAuthorLastMessage: {
@@ -57,10 +56,12 @@ const DialogLisItem = ({
             />
         </ListItemAvatar>
         <ListItemText
-            className={classes.listItemText}
+
             primaryTypographyProps={{
                 noWrap: true,
-                gutterBottom: true
+                gutterBottom: true,
+                overflow: "hidden",
+                textoverflow: "ellipsis"
             }}
             primary={name}
             secondaryTypographyProps={{
@@ -89,16 +90,16 @@ const DialogLisItem = ({
             }
         />
 
-        <ListItemSecondaryAction>
-            <VerticalWrap style={infoLastMessageStyle}>
-                <Typography
-                    style={{paddingBottom: 10, color: "#9c9c9c"}}
-                    variant="caption"
-                >
-                    {new Date(timeLastMessage).toLocaleTimeString()}
-                </Typography>
-                {numberOfUnreadMessages && <Chip value={numberOfUnreadMessages}/>}
-            </VerticalWrap>
+        <ListItemSecondaryAction style={infoLastMessageStyle}>
+
+            <Typography
+                style={{padding: "10px 0", color: "#9c9c9c"}}
+                variant="caption"
+            >
+                {new Date(timeLastMessage).toLocaleDateString()}
+            </Typography>
+            {numberOfUnreadMessages && <Chip value={numberOfUnreadMessages}/>}
+
         </ListItemSecondaryAction>
     </ListItem>
 );

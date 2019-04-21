@@ -151,21 +151,20 @@ export const historyColumnStyle = {
 
 
 export const dialogInfoStyle = {
-    padding: "7px 14px",
     justifyContent: "space-between",
     overflow: "hidden"
 };
 
-export const strechAreaStyle = {
+export const stretchAreaStyle = {
     justifyContent: "space-between",
     overflow: "hidden"
 };
 
 export const infoLastMessageStyle = {
-    justifyContent: "space-between",
     alignItems: "flex-end",
-    paddingRight: 10,
     height: "100%",
+    display: "flex",
+    flexDirection: "column",
 };
 
 export const decorationOverflowStyle = {

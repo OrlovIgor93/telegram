@@ -20,11 +20,23 @@ export const HistoryListItem = ({
                 name={areYouAuthor ? fullName : name}
             />
             <VerticalWrap style={stretchAreaStyle}>
-                <Typography variant="subtitle1">
-                    {areYouAuthor ? fullName : name}
-                </Typography>
+                <VerticalWrap>
+                <HorizontalWrap style={{alignItems: "baseline"}}>
+                    <Typography variant="subtitle1">
+                        {areYouAuthor ? fullName : name}
+                    </Typography>
+                    <Typography variant="caption" style={{marginLeft: "auto"}}>
+                        {new Date(messages[0].timeMessage).toLocaleTimeString()}
+                    </Typography>
 
-                {messages.map((mes) => <HorizontalWrap key={mes.timeMessage}>
+                </HorizontalWrap>
+
+                <Typography variant="body2" gutterBottom style={{maxWidth: 400}}>
+                    {messages[0].textMessage}
+                </Typography>
+                </VerticalWrap>
+                {messages.slice(1).map((mes) =>
+                    <HorizontalWrap key={mes.timeMessage} style={{alignItems: "baseline"}}>
                         <Typography variant="body2" gutterBottom style={{maxWidth: 400}}>
                             {mes.textMessage}
                         </Typography>
@@ -35,8 +47,6 @@ export const HistoryListItem = ({
                 )
                 }
             </VerticalWrap>
-
-
         </HorizontalWrap>
     </div>
 );

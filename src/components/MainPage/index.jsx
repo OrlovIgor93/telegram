@@ -11,7 +11,9 @@ import { accountData } from "../../mock/accountData";
 import { wrapPageStyle, pageContextStyle } from "./styles";
 
 export const MainPage = () => {
-  const [listUserDialogs, setListUserDialogs] = useState(listDialogs);
+  const [listUserDialogs, setListUserDialogs] = useState(listDialogs.sort((a,b) =>{
+    return new Date(b.timeLastMessage) - new Date(a.timeLastMessage);
+  }));
   const [messagesActiveDialog, changeActiveDialog] = useState([]);
   const [profileInfo, changeProfileInfo] = useState(accountData);
   const [selectedIndex, setSelectedIndex] = useState();
