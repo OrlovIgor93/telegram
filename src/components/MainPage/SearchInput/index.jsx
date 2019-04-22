@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
+import {MainPageContext} from "../MainPageContext";
 
 const styles = () => ({
   search: {
@@ -26,7 +27,8 @@ const styles = () => ({
   }
 });
 
-export const SearchInput = ({ onChangeSearchInput, classes }) => {
+export const SearchInput = ({ classes }) => {
+  const {onChangeSearchInput}=useContext(MainPageContext);
   return (
     <div className={classes.search}>
       <div className={classes.searchIcon}>

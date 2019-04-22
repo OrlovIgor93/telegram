@@ -1,17 +1,15 @@
-import React from "react";
+import React, {useContext} from "react";
 import Typography from "@material-ui/core/Typography";
 import {AvatarApp} from "../../../Avatar/Avatar";
 import {VerticalWrap} from "../../VerticalWrap";
 import {HorizontalWrap} from "../../HorizontalWrap";
 
 import "./style.css";
+import {MainPageContext} from "../../MainPageContext";
 
-export const HistoryListItem = ({
-                                    areYouAuthor,
-                                    messages,
-                                    profileInfo: {img, fullName},
-                                    activeDialogInfo: {imgUrl, name}
-                                }) => (
+export const HistoryListItem = ({areYouAuthor, messages}) =>{
+    const { profileInfo: {img, fullName}, activeDialogInfo: {imgUrl, name} } = useContext(MainPageContext);
+    return (
     <div className="dialog-item">
         <HorizontalWrap style={dialogInfoStyle}>
             <AvatarApp
@@ -50,7 +48,7 @@ export const HistoryListItem = ({
         </HorizontalWrap>
     </div>
 );
-
+};
 export const stretchAreaStyle = {
     justifyContent: "space-between",
     width: "100%"

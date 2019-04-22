@@ -1,117 +1,98 @@
-import React from "react";
+import React, {useContext} from "react";
+import {Link} from "react-router-dom"
 import PropTypes from "prop-types";
-import LeftMenu from "../MainPage/LeftMenu/LeftMenu";
-import { Button } from "../MainPage/Button";
 
+import {MainPageContext} from "../MainPage/MainPageContext";
+import LeftMenu from "../MainPage/LeftMenu/LeftMenu";
+import {HorizontalWrap} from "../MainPage/HorizontalWrap";
 import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+
+import {withStyles} from "@material-ui/core/styles";
+import SearchIcon from '@material-ui/icons/Search';
+import MoreIcon from '@material-ui/icons/MoreVert';
 import Telegram from "../../../src/img/Telegram.svg";
 
-import IconsetW from "../../img/icons/IconsetW.png";
-
-import { HorizontalWrap } from "../MainPage/HorizontalWrap";
-
 const styles = () => ({
-  header: {
-    minHeight: 48,
-    maxHeight: 48,
-    padding: 0,
-    width: "100%",
-    alignItems: "center"
-  },
-  mainMenu: {
-    flex: "2 1 31%"
-  },
-  logoImage: {
-    height: 24
-  }
+
+    logoImage: {
+        height: 24
+    },
+    infoActiveDialog: {
+        width: "100%",
+        display: "flex",
+        justifyContent: "flex-start",
+        color: "#fff",
+        textTransform: "inherit",
+    },
+
 });
 
-function Header({ activeDialogInfo, profileInfo , classes}) {
- 
-  return (
-    <AppBar position="static">
-      <HorizontalWrap style={headerStyle}>
-        <HorizontalWrap style={mainMenuStyle}>
-          <LeftMenu profileInfo={profileInfo} />
-          <div style={{ display: "flex" }}>
-            <img className={classes.logoImage} src={`${Telegram}`} alt="" />
-          </div>
-        </HorizontalWrap>
-        <HorizontalWrap style={rightWrapperButons}>
-          <Button to="/contact" style={dialogButtonName}>
-            <Typography varint="title1" noWrap style={{ color: "#fff", padding: "0px 10px" }}>
-              {activeDialogInfo.name}
-            </Typography>
-            {/* <Typography noWrap style={{ color: "#b9cfe3" }}>
-              online
-            </Typography> */}
-          </Button>
-          <Button style={rightMenuButtonStyle}>
-            {" "}
-            <i style={iconSearchButton} />{" "}
-          </Button>
-          <Button style={rightMenuButtonStyle}>
-            {" "}
-            <i style={iconLeftMenu} />{" "}
-          </Button>
-        </HorizontalWrap>
-      </HorizontalWrap>
-    </AppBar>
-  );
-}
+const Header = ({classes}) => {
+    const {profileInfo, activeDialogInfo: {name, imgUrl}, onSelectSearchForDialog} = useContext(MainPageContext);
+    return (
+        <AppBar position="static">
+            <HorizontalWrap style={headerStyle}>
+                <HorizontalWrap style={mainMenuStyle}>
+                    <LeftMenu profileInfo={profileInfo}/>
+                    <div style={{display: "flex"}}>
+                        <img className={classes.logoImage} src={`${Telegram}`} alt=""/>
+                    </div>
+                </HorizontalWrap>
+                <HorizontalWrap style={rightWrapperButtons}>
+                    <Button
+                        disabled={!name}
+                        fullWidth
+                        className={classes.infoActiveDialog}
+                        component={Link}
+                        to={{
+                            pathname: "/contact",
+                            state: {imgurl: imgUrl, name: name}
+                        }}
+                    >
+                        <Typography varint="h5" noWrap color="inherit">
+                            {name}
+                        </Typography>
+                        {/* <Typography noWrap style={{ color: "#b9cfe3" }}>
+                         online
+                             </Typography> */}
+                    </Button>
+                    <Button
+                        disabled={!name}
+                        color="inherit"
+
+                        onClick={onSelectSearchForDialog}
+                    >
+                        <SearchIcon/>
+                    </Button>
+                    <Button disabled={!name} color="inherit">
+                        <MoreIcon/>
+                    </Button>
+                </HorizontalWrap>
+            </HorizontalWrap>
+        </AppBar>
+    );
+};
 
 Header.propTypes = {
-  classes: PropTypes.object.isRequired
+    classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(Header);
 
-export const rightMenuButtonStyle = {
-  display: "block",
-
-  padding: "15px 19px",
-  lineHeight: "16px"
-};
-
-export const iconSearchButton = {
-  display: "inline-block",
-  width: 17,
-  height: 17,
-  backgroundImage: `url(${IconsetW})`,
-  backgroundRepeat: "no-repeat",
-  backgroundPosition: "-12px -1037px",
-  verticalAlign: "middle",
-  lineHeight: "16px"
-};
-
-export const iconLeftMenu = {
-  display: "inline-block",
-  width: 11,
-  height: 16,
-  backgroundImage: `url(${IconsetW})`,
-  backgroundRepeat: "no-repeat",
-  backgroundPosition: "-16px -1011px",
-  verticalAlign: "middle",
-  lineHeight: "16px"
-};
-
-export const dialogButtonName = {
-  width: "100%"
-};
-
 export const headerStyle = {
-  lineHeight: "48px",
-  backgroundColor: "#5682a3",
-  alignItems: "center"
+    lineHeight: "48px",
+    backgroundColor: "#5682a3",
+    alignItems: "center",
 };
 
 export const mainMenuStyle = {
-  flex: "2 1 31%",
-  alignItems: "center"
+    flex: "2 1 31%",
+    alignItems: "center",
 };
 
-export const rightWrapperButons = {
-  flex: "1 2 69%"
+export const rightWrapperButtons = {
+    flex: "1 2 69%",
+    height: "100%"
 };

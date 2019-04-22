@@ -16,12 +16,7 @@ const styles = () => ({
   //https://stackoverflow.com/questions/53772429/material-ui-how-can-i-style-the-scrollbar-with-css-in-js
 });
 
-const DialogsList = ({
-  classes,
-  listUserDialogs,
-  selectedIndex,
-  setActiveDialog
-}) => (
+const DialogsList = ({ classes, listUserDialogs, }) => (
     <List className={classes.dialogsList} component="nav">
       {listUserDialogs.map(
         ({ id, name, imgUrl, lastMessage, timeLastMessage, numberOfUnreadMessages }) => {
@@ -33,8 +28,6 @@ const DialogsList = ({
               imgUrl={imgUrl}
               lastMessage={lastMessage}
               timeLastMessage={timeLastMessage}
-              selectedIndex={selectedIndex}
-              setSelectedIndex={setActiveDialog}
               numberOfUnreadMessages={numberOfUnreadMessages}
             />
           );

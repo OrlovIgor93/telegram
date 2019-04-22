@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import PropTypes from "prop-types";
 import {withStyles} from "@material-ui/core/styles";
 import ListItem from "@material-ui/core/ListItem";
@@ -11,6 +11,7 @@ import {infoLastMessageStyle} from "../../styles";
 
 import {Chip} from "../../Chip";
 import {AvatarApp} from "../../../Avatar/Avatar";
+import {MainPageContext} from "../../MainPageContext";
 
 const styles = () => ({
     colorAuthorLastMessage: {
@@ -35,75 +36,76 @@ const DialogLisItem = ({
                            imgUrl,
                            lastMessage,
                            timeLastMessage,
-                           selectedIndex,
-                           setSelectedIndex,
                            numberOfUnreadMessages,
                            classes,
-                       }) => (
-    <ListItem
-        id={id}
-        button
-        selected={selectedIndex === id}
-        onClick={() => setSelectedIndex(id)}
-        alignItems="flex-start"
-    >
-        <ListItemAvatar>
-            <AvatarApp
-                medium
-                style={{marginRight: 15}}
-                src={imgUrl}
-                name={name}
+                       }) => {
+    const {selectedIndex, setActiveDialog} = useContext(MainPageContext);
+
+    return (
+        <ListItem
+            id={id}
+            button
+            selected={selectedIndex === id}
+            onClick={() => setActiveDialog(id)}
+            alignItems="flex-start"
+        >
+            <ListItemAvatar>
+                <AvatarApp
+                    medium
+                    style={{marginRight: 15}}
+                    src={imgUrl}
+                    name={name}
+                />
+            </ListItemAvatar>
+            <ListItemText
+
+                primaryTypographyProps={{
+                    noWrap: true,
+                    gutterBottom: true,
+                    overflow: "hidden",
+                    textoverflow: "ellipsis"
+                }}
+                primary={name}
+                secondaryTypographyProps={{
+                    className: classes.overflowStyleMessage
+                }}
+                secondary={
+                    <React.Fragment>
+                        <Typography
+                            inline
+                            variant="body2"
+                            className={classes.colorAuthorLastMessage}
+                            component="span"
+                            color="textPrimary"
+                        >
+                            {name}:&nbsp;
+                        </Typography>
+                        <Typography
+                            inline
+                            variant="body2"
+                            component="span"
+                            className={classes.colorTextLastMessage}
+                        >
+                            {lastMessage}
+                        </Typography>
+                    </React.Fragment>
+                }
             />
-        </ListItemAvatar>
-        <ListItemText
 
-            primaryTypographyProps={{
-                noWrap: true,
-                gutterBottom: true,
-                overflow: "hidden",
-                textoverflow: "ellipsis"
-            }}
-            primary={name}
-            secondaryTypographyProps={{
-                className: classes.overflowStyleMessage
-            }}
-            secondary={
-                <React.Fragment>
-                    <Typography
-                        inline
-                        variant="body2"
-                        className={classes.colorAuthorLastMessage}
-                        component="span"
-                        color="textPrimary"
-                    >
-                        {name}:&nbsp;
-                    </Typography>
-                    <Typography
-                        inline
-                        variant="body2"
-                        component="span"
-                        className={classes.colorTextLastMessage}
-                    >
-                        {lastMessage}
-                    </Typography>
-                </React.Fragment>
-            }
-        />
+            <ListItemSecondaryAction style={infoLastMessageStyle}>
 
-        <ListItemSecondaryAction style={infoLastMessageStyle}>
+                <Typography
+                    style={{padding: "10px 0", color: "#9c9c9c"}}
+                    variant="caption"
+                >
+                    {new Date(timeLastMessage).toLocaleDateString()}
+                </Typography>
+                {numberOfUnreadMessages && <Chip value={numberOfUnreadMessages}/>}
 
-            <Typography
-                style={{padding: "10px 0", color: "#9c9c9c"}}
-                variant="caption"
-            >
-                {new Date(timeLastMessage).toLocaleDateString()}
-            </Typography>
-            {numberOfUnreadMessages && <Chip value={numberOfUnreadMessages}/>}
-
-        </ListItemSecondaryAction>
-    </ListItem>
-);
-
+            </ListItemSecondaryAction>
+        </ListItem>
+    );
+};
 
 DialogLisItem.propTypes = {
     classes: PropTypes.object.isRequired

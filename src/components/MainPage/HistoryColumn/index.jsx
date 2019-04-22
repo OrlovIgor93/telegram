@@ -6,23 +6,12 @@ import Typography from "@material-ui/core/Typography";
 
 import {historyColumnStyle} from "../styles";
 
-export const HistoryColumn = ({
-                                  messagesActiveDialog,
-                                  profileInfo,
-                                  activeDialogInfo
-                              }) => (
+export const HistoryColumn = ({messagesActiveDialog}) => (
     <VerticalWrap style={historyColumnStyle}>
         {messagesActiveDialog.length > 0 && (
             <React.Fragment>
-                <BottomPanelWrap
-                    profileInfo={profileInfo}
-                    activeDialogInfo={activeDialogInfo}
-                />
-                <HistoryList
-                    messagesActiveDialog={messagesActiveDialog}
-                    profileInfo={profileInfo}
-                    activeDialogInfo={activeDialogInfo}
-                />
+                <BottomPanelWrap/>
+                <HistoryList/>
             </React.Fragment>
         )}
         {messagesActiveDialog.length === 0 && (
