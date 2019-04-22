@@ -10,8 +10,9 @@ export const HistoryColumn = ({messagesActiveDialog}) => (
     <VerticalWrap style={historyColumnStyle}>
         {messagesActiveDialog.length > 0 && (
             <React.Fragment>
-                <BottomPanelWrap/>
                 <HistoryList/>
+                <BottomPanelWrap/>
+
             </React.Fragment>
         )}
         {messagesActiveDialog.length === 0 && (

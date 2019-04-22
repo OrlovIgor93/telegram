@@ -115,7 +115,7 @@ export const colors = {
 
 export const horizontalWrap = {
     display: "flex",
-    flexDirection: "row",    
+    flexDirection: "row",
 };
 
 export const verticalWrap = {
@@ -145,8 +145,8 @@ export const dialogsColumnStyle = {
 export const historyColumnStyle = {
     flex: "2 1 69%",
     width: "69%",
-    flexDirection: "column-reverse",
-    justifyContent: "flex-start"
+    flexDirection: "column",
+    justifyContent: "flex-end"
 };
 
 

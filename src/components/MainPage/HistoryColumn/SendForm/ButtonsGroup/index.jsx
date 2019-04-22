@@ -4,6 +4,7 @@ import { Button } from "../../../Button";
 import General from "../../../../../img/icons/General.png";
 import IconsetW from "../../../../../img/icons/IconsetW.png";
 
+import ButtonBase from '@material-ui/core/ButtonBase';
 import emojisprite_0 from "../../../../../img/icons/emojisprite_0.png";
 
 export const ButtonsGroup = () => (
@@ -12,8 +13,8 @@ export const ButtonsGroup = () => (
     <Button style={buttonSendMediaStyle} />
     <Button style={buttonSendVoiceStyle} />
     <EmomojiGroupButton />
+      <ButtonBase style={submitButtonStyle} variant="contained" type="submit" > SEND </ButtonBase>
 
-    <Button style={submiButtonStyle}> SEND </Button>
   </HorizontalWrap>
 );
 
@@ -29,7 +30,7 @@ const EmomojiGroupButton = () => (
   </HorizontalWrap>
 );
 
-export const submiButtonStyle = {
+export const submitButtonStyle = {
   color: "#499dd9",
   fontSize: 13,
   fontWeight: 800

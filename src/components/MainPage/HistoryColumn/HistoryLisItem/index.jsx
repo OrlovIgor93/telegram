@@ -39,7 +39,7 @@ export const HistoryListItem = ({areYouAuthor, messages}) =>{
                             {mes.textMessage}
                         </Typography>
                         <Typography variant="caption" style={{marginLeft: "auto"}}>
-                            {new Date(mes.timeMessage).toLocaleTimeString()}
+                            {new Date(mes.timeMessage).toLocaleDateString()}
                         </Typography>
                     </HorizontalWrap>
                 )
@@ -57,5 +57,5 @@ export const stretchAreaStyle = {
 export const dialogInfoStyle = {
     padding: "7px 14px",
     justifyContent: "space-between",
-    overflow: "hidden"
+
 };

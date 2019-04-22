@@ -28,9 +28,12 @@ export const MainPage = () => {
         const randomMessages = activeDialog.filter((el, i, arr) => {
             return arr.indexOf(el) % id === 0;
         });
+        randomMessages.sort((a, b) => {
+            return new Date(b.messages[0].timeMessage) - new Date(a.messages[0].timeMessage);
+        });
         setSelectedIndex(id);
         changeActiveDialog(randomMessages);
-        setValueSearchInput("");
+
         setActiveDialogInfo(listDialogs.find(dialog => dialog.id === id));
     };
 
@@ -62,7 +65,8 @@ export const MainPage = () => {
             selectedIndex,
             onChangeSearchInput,
             messagesActiveDialog,
-            onSelectSearchForDialog
+            onSelectSearchForDialog,
+            changeActiveDialog
         }
         }>
             <VerticalWrap style={wrapPageStyle}>
