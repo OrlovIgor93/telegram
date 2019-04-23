@@ -2,9 +2,9 @@ import React from "react";
 import {
     Header,
     Navigate,
-    Search
+    Search,
+    ContactList
 } from "./ComponentsContacts";
-import ContactList from '../Group/ComponentsGroup/ContactList'
 import { Link } from "react-router-dom";
 
 import Style from './style.js'
@@ -12,6 +12,10 @@ import Style from './style.js'
 // edit
 
 export class Contacts extends React.Component {
+    // state = {
+    //     user: JSON.parse(localStorage.getItem('profileInfo'))
+    // };
+    
     constructor() {
         super()
         this.state = {
