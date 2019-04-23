@@ -7,6 +7,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import List from "@material-ui/core/List";
 import {Divider} from "@material-ui/core";
+import ChangeMyInfo from "./ChangeMyInfo";
 
 export const ProfileBody = ({phone, name, username}) => {
     return (
@@ -34,6 +35,9 @@ export const ProfileBody = ({phone, name, username}) => {
                     </ListItemIcon>
                     <ListItemText primary={"@"+ name.toLowerCase()}
                                   secondary="your username"/>
+                </ListItem>
+                <ListItem style={{justifyContent:'center'}}>
+                    <ChangeMyInfo/>
                 </ListItem>
             </List>
         </div>
