@@ -3,14 +3,12 @@ import Typography from "@material-ui/core/Typography";
 import {AvatarApp} from "../../../Avatar/Avatar";
 import {VerticalWrap} from "../../VerticalWrap";
 import {HorizontalWrap} from "../../HorizontalWrap";
-
-import "./style.css";
 import {MainPageContext} from "../../MainPageContext";
 
 export const HistoryListItem = ({areYouAuthor, messages}) =>{
     const { profileInfo: {img, fullName}, activeDialogInfo: {imgUrl, name} } = useContext(MainPageContext);
     return (
-    <div className="dialog-item">
+
         <HorizontalWrap style={dialogInfoStyle}>
             <AvatarApp
                 style={{marginRight: 15}}
@@ -46,7 +44,7 @@ export const HistoryListItem = ({areYouAuthor, messages}) =>{
                 }
             </VerticalWrap>
         </HorizontalWrap>
-    </div>
+
 );
 };
 export const stretchAreaStyle = {
@@ -55,6 +53,7 @@ export const stretchAreaStyle = {
 };
 
 export const dialogInfoStyle = {
+
     padding: "7px 14px",
     justifyContent: "space-between",
 

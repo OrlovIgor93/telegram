@@ -2,27 +2,31 @@ import React from "react";
 import {HistoryListItem} from "../HistoryLisItem";
 import {VerticalWrap} from "../../VerticalWrap";
 import {MainPageContext} from "../../../MainPage/MainPageContext"
-import "./style.css";
+
 
 export const HistoryList = () => {
     const {messagesActiveDialog} = React.useContext(MainPageContext);
     return (
-        <div className="message-context">
-            <VerticalWrap style={bottomPanelWrap}>
+        <VerticalWrap style={bottomPanelWrap}>
+            <div>
                 {messagesActiveDialog.map(({areYouAuthor, messages}) => (
                     <HistoryListItem
                         key={messages[0].timeMessage}
                         messages={messages}
                         areYouAuthor={areYouAuthor}
                     />
+
                 ))}
-            </VerticalWrap>
-        </div>
+                {console.log("1111")}
+            </div>
+        </VerticalWrap>
     );
 };
+
 export const bottomPanelWrap = {
+    height: "100%",
+    flexDirection: "column-reverse",
     overflow: "auto",
-    justifyContent: "flex-start",
     margin: "0 auto",
-    padding: "0 15px 0",
+    padding: "0 15px",
 };
