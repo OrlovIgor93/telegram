@@ -14,23 +14,44 @@ export const Wrap = props => (
 
 export class LoginPage extends Component {
     state = {
-        error: false,
-        value: "",
-    };
-
-    changePhoneNumber = e => {
-        console.log(e.target.value);
-        this.setState({
-            value: e.target.value,
-            error: e.target.value.length > 5
-        });
-    };
+        error: '',
+        country: '',
+        phoneNumber: '',
+      };
+    
+      handleChange = event => {
+        this.setState({ country: event.target.value, phoneNumber: '' });
+      };
+    
+      handleBlur = () => {
+        if (this.state.country.phoneLength > this.state.phoneNumber.length) {
+          this.setState({ error: 'Введите еще ' + `${this.state.country.phoneLength-this.state.phoneNumber.length}` + ' символов' })
+        }
+      }
+    
+      handleChangeInputPhoneNumber = event => {
+        if (event.target.value.length > this.state.country.phoneLength) {
+            this.setState({ error: 'Длина должна быть не больше ' + `${this.state.country.phoneLength}` + ' символов' })
+        }   else {
+          this.setState({ error: '' })
+        }
+        this.setState({ phoneNumber: event.target.value })
+      }    
 
     render() {
         return (
             <Wrap>
-                <Header error={this.state.error} number={this.state.value}/>
-                <Login value={this.state.value} changePhoneNumber={this.changePhoneNumber}/>
+                <Header
+                    error={this.state.error}
+                    phoneNumber={`${this.state.country.code} ${this.state.phoneNumber}`} />
+                <Login
+                    error={this.state.error}
+                    country={this.state.country}
+                    phoneNumber={this.state.phoneNumber}
+                    handleChange={this.handleChange}
+                    handleBlur={this.handleBlur}
+                    handleChangeInputPhoneNumber={this.handleChangeInputPhoneNumber}
+                />
                 <LearnMore />
             </Wrap>
         )
