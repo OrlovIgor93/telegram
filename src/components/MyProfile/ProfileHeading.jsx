@@ -13,7 +13,7 @@ export const ProfileHeading = ({user}) => (
         <div style={style.titles}>
             <div>My Profile</div>
             <div style={style.linksRight}>
-                <Link to="/">
+                <Link to="/home">
                     <CloseIcon style={{color: 'white'}}/>
                 </Link></div>
         </div>
