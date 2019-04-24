@@ -9,7 +9,6 @@ import { About } from './components/About'
 import { Contacts } from "./components/Contacts"
 import { GroupPage } from "./components/Group"
 import { LoginPage } from "./components/Login";
-import { Settings } from "./components/Settings";
 
 class App extends Component {
   render() {
@@ -21,7 +20,6 @@ class App extends Component {
         <Route path="/contacts" component={Contacts} />
         <Route path="/home" component={MainPage} />
         <Route path="/group" component={GroupPage} />
-        <Route path="/settings" component={Settings} />
         <Route path="/profile" component={Profile} />
       </Switch>
     );
