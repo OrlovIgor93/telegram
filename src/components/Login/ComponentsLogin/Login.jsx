@@ -5,6 +5,7 @@ import '../style.css'
 
 export const Login = ({
   error,
+  errorMessage,
   country,
   phoneNumber,
   handleChange,
@@ -22,6 +23,7 @@ export const Login = ({
         </div>
         <BootstrapInput
           error={error}
+          errorMessage={errorMessage}
           country={country}
           phoneNumber={phoneNumber}
           handleChange={handleChange}

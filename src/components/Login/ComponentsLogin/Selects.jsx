@@ -33,6 +33,7 @@ const styles = theme => ({
 const SimpleSelect = ({
   classes,
   error,
+  errorMessage,
   country,
   phoneNumber,
   handleChange,
@@ -62,7 +63,7 @@ const SimpleSelect = ({
             margin="normal"
           />
         </FormControl>
-        <FormControl className={classes.formControl} error={ error}>
+        <FormControl className={classes.formControl} error={ true}>
           <TextField
             type="number"
             disabled={! country}
@@ -76,7 +77,7 @@ const SimpleSelect = ({
             onBlur={  handleBlur}
           />
 
-          <FormHelperText id="component-error-text">{ error}</FormHelperText>
+          <FormHelperText id="component-error-text">{ errorMessage}</FormHelperText>
         </FormControl>
       </form>
     );
