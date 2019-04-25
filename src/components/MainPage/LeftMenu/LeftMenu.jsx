@@ -24,18 +24,19 @@ const styles = () => ({
     }
 });
 
-const LeftMenu = ({profileInfo, classes}) => {
-    const [anchorEl, setAnchorEl] = useState(null);
+const LeftMenu = ({classes}) => {
+    const {handleClickOpenModal, anchorLeftMenu, setAnchorLeftMenu} = useContext(MainPageContext);
+
     return (
         <div className={classes.root}>
             <div>
                 <IconButton
                     className={classes.menuButton}
                     color="inherit"
-                    aria-owns={anchorEl ? "simple-menu" : undefined}
+                    aria-owns={anchorLeftMenu ? "simple-menu" : undefined}
                     aria-haspopup="true"
                     onClick={event => {
-                        setAnchorEl(event.currentTarget);
+                        setAnchorLeftMenu(event.currentTarget);
                     }}
                 >
                     <MenuIcon/>
@@ -43,50 +44,52 @@ const LeftMenu = ({profileInfo, classes}) => {
 
                 <Menu
                     id="simple-menu"
-                    anchorEl={anchorEl}
+                    anchorEl={anchorLeftMenu}
                     getContentAnchorEl={null}
                     anchorOrigin={{vertical: "bottom", horizontal: "left"}}
-                    open={Boolean(anchorEl)}
-                    onClose={() => setAnchorEl(null)}
+                    open={Boolean(anchorLeftMenu)}
+                    onClose={() => setAnchorLeftMenu(null)}
                 >
-                    <MenuItem className={classes.menuItem}>
+                    <MenuItem onClick={() => handleClickOpenModal('New group')}
+                              className={classes.menuItem}
+                    >
                         <ListItemIcon className={classes.icon}>
                             <GroupIcon/>
                         </ListItemIcon>
-                        <Link to="/group">
-                            <ListItemText
-                                classes={{primary: classes.primary}}
-                                inset
-                                primary="New Group"
-                            />
-                        </Link>
+
+                        <ListItemText
+                            classes={{primary: classes.primary}}
+                            primary="New Group"
+                        />
+
                     </MenuItem>
 
-                    <MenuItem className={classes.menuItem}>
+                    <MenuItem onClick={() => handleClickOpenModal('Contacts')}
+                              className={classes.menuItem}
+                    >
                         <ListItemIcon className={classes.icon}>
                             <PeopleIcon/>
                         </ListItemIcon>
-                        <Link to="/contacts">
-                            <ListItemText
-                                classes={{primary: classes.primary}}
-                                inset
-                                primary="Contacts"
-                            />
-                        </Link>
+
+                        <ListItemText
+                            classes={{primary: classes.primary}}
+                            primary="Contacts"
+                        />
+
                     </MenuItem>
 
-                    <MenuItem onClick={() => localStorage.setItem('profileInfo', JSON.stringify(profileInfo))}
-                              className={classes.menuItem}>
+                    <MenuItem onClick={() => handleClickOpenModal('My profile')}
+                              className={classes.menuItem}
+                    >
                         <ListItemIcon className={classes.icon}>
                             <SettingsIcon/>
                         </ListItemIcon>
-                        <Link to="/profile">
-                            <ListItemText
-                                classes={{primary: classes.primary}}
-                                inset
-                                primary="My profile"
-                            />
-                        </Link>
+
+                        <ListItemText
+                            classes={{primary: classes.primary}}
+                            primary="My profile"
+                        />
+
                     </MenuItem>
 
                     <MenuItem className={classes.menuItem}>
@@ -94,13 +97,13 @@ const LeftMenu = ({profileInfo, classes}) => {
                             <CodeIcon/>
                         </ListItemIcon>
                         <a
+                            style={{paddingLeft: 16}}
                             href="https://github.com/OrlovIgor93/telegram/tree/develop/"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
                             <ListItemText
                                 classes={{primary: classes.primary}}
-                                inset
                                 primary="Code"
                             />
                         </a>
@@ -110,13 +113,11 @@ const LeftMenu = ({profileInfo, classes}) => {
                         <ListItemIcon className={classes.icon}>
                             <TelegramIcon/>
                         </ListItemIcon>
-                        <Link to="/about">
-                            <ListItemText
-                                classes={{primary: classes.primary}}
-                                inset
-                                primary="About"
-                            />
-                        </Link>
+
+                        <ListItemText
+                            classes={{primary: classes.primary}}
+                            primary="About"
+                        />
                     </MenuItem>
                 </Menu>
             </div>

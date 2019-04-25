@@ -4,17 +4,14 @@ import {ContactHeading} from "./ContactHeading";
 import {ContactBody} from "./ContactBody";
 import Paper from '@material-ui/core/Paper';
 
-export const User = props => (
+export const User = ({activeDialogInfo}) => (
     <Paper style={{padding: 0, width: "480px"}} elevation={1}>
-        {(() => {
-            console.log("----User", props);
-        })()}
         <ContactHeading
-            imgurl={props.history.location.state.imgurl}
-            name={props.history.location.state.name}
+            imgurl={activeDialogInfo.imgUrl}
+            name={activeDialogInfo.name}
         />
-        <ContactBody name={props.history.location.state.name}
-                     phone={props.history.location.state.phone}
+        <ContactBody name={activeDialogInfo.name}
+                     phone={activeDialogInfo.phone}
         />
     </Paper>
 );

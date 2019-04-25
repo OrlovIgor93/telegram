@@ -43,7 +43,7 @@ export const HistoryListItem = ({areYouAuthor, messages}) => {
                             variant="body2" gutterBottom style={{maxWidth: 500}}/>
 
                         <Typography variant="caption" style={{marginLeft: "auto"}}>
-                            {new Date(mes.timeMessage).toLocaleDateString()}
+                            {new Date(mes.timeMessage).toLocaleTimeString()}
                         </Typography>
                     </HorizontalWrap>
                 )

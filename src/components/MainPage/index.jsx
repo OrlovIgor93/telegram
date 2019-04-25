@@ -36,6 +36,12 @@ export const MainPage = () => {
         changeActiveDialog(randomMessages);
 
         setActiveDialogInfo(listDialogs.find(dialog => dialog.id === id));
+        console.log(valueSearchInput);
+        if (valueSearchInput) {
+            changeDialogListView("");
+            setValueSearchInput("")
+        }
+
     };
 
     const onChangeSearchInput = ({target: {value}}) => {
@@ -63,9 +69,9 @@ export const MainPage = () => {
             const messages = el.messages.map((mes) => {
                 const timeMessage = mes.timeMessage;
                 const textMessage = mes.textMessage
-                                            .replace(regExOpenSpan, '')
-                                            .replace(regExCloseSpan, '')
-                                            .replace(regEx, `<span>${value}</span>`);
+                    .replace(regExOpenSpan, '')
+                    .replace(regExCloseSpan, '')
+                    .replace(regEx, `<span>${value}</span>`);
 
                 return {timeMessage, textMessage}
             });
@@ -78,8 +84,9 @@ export const MainPage = () => {
         setSearchValueInDialog(value);
     };
 
-    const handlerBlurSearchDialog=()=>{
+    const handlerBlurSearchDialog = () => {
         setSearchValueInDialog('');
+        setActiveDialog(selectedIndex);
     };
 
     return (

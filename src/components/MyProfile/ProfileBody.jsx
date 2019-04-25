@@ -9,7 +9,7 @@ import List from "@material-ui/core/List";
 import {Divider} from "@material-ui/core";
 import ChangeMyInfo from "./ChangeMyInfo";
 
-export const ProfileBody = ({user}) => {
+export const ProfileBody = ({user, changeProfileInfo}) => {
     return (
         <div style={style.bodyBackground}>
             <List>
@@ -37,7 +37,7 @@ export const ProfileBody = ({user}) => {
                                   secondary="your username"/>
                 </ListItem>
                 <ListItem style={{justifyContent: 'center'}}>
-                    <ChangeMyInfo user={user}/>
+                    <ChangeMyInfo user={user} changeProfileInfo={changeProfileInfo}/>
                 </ListItem>
             </List>
         </div>

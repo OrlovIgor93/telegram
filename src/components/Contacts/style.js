@@ -11,7 +11,8 @@ export const style = {
   // .head_group
   headGroupClass: {
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
+      height: 650
   },
   // .contact-contacts
   contactContactsClass: {
@@ -124,19 +125,19 @@ export const style = {
 },
 
 // .wrap_group
-wrapGroupClass: {
-    height: "65px",
-    width: "425px",
-    display: "flex",
-    flexDirection: "column",
-    backgroundColor: "#5580a3",
-    font: "13px/18px Tahoma,sans-serif,Arial,Helvetica"
-},
+// wrapGroupClass: {
+//     height: "65px",
+//     width: "425px",
+//     display: "flex",
+//     flexDirection: "column",
+//     backgroundColor: "#5580a3",
+//     font: "13px/18px Tahoma,sans-serif,Arial,Helvetica"
+// },
 // .head_group
-headGroupClass: {
-    display: "flex",
-    justifyContent: "center"
-},
+// headGroupClass: {
+//     display: "flex",
+//     justifyContent: "center"
+// },
 // .new-group_page
 newGroupPageClass: {
     color: "#dde8f1",
@@ -148,12 +149,12 @@ closeGroupPageClass: {
     padding: "19px"
 },
 // .dialogs_group
-dialogsGroupClass: {
-    alignItems: "center",
-    padding: "5px",
-    backgroundColor: "#fff",
-    margin: "0px"
-},
+// dialogsGroupClass: {
+//     alignItems: "center",
+//     padding: "5px",
+//     backgroundColor: "#fff",
+//     margin: "0px"
+// },
 wrapContactList: {
     display: "flex",
     flexDirection: "row",
@@ -161,13 +162,13 @@ wrapContactList: {
     justifyContent: "space-between",
 },
 // .dialog
-dialogClass: {
-    alignItems: "center",
-    margin: "0 20px 15px 5px",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-},
+// dialogClass: {
+//     alignItems: "center",
+//     margin: "0 20px 15px 5px",
+//     display: "flex",
+//     flexDirection: "row",
+//     justifyContent: "space-between",
+// },
 // .title_wrap_group_page
 titleWrapGroupPageClass: {
     display: "flex",
@@ -178,42 +179,42 @@ titleWrapGroupPageClass: {
     color: "#fff"
 },
 // .input_search input
-inputSearchinputClass: {
-    border: "none",
-    outline: "none",
-    padding: "7px"
-},
+// inputSearchinputClass: {
+//     border: "none",
+//     outline: "none",
+//     padding: "7px"
+// },
 // li
-liClass: {
-    listStyleType: "none",
-},
+// liClass: {
+//     listStyleType: "none",
+// },
 // .search_wrap
-searchWrapClass: {
-    alignItems: "center",
-    display: "flex",
-    font: "13px/18px Tahoma,sans-serif,Arial,Helvetica",
-    backgroundColor: "#fff",
-    borderBottom: "lightgray solid 1.5px"
-},
+// searchWrapClass: {
+//     alignItems: "center",
+//     display: "flex",
+//     font: "13px/18px Tahoma,sans-serif,Arial,Helvetica",
+//     backgroundColor: "#fff",
+//     borderBottom: "lightgray solid 1.5px"
+// },
 // .dialogName_group
-dialogNameGroupClass: {
-    fontWeight: "bold",
-    fontSize: "14px",
-    marginLeft: "20px",
-},
+// dialogNameGroupClass: {
+//     fontWeight: "bold",
+//     fontSize: "14px",
+//     marginLeft: "20px",
+// },
 // .infoLastMessage
-infoLastMessageClass: {
-    color: "gray"
-},
+// infoLastMessageClass: {
+//     color: "gray"
+// },
 // .img_search img
-imgSearchimgClass: {
-    width: "25px",
-    height: "auto"
-},
+// imgSearchimgClass: {
+//     width: "25px",
+//     height: "auto"
+// },
 // .input_search
-inputSearchClass: {
-    padding: "15px"
-},
+// inputSearchClass: {
+//     padding: "15px"
+// },
 // .foot_wrap_group_page
 footWrapGroupPageClass: {
     display: "flex",
@@ -234,6 +235,6 @@ nextGroupPageClass: {
     textAlign: "right",
     padding: "15px"
 }
-}
+};
 
 export default style;

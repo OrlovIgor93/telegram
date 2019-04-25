@@ -28,14 +28,15 @@ const styles = () => ({
 });
 
 export const SearchInput = ({classes}) => {
-    const {onChangeSearchInput} = useContext(MainPageContext);
+    const {valueSearchInput, onChangeSearchInput} = useContext(MainPageContext);
     return (
         <div className={classes.search}>
             <div className={classes.searchIcon}>
                 <SearchIcon/>
             </div>
             <InputBase
-                onChange={event => onChangeSearchInput(event)}
+                value={valueSearchInput}
+                onChange={onChangeSearchInput}
                 placeholder="Search…"
             />
         </div>

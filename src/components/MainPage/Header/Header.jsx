@@ -74,7 +74,7 @@ const styles = (theme) => ({
         transition: theme.transitions.create('width'),
         width: '100%',
         [theme.breakpoints.up('sm')]: {
-            width: 120,
+            width: 140,
             '&:focus': {
                 width: 200,
             },
@@ -124,7 +124,7 @@ const Header = ({classes}) => {
                                 <SearchIcon/>
                             </div>
                             <InputBase
-                                placeholder="Search…"
+                                placeholder="Search in dialog…"
                                 value={searchValueInDialog}
                                 onChange={handleSearchForDialog}
                                 onBlur={handlerBlurSearchDialog}

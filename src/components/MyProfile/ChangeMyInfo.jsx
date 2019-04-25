@@ -8,11 +8,11 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default class FormDialog extends React.Component {
-    state = {
-        open: false,
-        firstName : this.props.user.firstName,
-        lastName : this.props.user.lastName
-    };
+  state = {
+            open: false,
+            firstName: this.props.user.firstName,
+            lastName: this.props.user.lastName
+        };
 
     handleClickOpen = () => {
         this.setState({ open: true });
@@ -22,12 +22,19 @@ export default class FormDialog extends React.Component {
         this.setState({ open: false });
     };
     handleSave = () => {
-        let profileInfo = this.props.user;
-        profileInfo.firstName = this.state.firstName;
-        profileInfo.lastName = this.state.lastName;
-        profileInfo.fullName = this.state.firstName + " " + this.state.lastName;
-        console.log (profileInfo);
-        localStorage.setItem('profileInfo', JSON.stringify(profileInfo));
+        // let profileInfo = this.props.user;
+        // profileInfo.firstName = this.state.firstName;
+        // profileInfo.lastName = this.state.lastName;
+        // profileInfo.fullName = this.state.firstName + " " + this.state.lastName;
+        // console.log(profileInfo);
+        // localStorage.setItem('profileInfo', JSON.stringify(profileInfo));
+
+        this.props.changeProfileInfo({...this.props.user,
+                                        firstName: this.state.firstName,
+                                        lastName: this.state.lastName,
+                                        fullName: this.state.firstName + " " + this.state.lastName
+                                        });
+
         this.setState({ open: false });
     };
     handleChange = name => event => {
