@@ -1,6 +1,5 @@
 import React from "react";
 import {style} from "../LeraStyles/style";
-import {Link} from "react-router-dom";
 import PersonIcon from '@material-ui/icons/Person';
 import PhoneIcon from '@material-ui/icons/Phone';
 import ListItem from "@material-ui/core/ListItem";
@@ -12,10 +11,10 @@ import DeleteIcon from '@material-ui/icons/DeleteOutlined';
 import {Divider} from "@material-ui/core";
 
 
-export const ContactBody = ({name, phone = '+375297654321'}) => {
+export const ContactBody = ({name, phone, onClose}) => {
     return (
         <div style={style.bodyBackground}>
-            <List>
+            <List style={{paddingLeft: '60px'}}>
                 <ListItem>
                     <ListItemIcon>
                         <PhoneIcon/>
@@ -30,16 +29,16 @@ export const ContactBody = ({name, phone = '+375297654321'}) => {
                     <ListItemText primary={name}
                                   secondary="user's name"/>
                 </ListItem>
+            </List>
                 <Divider/>
-                <Link to='/home'>
-                    <ListItem button>
+                <List>
+                    <ListItem button  style={{paddingLeft: '80px'}}>
                         <ListItemIcon>
                             <DraftsIcon/>
                         </ListItemIcon>
-                        <ListItemText primary="Write a message"/>
+                        <ListItemText onClick={onClose} primary="Write a message"/>
                     </ListItem>
-                </Link>
-                <ListItem button>
+                <ListItem button  style={{paddingLeft: '80px'}}>
                     <ListItemIcon>
                         <DeleteIcon/>
                     </ListItemIcon>

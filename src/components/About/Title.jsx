@@ -1,6 +1,4 @@
 import React from "react";
-
-import {Link} from "react-router-dom";
 import {Typography} from "../MainPage/Typography";
 import {style} from "../LeraStyles/style";
 import CloseIcon from '@material-ui/icons/Close'
@@ -14,7 +12,7 @@ export const Title = ({onClose}) => (
     </div>
     <div style={style.linksRight}>
         <IconButton onClick={onClose}>
-            <CloseIcon   style={{color:'white'}}/>
+            <CloseIcon style={{color:'white'}}/>
         </IconButton>
     </div>
 </div>

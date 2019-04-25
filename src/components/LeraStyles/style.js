@@ -10,12 +10,7 @@ export const style = {
     },
     bodyBackground: {
         background: "white",
-
-    },
-    bodyBackgroundDark: {
-        background: "black",
-        color: "white"
-    },
+       },
     bodyMargins: {
         marginTop: 19 + 'px',
         marginRight: 0,
@@ -29,13 +24,14 @@ export const style = {
     },
     titles: {
         display: 'flex',
+        alignItems: 'baseline',
         justifyContent: 'spaceBetween',
         color: '#fff',
         padding: 20 + 'px', 0: 5 + 'px'
     },
     linksRight: {
         marginLeft: 'auto',
-        marginRight: 20 + 'px'
+        marginRight: '10px'
     },
     head: {
         backgroundColor: 'rgb(85, 128, 163)',
@@ -47,27 +43,5 @@ export const style = {
         justifyContent: 'spaceBetween',
         padding: 20 + 'px',
         color: 'gray',
-    },
-    settingIcon: {
-        width: 18 + 'px',
-        height: 18 + 'px',
-        backgroundImage: 'url(../../img/icons/ProfileIcons.png)',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: -12 + 'px' - 10 + 'px',
-        marginTop: 3 + 'px',
-        display: 'inline-block',
-        marginLeft: '-64 + px',
-        position: 'absolute'
-    },
-    iconPhone: {
-        width: 18+'px',
-        height: 18+'px',
-        backgroundImage: 'url(../../img/icons/ProfileIcons.png)',
-        backgroundRepeat: 'noRepeat',
-        backgroundPosition: '-12px -10px',
-        marginTop: 3+'px',
-        display: 'inlineBlock',
-        marginLeft: -64+'px',
-        position: 'absolute'
     },
 };

@@ -12,7 +12,7 @@ import ChangeMyInfo from "./ChangeMyInfo";
 export const ProfileBody = ({user, changeProfileInfo}) => {
     return (
         <div style={style.bodyBackground}>
-            <List>
+            <List style={{padding: '0 60px'}}>
                 <ListItem>
                     <ListItemIcon>
                         <PhoneIcon/>

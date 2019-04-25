@@ -5,9 +5,6 @@ import {ProfileBody} from "./ProfileBody";
 import Paper from '@material-ui/core/Paper';
 
 export class Profile extends Component {
-    // state = {
-    //     user: this.props.profileInfo,
-    // };
 
     render() {
         const {changeProfileInfo, onClose, profileInfo} =this.props;
