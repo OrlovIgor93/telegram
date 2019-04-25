@@ -12,7 +12,7 @@ export const Title = () => (
         <Typography variant="title">About</Typography>
     </div>
     <div style={style.linksRight}>
-        <Link to="/">
+        <Link to="/home">
             <CloseIcon style={{color:'white'}}/>
         </Link>
     </div>

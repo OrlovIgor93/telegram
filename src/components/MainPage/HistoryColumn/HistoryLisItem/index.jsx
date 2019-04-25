@@ -4,9 +4,11 @@ import {AvatarApp} from "../../../Avatar/Avatar";
 import {VerticalWrap} from "../../VerticalWrap";
 import {HorizontalWrap} from "../../HorizontalWrap";
 import {MainPageContext} from "../../MainPageContext";
+import {dialogInfoStyle, stretchAreaStyle} from "../../styles"
+import "./style.css"
 
-export const HistoryListItem = ({areYouAuthor, messages}) =>{
-    const { profileInfo: {img, fullName}, activeDialogInfo: {imgUrl, name} } = useContext(MainPageContext);
+export const HistoryListItem = ({areYouAuthor, messages}) => {
+    const {profileInfo: {img, fullName}, activeDialogInfo: {imgUrl, name}} = useContext(MainPageContext);
     return (
 
         <HorizontalWrap style={dialogInfoStyle}>
@@ -17,27 +19,31 @@ export const HistoryListItem = ({areYouAuthor, messages}) =>{
             />
             <VerticalWrap style={stretchAreaStyle}>
                 <VerticalWrap>
-                <HorizontalWrap style={{alignItems: "baseline"}}>
-                    <Typography variant="subtitle1">
-                        {areYouAuthor ? fullName : name}
-                    </Typography>
-                    <Typography variant="caption" style={{marginLeft: "auto"}}>
-                        {new Date(messages[0].timeMessage).toLocaleTimeString()}
-                    </Typography>
+                    <HorizontalWrap style={{alignItems: "baseline"}}>
+                        <Typography variant="subtitle1">
+                            {areYouAuthor ? fullName : name}
+                        </Typography>
+                        <Typography variant="caption" style={{marginLeft: "auto"}}>
+                            {new Date(messages[0].timeMessage).toLocaleTimeString()}
+                        </Typography>
 
-                </HorizontalWrap>
+                    </HorizontalWrap>
 
-                <Typography variant="body2" gutterBottom style={{maxWidth: 400}}>
-                    {messages[0].textMessage}
-                </Typography>
+                    <Typography
+                        id="typography-text-message"
+                        dangerouslySetInnerHTML={{__html: messages[0].textMessage}}
+                        style={{whiteSpace: "pre-wrap", maxWidth: 500, alignItems: "baseline"}}
+                    />
+
                 </VerticalWrap>
                 {messages.slice(1).map((mes) =>
                     <HorizontalWrap key={mes.timeMessage} style={{alignItems: "baseline"}}>
-                        <Typography variant="body2" gutterBottom style={{maxWidth: 400}}>
-                            {mes.textMessage}
-                        </Typography>
+                        <Typography
+                            dangerouslySetInnerHTML={{__html: mes.textMessage}}
+                            variant="body2" gutterBottom style={{maxWidth: 500}}/>
+
                         <Typography variant="caption" style={{marginLeft: "auto"}}>
-                            {new Date(mes.timeMessage).toLocaleDateString()}
+                            {new Date(mes.timeMessage).toLocaleTimeString()}
                         </Typography>
                     </HorizontalWrap>
                 )
@@ -45,16 +51,5 @@ export const HistoryListItem = ({areYouAuthor, messages}) =>{
             </VerticalWrap>
         </HorizontalWrap>
 
-);
-};
-export const stretchAreaStyle = {
-    justifyContent: "space-between",
-    width: "100%"
-};
-
-export const dialogInfoStyle = {
-
-    padding: "7px 14px",
-    justifyContent: "space-between",
-
+    );
 };

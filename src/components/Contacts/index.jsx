@@ -5,9 +5,9 @@ import {
     Search,
     ContactList
 } from "./ComponentsContacts";
-import { Link } from "react-router-dom";
 
 import Style from './style.js'
+import {Button} from "@material-ui/core";
 
 // edit
 
@@ -16,22 +16,23 @@ export class Contacts extends React.Component {
     //     user: JSON.parse(localStorage.getItem('profileInfo'))
     // };
     
-    constructor() {
-        super()
+    constructor(props) {
+        super(props);
         this.state = {
             editMode: false
         }
     }
 
     render() {
+        const {onClose} = this.props;
         return (
             <Wrap>
                 <Header>
                     <div style={Style.contactContactsClass}>Contacts</div>
                     <div style={Style.editContactClass} onClick={() => this.setState({ editMode: !this.state.editMode })}>Edit</div>
-                    <div style={Style.closeClass}>
-                        <Link style={Style.closeClass} to="/home">Close</Link>
-                    </div>
+                    <Button onClick={onClose} style={Style.closeClass}>
+                       Close
+                    </Button>
                 </Header>
                 <Search />
                 <ContactList editMode={this.state.editMode} />

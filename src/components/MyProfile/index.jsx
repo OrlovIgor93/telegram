@@ -5,18 +5,18 @@ import {ProfileBody} from "./ProfileBody";
 import Paper from '@material-ui/core/Paper';
 
 export class Profile extends Component {
-    state = {
-        user: JSON.parse(localStorage.getItem('profileInfo'))
-    };
+    // state = {
+    //     user: this.props.profileInfo,
+    // };
 
     render() {
+        const {changeProfileInfo, onClose, profileInfo} =this.props;
         return (
             <Paper style={{padding: 0, width: '480px'}}
                    elevation={1}>
-                <ProfileHeading user={this.state.user}/>
-                <ProfileBody phone={this.state.user.phone}
-                             username={this.state.user.fullName}
-                             name={this.state.user.firstName}
+                <ProfileHeading user={profileInfo} onClose={onClose}/>
+                <ProfileBody user={profileInfo}
+                             changeProfileInfo={changeProfileInfo}
                 />
             </Paper>
 

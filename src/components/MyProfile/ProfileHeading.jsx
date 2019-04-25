@@ -1,10 +1,10 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import CloseIcon from '@material-ui/icons/Close'
 import {Description} from "./Description"
 import {style} from "../LeraStyles/style";
+import {IconButton} from "@material-ui/core";
 
-export const ProfileHeading = ({user}) => (
+export const ProfileHeading = ({user, onClose}) => (
     <div style={{
         backgroundColor: 'rgb(85, 128, 163)',
         color: '#fff',
@@ -13,9 +13,10 @@ export const ProfileHeading = ({user}) => (
         <div style={style.titles}>
             <div>My Profile</div>
             <div style={style.linksRight}>
-                <Link to="/">
-                    <CloseIcon style={{color: 'white'}}/>
-                </Link></div>
+                <IconButton onClick={onClose}>
+                    <CloseIcon   style={{color:'white'}}/>
+                </IconButton>
+            </div>
         </div>
         <Description user={user}/>
     </div>

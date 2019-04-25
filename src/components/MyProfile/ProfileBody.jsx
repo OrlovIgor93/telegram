@@ -9,7 +9,7 @@ import List from "@material-ui/core/List";
 import {Divider} from "@material-ui/core";
 import ChangeMyInfo from "./ChangeMyInfo";
 
-export const ProfileBody = ({phone, name, username}) => {
+export const ProfileBody = ({user, changeProfileInfo}) => {
     return (
         <div style={style.bodyBackground}>
             <List>
@@ -17,7 +17,7 @@ export const ProfileBody = ({phone, name, username}) => {
                     <ListItemIcon>
                         <PhoneIcon/>
                     </ListItemIcon>
-                    <ListItemText primary={phone}
+                    <ListItemText primary={user.phone}
                                   secondary="your phone number"/>
                 </ListItem>
                 <Divider/>
@@ -25,7 +25,7 @@ export const ProfileBody = ({phone, name, username}) => {
                     <ListItemIcon>
                         <PersonIcon/>
                     </ListItemIcon>
-                    <ListItemText primary={username}
+                    <ListItemText primary={user.fullName}
                                   secondary="your name"/>
                 </ListItem>
                 <Divider/>
@@ -33,11 +33,11 @@ export const ProfileBody = ({phone, name, username}) => {
                     <ListItemIcon>
                         <PersonIcon/>
                     </ListItemIcon>
-                    <ListItemText primary={"@"+ name.toLowerCase()}
+                    <ListItemText primary={"@" + user.firstName.toLowerCase()}
                                   secondary="your username"/>
                 </ListItem>
-                <ListItem style={{justifyContent:'center'}}>
-                    <ChangeMyInfo/>
+                <ListItem style={{justifyContent: 'center'}}>
+                    <ChangeMyInfo user={user} changeProfileInfo={changeProfileInfo}/>
                 </ListItem>
             </List>
         </div>

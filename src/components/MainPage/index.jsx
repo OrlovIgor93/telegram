@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Header from "../Header/Header";
+import Header from "./Header/Header";
 import {DialogsColumn} from "./DialogsColumn";
 import {HistoryColumn} from "./HistoryColumn";
 import {VerticalWrap} from "./VerticalWrap";
@@ -22,6 +22,7 @@ export const MainPage = () => {
     const [activeDialogInfo, setActiveDialogInfo] = useState({});
     const [valueSearchInput, setValueSearchInput] = useState("");
     const [filteredList, setFilteredList] = useState();
+    const [searchValueInDialog, setSearchValueInDialog] = useState("");
 
     const setActiveDialog = id => {
         // Random messages --- crutch
@@ -35,6 +36,12 @@ export const MainPage = () => {
         changeActiveDialog(randomMessages);
 
         setActiveDialogInfo(listDialogs.find(dialog => dialog.id === id));
+        console.log(valueSearchInput);
+        if (valueSearchInput) {
+            changeDialogListView("");
+            setValueSearchInput("")
+        }
+
     };
 
     const onChangeSearchInput = ({target: {value}}) => {
@@ -52,23 +59,50 @@ export const MainPage = () => {
         setFilteredList(filterDialogs);
     };
 
-    const onSelectSearchForDialog = () => {
+    const handleSearchForDialog = ({target: {value}}) => {
+        const regEx = new RegExp(`${value}`, "img");
+        const regExOpenSpan = new RegExp(`<span>`, "g");
+        const regExCloseSpan = new RegExp(`</span>`, "g");
 
-    }
+        const searchText = messagesActiveDialog.map((el) => {
+            const areYouAuthor = el.areYouAuthor;
+            const messages = el.messages.map((mes) => {
+                const timeMessage = mes.timeMessage;
+                const textMessage = mes.textMessage
+                    .replace(regExOpenSpan, '')
+                    .replace(regExCloseSpan, '')
+                    .replace(regEx, `<span>${value}</span>`);
+
+                return {timeMessage, textMessage}
+            });
+
+            return {areYouAuthor, messages}
+        });
+
+        changeActiveDialog(searchText);
+
+        setSearchValueInDialog(value);
+    };
+
+    const handlerBlurSearchDialog = () => {
+        setSearchValueInDialog('');
+        setActiveDialog(selectedIndex);
+    };
 
     return (
         <MainPageContext.Provider value={{
-            profileInfo,
-            activeDialogInfo,
-            valueSearchInput,
-            setActiveDialog,
-            selectedIndex,
-            onChangeSearchInput,
-            messagesActiveDialog,
-            onSelectSearchForDialog,
-            changeActiveDialog
-        }
-        }>
+                                        profileInfo,
+                                        activeDialogInfo,
+                                        valueSearchInput,
+                                        searchValueInDialog,
+                                        setActiveDialog,
+                                        selectedIndex,
+                                        onChangeSearchInput,
+                                        messagesActiveDialog,
+                                        handleSearchForDialog,
+                                        handlerBlurSearchDialog,
+                                        changeActiveDialog
+        }}>
             <VerticalWrap style={wrapPageStyle}>
                 <Header/>
                 <HorizontalWrap style={pageContextStyle}>
@@ -77,7 +111,7 @@ export const MainPage = () => {
                             valueSearchInput === "" ? listUserDialogs : filteredList
                         }
                     />
-                    <HistoryColumn messagesActiveDialog={messagesActiveDialog}/>
+                    <HistoryColumn selectedIndex={selectedIndex}/>
                 </HorizontalWrap>
             </VerticalWrap>
         </MainPageContext.Provider>

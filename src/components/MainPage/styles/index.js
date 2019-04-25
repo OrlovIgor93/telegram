@@ -1,5 +1,3 @@
-import IconsetW from "../../../img/icons/IconsetW.png"
-
 export const avatar = {
     display: "flex",
     justifyContent: "center",
@@ -33,6 +31,7 @@ export const avatarBig = {
     height: 56,
     width: 56,
 };
+
 export const chipStyle = {
     display: "inline-flex",
     minWidth: 11,
@@ -53,34 +52,15 @@ export const sudTitleStyle = {
     fontSize: 12,
     fontWeight: 700,
 };
+
 export const bodyTextstyle = {
     fontSize: 13,
     fontWeight: 400,
 };
+
 export const captionStyle = {
     fontSize: 11,
     fontWeight: 400,
-};
-
-export const inputSearchStyle = {
-    outline: "none",
-    margin: "10px 20px",
-    height: 25,
-    backgroundColor: "#f2f2f2",
-    fontSize: 12,
-    padding: "6px 26px 6px 30px",
-    border: "1px solid #f2f2f2",
-    borderRadius: 5,
-    backgroundImage: `url(${IconsetW})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "-6px -205px"
-};
-
-export const focusInputStyle = {
-    ...inputSearchStyle,
-    outline: "none",
-    backgroundColor: "#fff",
-    border: "1px solid #b8b8b8",
 };
 
 export const colors = {
@@ -125,7 +105,7 @@ export const verticalWrap = {
 
 export const wrapPageStyle = {
     maxWidth: 1000,
-    minWidth: 600,
+    minWidth: 1000,
     maxHeight: "95vh",
     minHeight: "95vh"
 };
@@ -149,15 +129,8 @@ export const historyColumnStyle = {
     justifyContent: "flex-end"
 };
 
-
-export const dialogInfoStyle = {
-    justifyContent: "space-between",
-    overflow: "hidden"
-};
-
-export const stretchAreaStyle = {
-    justifyContent: "space-between",
-    overflow: "hidden"
+export const styleMessageInput = {
+    width: "400px",
 };
 
 export const infoLastMessageStyle = {
@@ -167,9 +140,39 @@ export const infoLastMessageStyle = {
     flexDirection: "column",
 };
 
-export const decorationOverflowStyle = {
-    whiteSpace: "nowrap",
-    overflow: "hidden",
-    textOverflow: "ellipsis"
+export const headerStyle = {
+    lineHeight: "48px",
+    backgroundColor: "#5682a3",
+    alignItems: "center",
+};
+
+export const mainMenuStyle = {
+    flex: "2 1 31%",
+    alignItems: "center",
+};
+
+export const rightWrapperButtons = {
+    flex: "1 2 69%",
+    height: "100%",
+};
+
+export const stretchAreaStyle = {
+    justifyContent: "space-between",
+    width: "100%",
+};
+
+export const dialogInfoStyle = {
+    padding: "7px 14px",
+    justifyContent: "space-between",
+};
+
+
+
+export const bottomPanelWrap = {
+    height: "100%",
+    flexDirection: "column-reverse",
+    overflow: "auto",
+    margin: "0 auto",
+    padding: "0 15px",
 };
 

@@ -8,9 +8,11 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default class FormDialog extends React.Component {
-    state = {
-        open: false,
-    };
+  state = {
+            open: false,
+            firstName: this.props.user.firstName,
+            lastName: this.props.user.lastName
+        };
 
     handleClickOpen = () => {
         this.setState({ open: true });
@@ -19,8 +21,29 @@ export default class FormDialog extends React.Component {
     handleClose = () => {
         this.setState({ open: false });
     };
+    handleSave = () => {
+        // let profileInfo = this.props.user;
+        // profileInfo.firstName = this.state.firstName;
+        // profileInfo.lastName = this.state.lastName;
+        // profileInfo.fullName = this.state.firstName + " " + this.state.lastName;
+        // console.log(profileInfo);
+        // localStorage.setItem('profileInfo', JSON.stringify(profileInfo));
+
+        this.props.changeProfileInfo({...this.props.user,
+                                        firstName: this.state.firstName,
+                                        lastName: this.state.lastName,
+                                        fullName: this.state.firstName + " " + this.state.lastName
+                                        });
+
+        this.setState({ open: false });
+    };
+    handleChange = name => event => {
+        this.setState({ [name]: event.target.value });
+    };
 
     render() {
+    const {firstName, lastName} = this.state;
+
         return (
             <div>
                 <Button variant="contained" color="primary" onClick={this.handleClickOpen}>
@@ -37,12 +60,16 @@ export default class FormDialog extends React.Component {
                             Please enter your new info and click "Save"
                         </DialogContentText>
                             <TextField
+                                onChange={this.handleChange('firstName')}
+                                value={firstName}
                                 margin="dense"
                                 id="firstname"
                                 label="First name"
                                 type="text"
                                 fullWidth />
                             <TextField
+                                onChange={this.handleChange('lastName')}
+                                value={lastName}
                                 margin="dense"
                                 id="lastname"
                                 label="Last name"
@@ -53,7 +80,7 @@ export default class FormDialog extends React.Component {
                         <Button onClick={this.handleClose} color="primary">
                             Cancel
                         </Button>
-                        <Button onClick={this.handleClose} color="primary">
+                        <Button onClick={this.handleSave} color="primary">
                             Save
                         </Button>
                     </DialogActions>

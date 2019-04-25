@@ -21,7 +21,7 @@ export const ContactHeading = ({ imgurl, name }) => (
                 <Typography variant="title">User Info</Typography>
             </div>
             <div style={style.linksRight}>
-                <Link to="/">
+                <Link to="/home">
                     <CloseIcon style={{color:'white'}}/>
                 </Link>
             </div>
