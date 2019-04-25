@@ -4,9 +4,9 @@ import {Title} from "./Title";
 import {Description} from "./Description";
 import {style} from "../LeraStyles/style";
 
-export const AboutHeading = () => (
+export const AboutHeading = ({onClose}) => (
     <div style={style.head}>
-        <Title/>
+        <Title onClose={onClose}/>
         <Description/>
     </div>
 );

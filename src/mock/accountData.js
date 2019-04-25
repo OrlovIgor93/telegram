@@ -4,5 +4,5 @@ export const accountData = {
     "lastName": "Rhoddie",
     "fullName": "Randie Rhoddie",
     "img": "https://robohash.org/corporisremquis.png?size=50x50&set=set1",
-    "phone": "776-376-2951"
-}
+    "phone": localStorage.getItem("number"),
+};

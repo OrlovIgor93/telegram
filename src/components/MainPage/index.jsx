@@ -10,7 +10,13 @@ import {accountData} from "../../mock/accountData";
 
 import {wrapPageStyle, pageContextStyle} from "./styles";
 
-import {MainPageContext} from "./MainPageContext"
+import {MainPageContext} from "./MainPageContext";
+import {ModalWrap} from "./ModalWrap";
+import {About} from "../About";
+import {Profile} from "../MyProfile";
+import {Contacts} from "../Contacts";
+import {GroupPage} from "../Group";
+import {User} from "../User";
 
 export const MainPage = () => {
     const [listUserDialogs, setListUserDialogs] = useState(listDialogs.sort((a, b) => {
@@ -23,6 +29,8 @@ export const MainPage = () => {
     const [valueSearchInput, setValueSearchInput] = useState("");
     const [filteredList, setFilteredList] = useState();
     const [searchValueInDialog, setSearchValueInDialog] = useState("");
+    const [openModal, setOpenModal] = useState({open: false, name: ""});
+    const [anchorLeftMenu, setAnchorLeftMenu] = useState(null);
 
     const setActiveDialog = id => {
         // Random messages --- crutch
@@ -89,22 +97,55 @@ export const MainPage = () => {
         setActiveDialog(selectedIndex);
     };
 
+    const handleClickOpenModal = (value) => {
+
+        setOpenModal({open: true, name: value});
+        setAnchorLeftMenu(null);
+    };
+    const handleCloseModal = () => {
+        setOpenModal({open: false, name: ""});
+    };
+    const switchModal = () => {
+        switch (openModal.name) {
+            case 'New group':
+                return <GroupPage onClose={handleCloseModal}/>;
+            case 'Contacts':
+                return <Contacts onClose={handleCloseModal}/>;
+            case 'My profile':
+                return <Profile profileInfo={profileInfo} changeProfileInfo={changeProfileInfo}
+                                onClose={handleCloseModal}/>;
+            case 'About':
+                return <About onClose={handleCloseModal}/>;
+            case 'User':
+                return <User activeDialogInfo={activeDialogInfo} onClose={handleCloseModal}/>;
+            default:
+                return "Error";
+        }
+    };
+
     return (
         <MainPageContext.Provider value={{
-                                        profileInfo,
-                                        activeDialogInfo,
-                                        valueSearchInput,
-                                        searchValueInDialog,
-                                        setActiveDialog,
-                                        selectedIndex,
-                                        onChangeSearchInput,
-                                        messagesActiveDialog,
-                                        handleSearchForDialog,
-                                        handlerBlurSearchDialog,
-                                        changeActiveDialog
+            openModal,
+            profileInfo,
+            activeDialogInfo,
+            valueSearchInput,
+            searchValueInDialog,
+            setActiveDialog,
+            setOpenModal,
+            selectedIndex,
+            onChangeSearchInput,
+            messagesActiveDialog,
+            handleSearchForDialog,
+            handlerBlurSearchDialog,
+            changeActiveDialog,
+            anchorLeftMenu,
+            setAnchorLeftMenu,
+            handleClickOpenModal,
         }}>
             <VerticalWrap style={wrapPageStyle}>
                 <Header/>
+
+
                 <HorizontalWrap style={pageContextStyle}>
                     <DialogsColumn
                         listUserDialogs={
@@ -114,6 +155,12 @@ export const MainPage = () => {
                     <HistoryColumn selectedIndex={selectedIndex}/>
                 </HorizontalWrap>
             </VerticalWrap>
+            {openModal.open &&
+            <ModalWrap open={openModal.open} handleClose={handleCloseModal}>
+                {switchModal()}
+            </ModalWrap>
+            }
         </MainPageContext.Provider>
     );
 };
+

@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-import {Link} from "react-router-dom";
+import React, {useContext} from "react";
 import PropTypes from "prop-types";
 
 import IconButton from "@material-ui/core/IconButton";
@@ -14,6 +13,7 @@ import PeopleIcon from "@material-ui/icons/People";
 import SettingsIcon from "@material-ui/icons/Settings";
 import CodeIcon from "@material-ui/icons/Code";
 import {TelegramIcon} from "../../Icons";
+import {MainPageContext} from "../MainPageContext";
 
 const styles = () => ({
     root: {
@@ -109,7 +109,7 @@ const LeftMenu = ({classes}) => {
                         </a>
                     </MenuItem>
 
-                    <MenuItem className={classes.menuItem}>
+                    <MenuItem onClick={() => handleClickOpenModal("About")} className={classes.menuItem}>
                         <ListItemIcon className={classes.icon}>
                             <TelegramIcon/>
                         </ListItemIcon>
