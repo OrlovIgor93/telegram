@@ -58,7 +58,7 @@ const DialogLisItem = ({
                 />
             </ListItemAvatar>
             <ListItemText
-
+style={{padding: 0}}
                 primaryTypographyProps={{
                     noWrap: true,
                     gutterBottom: true,

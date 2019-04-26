@@ -84,10 +84,11 @@ const styles = (theme) => ({
 
 const Header = ({classes}) => {
     const {profileInfo,
-           activeDialogInfo: {name, imgUrl},
+           activeDialogInfo: {name},
            searchValueInDialog,
            handleSearchForDialog,
-           handlerBlurSearchDialog} = useContext(MainPageContext);
+           handlerBlurSearchDialog,
+           handleClickOpenModal} = useContext(MainPageContext);
     return (
         <AppBar position="static">
             <HorizontalWrap style={headerStyle}>
@@ -103,10 +104,7 @@ const Header = ({classes}) => {
                         fullWidth
                         className={classes.infoActiveDialog}
                         component={Link}
-                        to={{
-                            pathname: "/contact",
-                            state: {imgurl: imgUrl, name: name}
-                        }}
+                        onClick={()=>handleClickOpenModal("User")}
                     >
                         <Typography varint="h5" noWrap color="inherit">
                             {name}
@@ -133,9 +131,6 @@ const Header = ({classes}) => {
                                 }}
                             />
                         </div>
-                        <Button disabled={!name} color="inherit">
-                            <MoreIcon/>
-                        </Button>
                     </React.Fragment>
                     }
                 </HorizontalWrap>

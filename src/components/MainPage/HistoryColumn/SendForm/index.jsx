@@ -40,7 +40,7 @@ export const SendForm = () => {
                     onChange={handleChangeInput}
                 />
 
-                <ButtonsGroup/>
+                <ButtonsGroup inputValue={inputValue}/>
 
             </VerticalWrap>
         </form>

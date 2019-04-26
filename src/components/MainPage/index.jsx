@@ -44,7 +44,7 @@ export const MainPage = () => {
         changeActiveDialog(randomMessages);
 
         setActiveDialogInfo(listDialogs.find(dialog => dialog.id === id));
-        console.log(valueSearchInput);
+
         if (valueSearchInput) {
             changeDialogListView("");
             setValueSearchInput("")

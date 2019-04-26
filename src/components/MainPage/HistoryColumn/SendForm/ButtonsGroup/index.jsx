@@ -7,13 +7,20 @@ import IconsetW from "../../../../../img/icons/IconsetW.png";
 import ButtonBase from '@material-ui/core/ButtonBase';
 import emojisprite_0 from "../../../../../img/icons/emojisprite_0.png";
 
-export const ButtonsGroup = () => (
+export const ButtonsGroup = ({inputValue}) => (
   <HorizontalWrap style={buttonsGroupStyle}>
     <Button style={buttonSendFileStyle} />
     <Button style={buttonSendMediaStyle} />
     <Button style={buttonSendVoiceStyle} />
     <EmomojiGroupButton />
-      <ButtonBase style={submitButtonStyle} variant="contained" type="submit" > SEND </ButtonBase>
+      <ButtonBase
+          style={submitButtonStyle}
+          variant="contained"
+          type="submit"
+          disabled={!inputValue.replace(/\s+/, '').length}
+      >
+          SEND
+      </ButtonBase>
 
   </HorizontalWrap>
 );
