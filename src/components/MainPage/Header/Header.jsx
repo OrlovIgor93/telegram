@@ -10,7 +10,6 @@ import AppBar from "@material-ui/core/AppBar/index";
 import Typography from "@material-ui/core/Typography/index";
 import Button from "@material-ui/core/Button/index";
 import SearchIcon from '@material-ui/icons/Search';
-import MoreIcon from '@material-ui/icons/MoreVert';
 import InputBase from "@material-ui/core/InputBase/index";
 import Telegram from "../../../img/Telegram.svg";
 import {fade} from '@material-ui/core/styles/colorManipulator';
