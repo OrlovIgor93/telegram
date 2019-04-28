@@ -1,10 +1,10 @@
-import React, {useContext} from "react";
-import {Link} from "react-router-dom"
+import React, { useContext } from "react";
+import { Link } from "react-router-dom"
 import PropTypes from "prop-types";
 
-import {MainPageContext} from "../MainPageContext";
+import { MainPageContext } from "../MainPageContext";
 import LeftMenu from "../LeftMenu/LeftMenu";
-import {HorizontalWrap} from "../HorizontalWrap";
+import { HorizontalWrap } from "../HorizontalWrap";
 
 import AppBar from "@material-ui/core/AppBar/index";
 import Typography from "@material-ui/core/Typography/index";
@@ -12,8 +12,8 @@ import Button from "@material-ui/core/Button/index";
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from "@material-ui/core/InputBase/index";
 import Telegram from "../../../img/Telegram.svg";
-import {fade} from '@material-ui/core/styles/colorManipulator';
-import {withStyles} from "@material-ui/core/styles/index";
+import { fade } from '@material-ui/core/styles/colorManipulator';
+import { withStyles } from "@material-ui/core/styles/index";
 import {
     headerStyle,
     mainMenuStyle,
@@ -82,19 +82,19 @@ const styles = (theme) => ({
 
 });
 
-const Header = ({classes}) => {
-    const {profileInfo,
-           activeDialogInfo: {name, imgUrl},
-           searchValueInDialog,
-           handleSearchForDialog,
-           handlerBlurSearchDialog} = useContext(MainPageContext);
+const Header = ({ classes }) => {
+    const { profileInfo,
+        activeDialogInfo: { name, imgUrl },
+        searchValueInDialog,
+        handleSearchForDialog,
+        handlerBlurSearchDialog } = useContext(MainPageContext);
     return (
         <AppBar position="static">
             <HorizontalWrap style={headerStyle}>
                 <HorizontalWrap style={mainMenuStyle}>
-                    <LeftMenu profileInfo={profileInfo}/>
-                    <div style={{display: "flex"}}>
-                        <img className={classes.logoImage} src={`${Telegram}`} alt=""/>
+                    <LeftMenu profileInfo={profileInfo} />
+                    <div style={{ display: "flex" }}>
+                        <img className={classes.logoImage} src={`${Telegram}`} alt="" />
                     </div>
                 </HorizontalWrap>
                 <HorizontalWrap style={rightWrapperButtons}>
@@ -105,7 +105,7 @@ const Header = ({classes}) => {
                         component={Link}
                         to={{
                             pathname: "/contact",
-                            state: {imgurl: imgUrl, name: name}
+                            state: { imgurl: imgUrl, name: name }
                         }}
                     >
                         <Typography varint="h5" noWrap color="inherit">
@@ -117,26 +117,26 @@ const Header = ({classes}) => {
                     </Button>
 
                     {name &&
-                    <React.Fragment>
-                        <div className={classes.search}>
-                            <div className={classes.searchIcon}>
-                                <SearchIcon/>
+                        <React.Fragment>
+                            <div className={classes.search}>
+                                <div className={classes.searchIcon}>
+                                    <SearchIcon />
+                                </div>
+                                <InputBase
+                                    placeholder="Search in dialog…"
+                                    value={searchValueInDialog}
+                                    onChange={handleSearchForDialog}
+                                    onBlur={handlerBlurSearchDialog}
+                                    classes={{
+                                        root: classes.inputRoot,
+                                        input: classes.inputInput,
+                                    }}
+                                />
                             </div>
-                            <InputBase
-                                placeholder="Search in dialog…"
-                                value={searchValueInDialog}
-                                onChange={handleSearchForDialog}
-                                onBlur={handlerBlurSearchDialog}
-                                classes={{
-                                    root: classes.inputRoot,
-                                    input: classes.inputInput,
-                                }}
-                            />
-                        </div>
-                        <Button disabled={!name} color="inherit">
-                            <MoreIcon/>
-                        </Button>
-                    </React.Fragment>
+                            <Button disabled={!name} color="inherit">
+                                {/* <MoreIcon/> */}
+                            </Button>
+                        </React.Fragment>
                     }
                 </HorizontalWrap>
             </HorizontalWrap>
