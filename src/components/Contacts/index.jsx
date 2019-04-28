@@ -11,9 +11,6 @@ import { Button } from "@material-ui/core"
 
 import { listDialogs } from "../../mock/listDialogs"
 
-
-// edit
-
 export class Contacts extends React.Component {
     constructor(props) {
         super(props);
