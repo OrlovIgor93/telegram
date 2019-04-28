@@ -4,38 +4,38 @@ import {
     Navigate,
     Search,
     ContactList
-} from "./ComponentsContacts";
+} from "./ComponentsContacts"
 
 import Style from './style.js'
-import {Button} from "@material-ui/core";
+import { Button } from "@material-ui/core"
+
+import { listDialogs } from "../../mock/listDialogs"
+
 
 // edit
 
 export class Contacts extends React.Component {
-    // state = {
-    //     user: JSON.parse(localStorage.getItem('profileInfo'))
-    // };
-    
     constructor(props) {
         super(props);
         this.state = {
-            editMode: false
+            editMode: false,
+            contacts: listDialogs
         }
     }
 
     render() {
-        const {onClose} = this.props;
+        const { onClose } = this.props;
         return (
             <Wrap>
                 <Header>
                     <div style={Style.contactContactsClass}>Contacts</div>
                     <div style={Style.editContactClass} onClick={() => this.setState({ editMode: !this.state.editMode })}>Edit</div>
                     <Button onClick={onClose} style={Style.closeClass}>
-                       Close
+                        Close
                     </Button>
                 </Header>
                 <Search />
-                <ContactList editMode={this.state.editMode} />
+                <ContactList contacts={this.state.contacts} editMode={this.state.editMode} />
                 <Navigate />
             </Wrap>
         )
