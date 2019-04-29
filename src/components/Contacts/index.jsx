@@ -16,8 +16,18 @@ export class Contacts extends React.Component {
         super(props);
         this.state = {
             editMode: false,
-            contacts: listDialogs
+            contacts: listDialogs,
+            initialContacts: listDialogs
         }
+    }
+
+    search(e) {
+        const value = e.target.value.toLowerCase()
+        const updatedContacts = this.state.initialContacts.filter(contact => contact.name.toLowerCase().search(value) !== -1)
+        this.setState({
+            editMode: this.state.editMode,
+            contacts: updatedContacts
+        })
     }
 
     render() {
@@ -31,7 +41,7 @@ export class Contacts extends React.Component {
                         Close
                     </Button>
                 </Header>
-                <Search />
+                <Search searchAction={this.search.bind(this)} />
                 <ContactList contacts={this.state.contacts} editMode={this.state.editMode} />
                 <Navigate />
             </Wrap>
