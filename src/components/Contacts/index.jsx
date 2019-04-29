@@ -37,7 +37,9 @@ export class Contacts extends React.Component {
         const lastName = form.lastname.value
         listDialogs.push({ name: `${firstName} ${lastName}`, phone })
         this.setState({
-            showNewContactDialog: false
+            showNewContactDialog: false,
+            contacts: listDialogs,
+            initialContacts: listDialogs
         })
         e.preventDefault()
     }
