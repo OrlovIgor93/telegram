@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom"
+import React, {useContext} from "react";
 import PropTypes from "prop-types";
 
-import { MainPageContext } from "../MainPageContext";
 import LeftMenu from "../LeftMenu/LeftMenu";
-import { HorizontalWrap } from "../HorizontalWrap";
+import {HorizontalWrap} from "../HorizontalWrap";
 
 import AppBar from "@material-ui/core/AppBar/index";
 import Typography from "@material-ui/core/Typography/index";
@@ -12,13 +10,14 @@ import Button from "@material-ui/core/Button/index";
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from "@material-ui/core/InputBase/index";
 import Telegram from "../../../img/Telegram.svg";
-import { fade } from '@material-ui/core/styles/colorManipulator';
-import { withStyles } from "@material-ui/core/styles/index";
+import {fade} from '@material-ui/core/styles/colorManipulator';
+import {withStyles} from "@material-ui/core/styles/index";
 import {
     headerStyle,
     mainMenuStyle,
     rightWrapperButtons,
 } from "../styles"
+import {StoreContext} from "../../../store";
 
 const styles = (theme) => ({
 
@@ -83,18 +82,20 @@ const styles = (theme) => ({
 });
 
 const Header = ({classes}) => {
-    const {profileInfo,
-           activeDialogInfo: {name, imgUrl},
+    const {
+           activeDialogInfo: {name},
            searchValueInDialog,
            handleSearchForDialog,
-           handlerBlurSearchDialog} = useContext(MainPageContext);
+           handlerBlurSearchDialog,
+           handleClickOpenModal} = useContext(StoreContext);
+
     return (
         <AppBar position="static">
             <HorizontalWrap style={headerStyle}>
                 <HorizontalWrap style={mainMenuStyle}>
-                    <LeftMenu profileInfo={profileInfo} />
-                    <div style={{ display: "flex" }}>
-                        <img className={classes.logoImage} src={`${Telegram}`} alt="" />
+                    <LeftMenu />
+                    <div style={{display: "flex"}}>
+                        <img className={classes.logoImage} src={`${Telegram}`} alt=""/>
                     </div>
                 </HorizontalWrap>
                 <HorizontalWrap style={rightWrapperButtons}>
@@ -102,13 +103,9 @@ const Header = ({classes}) => {
                         disabled={!name}
                         fullWidth
                         className={classes.infoActiveDialog}
-                        component={Link}
-                        to={{
-                            pathname: "/contact",
-                            state: {imgurl: imgUrl, name: name}
-                        }}
+                        onClick={()=>handleClickOpenModal("User")}
                     >
-                        <Typography varint="h5" noWrap color="inherit">
+                        <Typography variant="subtitle1" noWrap color="inherit">
                             {name}
                         </Typography>
                         {/* <Typography noWrap style={{ color: "#b9cfe3" }}>
@@ -133,9 +130,6 @@ const Header = ({classes}) => {
                                 }}
                             />
                         </div>
-                        <Button disabled={!name} color="inherit">
-                            <MoreIcon/>
-                        </Button>
                     </React.Fragment>
                     }
                 </HorizontalWrap>

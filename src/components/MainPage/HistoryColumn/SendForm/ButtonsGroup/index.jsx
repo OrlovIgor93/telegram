@@ -21,7 +21,6 @@ export const ButtonsGroup = ({inputValue}) => (
       >
           SEND
       </ButtonBase>
-
   </HorizontalWrap>
 );
 

@@ -1,14 +1,14 @@
 import React, {useState, useContext} from "react";
-import {MainPageContext} from "../../MainPageContext";
 import {VerticalWrap} from "../../VerticalWrap";
 import {ButtonsGroup} from "./ButtonsGroup";
 
 import TextField from "@material-ui/core/TextField";
 
 import {styleMessageInput} from "../../styles";
+import {StoreContext} from "../../../../store";
 
 export const SendForm = () => {
-    const {changeActiveDialog, messagesActiveDialog} = useContext(MainPageContext);
+    const {changeActiveDialog, messagesActiveDialog} = useContext(StoreContext);
     const [inputValue, setInputValue] = useState(``);
 
     const handleChangeInput = (event) => {

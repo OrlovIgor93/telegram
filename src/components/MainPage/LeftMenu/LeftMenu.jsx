@@ -13,7 +13,7 @@ import PeopleIcon from "@material-ui/icons/People";
 import SettingsIcon from "@material-ui/icons/Settings";
 import CodeIcon from "@material-ui/icons/Code";
 import {TelegramIcon} from "../../Icons";
-import {MainPageContext} from "../MainPageContext";
+import {StoreContext} from "../../../store";
 
 const styles = () => ({
     root: {
@@ -25,7 +25,7 @@ const styles = () => ({
 });
 
 const LeftMenu = ({classes}) => {
-    const {handleClickOpenModal, anchorLeftMenu, setAnchorLeftMenu} = useContext(MainPageContext);
+    const {handleClickOpenModal, anchorLeftMenu, setAnchorLeftMenu} = useContext(StoreContext);
 
     return (
         <div className={classes.root}>

@@ -5,15 +5,12 @@ import DialogsList from "./DialogsList/DialogsList";
 import {dialogsColumnStyle} from "../styles";
 import Typography from "@material-ui/core/Typography";
 
-export const DialogsColumn = ({listUserDialogs,}) => (
+export const DialogsColumn = ({setDialog, notFound}) => (
     <VerticalWrap style={dialogsColumnStyle}>
-        <SearchInput/>
+        <SearchInput />
 
-        <DialogsList
-            listUserDialogs={listUserDialogs}
-        />
-        {listUserDialogs.length === 0 && (
-            <Typography variant="title">Not found</Typography>
-        )}
+        <DialogsList setDialog={setDialog} />
+
+        { notFound && <Typography variant="title">Not found</Typography> }
     </VerticalWrap>
 );

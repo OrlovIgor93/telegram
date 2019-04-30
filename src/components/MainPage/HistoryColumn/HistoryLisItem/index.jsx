@@ -3,12 +3,13 @@ import Typography from "@material-ui/core/Typography";
 import {AvatarApp} from "../../../Avatar/Avatar";
 import {VerticalWrap} from "../../VerticalWrap";
 import {HorizontalWrap} from "../../HorizontalWrap";
-import {MainPageContext} from "../../MainPageContext";
 import {dialogInfoStyle, stretchAreaStyle} from "../../styles"
 import "./style.css"
+import {StoreContext} from "../../../../store";
 
 export const HistoryListItem = ({areYouAuthor, messages}) => {
-    const {profileInfo: {img, fullName}, activeDialogInfo: {imgUrl, name}} = useContext(MainPageContext);
+
+    const {profileInfo: {img, fullName}, activeDialogInfo: {imgUrl, name}} = useContext(StoreContext);
     return (
 
         <HorizontalWrap style={dialogInfoStyle}>

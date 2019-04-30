@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import {AvatarApp} from "../../../Avatar/Avatar";
 import {SendForm} from "../SendForm";
 import {HorizontalWrap} from "../../HorizontalWrap";
-import {MainPageContext} from "../../../MainPage/MainPageContext"
 
 import "./style.css";
 import IconButton from "@material-ui/core/IconButton";
+import {StoreContext} from "../../../../store";
 
 export const BottomPanelWrap = () => {
+
     const {profileInfo: {img, fullName},
            activeDialogInfo: {imgUrl, name},
-           handleClickOpenModal} = React.useContext(MainPageContext);
+           handleClickOpenModal} = useContext(StoreContext);
+
     return (
         <div style={bottomPanelWrap}>
             <HorizontalWrap>

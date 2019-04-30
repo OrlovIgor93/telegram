@@ -7,9 +7,9 @@ import Typography from "@material-ui/core/Typography";
 
 import {historyColumnStyle} from "../styles";
 
-export const HistoryColumn = ({selectedIndex}) => (
+export const HistoryColumn = ({selected}) => (
     <VerticalWrap style={historyColumnStyle}>
-        {selectedIndex ? (
+        {selected ? (
             <React.Fragment>
                 <HistoryList/>
                 <BottomPanelWrap/>

@@ -11,7 +11,8 @@ import {infoLastMessageStyle} from "../../styles";
 
 import {Chip} from "../../Chip";
 import {AvatarApp} from "../../../Avatar/Avatar";
-import {MainPageContext} from "../../MainPageContext";
+import {StoreContext} from "../../../../store";
+import {setActiveDialog} from "../../../../actions/actionCreatorDialogs";
 
 const styles = () => ({
     colorAuthorLastMessage: {
@@ -30,6 +31,8 @@ const styles = () => ({
     }
 });
 
+
+
 const DialogLisItem = ({
                            id,
                            name,
@@ -38,15 +41,16 @@ const DialogLisItem = ({
                            timeLastMessage,
                            numberOfUnreadMessages,
                            classes,
+
                        }) => {
-    const {selectedIndex, setActiveDialog} = useContext(MainPageContext);
+    const {selectedIndex, dispatchDialogs, setDialog} = useContext(StoreContext);
 
     return (
         <ListItem
             id={id}
             button
             selected={selectedIndex === id}
-            onClick={() => setActiveDialog(id)}
+            onClick={() => {dispatchDialogs(setActiveDialog(id)); setDialog(id)}}
             alignItems="flex-start"
         >
             <ListItemAvatar>

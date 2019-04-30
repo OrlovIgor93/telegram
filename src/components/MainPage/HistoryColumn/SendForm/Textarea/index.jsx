@@ -44,7 +44,7 @@ export const TextArea = () => {
 export const stylearea = {
   outline: "none",
   boxSizing: "border-box",
-  borderRradius: 3,
+  borderRadius: 3,
   resize: "none",
   overflow: "auto",
   height: "auto",

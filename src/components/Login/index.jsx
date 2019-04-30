@@ -26,17 +26,17 @@ export class LoginPage extends Component {
 
   handleBlur = () => {
     if (this.state.country.phoneLength > this.state.phoneNumber.length) {
-      this.setState({error: true})
-      this.setState({ errorMessage: 'Введите еще ' + `${this.state.country.phoneLength - this.state.phoneNumber.length}` + ' символов' })
+      this.setState({error: true});
+      this.setState({ errorMessage: `Введите еще  ${this.state.country.phoneLength - this.state.phoneNumber.length}  символов`})
     }
   }
 
   handleChangeInputPhoneNumber = event => {
     if (event.target.value.length > this.state.country.phoneLength) {
-      this.setState({error: true})
-      this.setState({ errorMessage: 'Длина должна быть не больше ' + `${this.state.country.phoneLength}` + ' символов' })
+      this.setState({error: true});
+      this.setState({ errorMessage: `Длина должна быть не больше  ${this.state.country.phoneLength} символов` })
     } else {
-      this.setState({error: false})
+      this.setState({error: false});
       this.setState({ errorMessage: '' })
     }
     this.setState({ phoneNumber: event.target.value })
