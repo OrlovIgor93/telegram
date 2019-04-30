@@ -2,16 +2,16 @@ import React from 'react';
 import Style from '../style.js'
 import Contact from './Contact'
 
-export const ContactList = props => (
+const makeContactComponent = ({ name, imgUrl, status, showDelete, id }) => (
+    <Contact key={id} imgUrl={imgUrl} name={name} showDelete={showDelete} status={status} />
+)
+
+export const ContactList = ({ editMode = false, contacts = [] }) => (
     <div /*className="contact_wrap"*/>
         <ul className="dialogs" style={Style.dialogsGroupClass}>
-            <Contact avatar="im" name="Ilona Menkui" showDelete={props.editMode} status="Last seen recently" />
-            <Contact avatar="in" name="Ilona Menkui" showDelete={props.editMode} status="Last seen recently" />
-            <Contact avatar="in" name="Ilona Menkui" showDelete={props.editMode} status="Last seen recently" />
-            <Contact avatar="in" name="Ilona Menkui" showDelete={props.editMode} status="Last seen recently" />
-            <Contact avatar="in" name="Ilona Menkui" showDelete={props.editMode} status="Last seen recently" />
-            <Contact avatar="in" name="Ilona Menkui" showDelete={props.editMode} status="Last seen recently" />
-            <Contact avatar="in" name="Ilona Menkui" showDelete={props.editMode} status="Last seen recently" />
+            {contacts.map(
+                (contact, index) => makeContactComponent({ ...contact, showDelete: editMode, id: index })
+            )}
         </ul>
     </div>
 );
