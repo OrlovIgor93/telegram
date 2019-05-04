@@ -10,7 +10,6 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path="/" component={LoginPage} />
-
         <Route path="/home" component={MainPage} />
 
       </Switch>

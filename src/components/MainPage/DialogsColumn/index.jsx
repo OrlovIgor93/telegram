@@ -1,16 +1,15 @@
 import React from "react";
 import SearchInput from "../SearchInput";
-import {VerticalWrap} from "../VerticalWrap";
+import { VerticalWrap } from "../VerticalWrap";
 import DialogsList from "./DialogsList/DialogsList";
-import {dialogsColumnStyle} from "../styles";
 import Typography from "@material-ui/core/Typography";
 
-export const DialogsColumn = ({setDialog, notFound}) => (
+import { dialogsColumnStyle, notFoundStyle } from "../styles";
+
+export const DialogsColumn = ({ notFound }) => (
     <VerticalWrap style={dialogsColumnStyle}>
-        <SearchInput />
-
-        <DialogsList setDialog={setDialog} />
-
-        { notFound && <Typography variant="title">Not found</Typography> }
+        <SearchInput/>
+        <DialogsList/>
+        {notFound && <Typography variant="title" style={notFoundStyle}>Not found</Typography>}
     </VerticalWrap>
 );

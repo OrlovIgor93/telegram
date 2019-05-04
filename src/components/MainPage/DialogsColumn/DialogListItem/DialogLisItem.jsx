@@ -1,18 +1,18 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import {withStyles} from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Typography from "@material-ui/core/Typography";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 
-import {infoLastMessageStyle} from "../../styles";
+import { infoLastMessageStyle } from "../../styles";
 
-import {Chip} from "../../Chip";
-import {AvatarApp} from "../../../Avatar/Avatar";
-import {StoreContext} from "../../../../store";
-import {setActiveDialog} from "../../../../actions/actionCreatorDialogs";
+import { Chip } from "../../Chip";
+import { AvatarApp } from "../../../Avatar/Avatar";
+import { StoreContext } from "../../../../store";
+import { setActiveDialog } from "../../../../actions/actionCreatorDialogs";
 
 const styles = () => ({
     colorAuthorLastMessage: {
@@ -32,7 +32,6 @@ const styles = () => ({
 });
 
 
-
 const DialogLisItem = ({
                            id,
                            name,
@@ -43,26 +42,28 @@ const DialogLisItem = ({
                            classes,
 
                        }) => {
-    const {selectedIndex, dispatchDialogs, setDialog} = useContext(StoreContext);
+    const { selectedIndex, dispatchDialogs } = useContext(StoreContext);
 
     return (
         <ListItem
             id={id}
             button
             selected={selectedIndex === id}
-            onClick={() => {dispatchDialogs(setActiveDialog(id)); setDialog(id)}}
+            onClick={() => {
+                dispatchDialogs(setActiveDialog(id));
+            }}
             alignItems="flex-start"
         >
             <ListItemAvatar>
                 <AvatarApp
                     medium
-                    style={{marginRight: 15}}
+                    style={{ marginRight: 15 }}
                     src={imgUrl}
                     name={name}
                 />
             </ListItemAvatar>
             <ListItemText
-style={{padding: 0}}
+                style={{ padding: 0 }}
                 primaryTypographyProps={{
                     noWrap: true,
                     gutterBottom: true,
@@ -99,7 +100,7 @@ style={{padding: 0}}
             <ListItemSecondaryAction style={infoLastMessageStyle}>
 
                 <Typography
-                    style={{padding: "10px 0", color: "#9c9c9c"}}
+                    style={{ padding: "10px 0", color: "#9c9c9c" }}
                     variant="caption"
                 >
                     {new Date(timeLastMessage).toLocaleDateString()}

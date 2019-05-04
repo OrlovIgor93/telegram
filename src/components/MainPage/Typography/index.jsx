@@ -1,26 +1,4 @@
 import React from "react";
-import {
-  titleStyle,
-  sudTitleStyle,
-  captionStyle,
-  bodyTextstyle
-} from "../../MainPage/styles";
-
-export const Title = ({ children, style }) => {
-  return <span style={{ ...titleStyle, ...style }}>{children}</span>;
-};
-
-export const SubTitle = ({ children, style }) => {
-  return <span style={{ ...sudTitleStyle, ...style }}>{children}</span>;
-};
-
-export const BodyText = ({ children, style }) => {
-  return <span style={{ ...bodyTextstyle, ...style }}>{children}</span>;
-};
-
-export const Caption = ({ children, style }) => {
-  return <span style={{ ...captionStyle, ...style }}>{children}</span>;
-};
 
 
 export const Typography = ({ variant, children, style }) => {

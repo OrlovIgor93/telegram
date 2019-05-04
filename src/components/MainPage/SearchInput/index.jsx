@@ -1,10 +1,10 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import {withStyles} from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import InputBase from "@material-ui/core/InputBase";
 import SearchIcon from "@material-ui/icons/Search";
-import {StoreContext} from "../../../store";
-import {searchInListDialogs} from "../../../actions/actionCreatorDialogs";
+import { StoreContext } from "../../../store";
+import { searchInListDialogs } from "../../../actions/actionCreatorDialogs";
 
 const styles = () => ({
     search: {
@@ -28,8 +28,8 @@ const styles = () => ({
     }
 });
 
-export const SearchInput = ({classes}) => {
-    const { search, dispatchDialogs} = useContext(StoreContext);
+export const SearchInput = ({ classes }) => {
+    const { search, dispatchDialogs } = useContext(StoreContext);
     return (
         <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -37,7 +37,7 @@ export const SearchInput = ({classes}) => {
             </div>
             <InputBase
                 value={search}
-                onChange={(e)=>dispatchDialogs(searchInListDialogs(e.target.value))}
+                onChange={(e) => dispatchDialogs(searchInListDialogs(e.target.value))}
                 placeholder="Search…"
             />
         </div>

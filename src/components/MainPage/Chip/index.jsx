@@ -1,9 +1,9 @@
 import React from "react";
-
-import { Caption } from "../Typography";
 import { chipStyle } from "../styles"
-
+import Typography from "@material-ui/core/Typography"
 
 export const Chip = ({ value }) => (
-         <Caption style={chipStyle}>{value}</Caption>
-       );
+    <Typography variant="caption" style={chipStyle}>
+        {value}
+    </Typography>
+);

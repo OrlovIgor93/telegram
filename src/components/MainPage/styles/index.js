@@ -17,7 +17,7 @@ export const avatarSmall = {
     height: 42,
     width: 42,
     color: "#fff",
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
 };
 
 export const avatarMedium = {
@@ -34,12 +34,14 @@ export const avatarBig = {
 
 export const chipStyle = {
     display: "inline-flex",
-    minWidth: 11,
+    minWidth: 14,
+    fontSize: 11,
+    fontWeight: 100,
     padding: 3,
     backgroundColor: "#BFBFBF",
     borderRadius: 50,
-    textOverflow: "ellipsis",
     color: "white",
+    textOverflow: "ellipsis",
     justifyContent: "space-evenly",
 };
 
@@ -167,7 +169,6 @@ export const dialogInfoStyle = {
 };
 
 
-
 export const bottomPanelWrap = {
     height: "100%",
     flexDirection: "column-reverse",
@@ -176,3 +177,13 @@ export const bottomPanelWrap = {
     padding: "0 15px",
 };
 
+export const selectDialog = {
+    alignSelf: "center",
+    color: "#bfbfbf",
+    margin: "auto"
+};
+
+export const notFoundStyle = {
+    alignSelf: "center",
+    color: "#bfbfbf",
+};
