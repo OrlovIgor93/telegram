@@ -1,6 +1,6 @@
 import React from "react";
-import { HorizontalWrap } from "../../../HorizontalWrap";
-import { Button } from "../../../Button";
+import { HorizontalWrap } from "../../../../common/HorizontalWrap";
+import { Button } from "../../../../common/Button";
 import General from "../../../../../img/icons/General.png";
 import IconsetW from "../../../../../img/icons/IconsetW.png";
 

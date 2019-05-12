@@ -1,6 +1,6 @@
 import React from "react";
-import {Typography} from "../MainPage/Typography";
-import {style} from "../LeraStyles/style";
+import Typography from "@material-ui/core/Typography";
+import {style} from "../styles";
 
 export const Description = () => (
 <div style={{display: 'flex'}}>
@@ -9,11 +9,11 @@ export const Description = () => (
     </div>
     <div style={{paddingTop: '40px'}}>
         <div>
-            <Typography variant="title">
+            <Typography variant="subtitle1">
                 Epam Telegram</Typography>
         </div>
         <div style={{paddingTop: '15px'}}>
-            <Typography variant='body'>Version 0.1</Typography></div>
+            <Typography variant='body2'>Version 0.1</Typography></div>
     </div>
 </div>
 );

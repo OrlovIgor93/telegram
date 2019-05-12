@@ -1,22 +1,19 @@
-import React, { Component } from 'react';
-
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import { MainPage } from './components/MainPage'
+import { MainPage } from "./components/MainPage"
 import { LoginPage } from "./components/Login";
+import { PrivateRoute } from "./requireAuth/requireAuth"
 
-class App extends Component {
-  render() {
-    return (
-      <Switch>
-        <Route exact path="/" component={LoginPage} />
-        <Route path="/home" component={MainPage} />
+export const App = () => (
+    <Switch>
+        <Route exact path="/login" component={LoginPage}/>
+        <PrivateRoute path="/" component={MainPage}/>
+    </Switch>
+);
 
-      </Switch>
-    );
-  }
-}
 
-export default App;
+
+
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {style} from "../LeraStyles/style";
+import {style} from "../styles";
 import {Caption} from "./Caption"
 import {Footer} from "./Footer"
 

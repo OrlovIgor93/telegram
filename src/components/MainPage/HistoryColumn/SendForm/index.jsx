@@ -1,10 +1,10 @@
 import React, {useState, useContext} from "react";
-import {VerticalWrap} from "../../VerticalWrap";
+import {VerticalWrap} from "../../../common/VerticalWrap";
 import {ButtonsGroup} from "./ButtonsGroup";
 
 import TextField from "@material-ui/core/TextField";
 
-import {styleMessageInput} from "../../styles";
+import {styleMessageInput} from "../../../styles";
 import {StoreContext} from "../../../../store";
 
 export const SendForm = () => {

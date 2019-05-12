@@ -1,7 +1,7 @@
-import { AvatarApp } from "../Avatar/Avatar";
+import { AvatarApp } from "../common/Avatar/Avatar";
 import React from "react";
-import {style} from "../LeraStyles/style";
-import {Typography} from "../MainPage/Typography";
+import {style} from "../styles";
+import Typography from "@material-ui/core/Typography";
 
 export const Description = ({ imgurl, name }) => (
     <div style={{ display: "flex" }}>
@@ -15,10 +15,10 @@ export const Description = ({ imgurl, name }) => (
         </div>
         <div style={{ paddingTop: 30 + "px" }}>
             <div>
-                <Typography variant="title">{name}</Typography>
+                <Typography variant="title1">{name}</Typography>
             </div>
             <div style={{ paddingTop: 15 + "px" }}>
-                <Typography variant="body">online</Typography>
+                <Typography variant="body1">online</Typography>
             </div>
         </div>
     </div>

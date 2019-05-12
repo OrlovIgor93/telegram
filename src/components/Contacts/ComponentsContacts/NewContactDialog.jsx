@@ -1,5 +1,3 @@
-import Style from '../style.js'
-
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -46,6 +44,6 @@ export const NewContactDialog = ({ open, onCancel, onSubmit }) => (
             </DialogActions>
         </form>
     </Dialog>
-)
+);
 
 export default NewContactDialog

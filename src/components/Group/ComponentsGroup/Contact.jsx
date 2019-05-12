@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar } from "../../Avatar";
+import { Avatar } from "../../common/Avatar";
 import Style from '../style.js'
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
@@ -22,6 +22,6 @@ export const Contact = props => (
             </div>
         </div>
     </li>
-)
+);
 
 export default Contact

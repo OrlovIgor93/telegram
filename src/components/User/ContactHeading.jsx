@@ -1,8 +1,8 @@
 import React from "react";
 import CloseIcon from '@material-ui/icons/Close'
 import {Description} from "./Description"
-import {style} from "../LeraStyles/style";
-import {Typography} from "../MainPage/Typography";
+import {style} from "../styles";
+import Typography from "@material-ui/core/Typography";
 import {IconButton} from "@material-ui/core";
 
 export const ContactHeading = ({ imgurl, name, onClose }) => (
@@ -14,7 +14,7 @@ export const ContactHeading = ({ imgurl, name, onClose }) => (
     >
         <div style={style.titles}>
             <div>
-                <Typography variant="title">User Info</Typography>
+                <Typography variant="title1">User Info</Typography>
             </div>
             <div style={style.linksRight}>
                 <IconButton onClick={onClose}>

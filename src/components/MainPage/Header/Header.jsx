@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 
 import LeftMenu from "../LeftMenu/LeftMenu";
-import { HorizontalWrap } from "../HorizontalWrap";
+import { HorizontalWrap } from "../../common/HorizontalWrap";
 
 import AppBar from "@material-ui/core/AppBar/index";
 import Typography from "@material-ui/core/Typography/index";
@@ -16,7 +16,7 @@ import {
     headerStyle,
     mainMenuStyle,
     rightWrapperButtons,
-} from "../styles"
+} from "../../styles"
 import { StoreContext } from "../../../store";
 
 const styles = (theme) => ({

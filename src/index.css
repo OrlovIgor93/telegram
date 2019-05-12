@@ -9,12 +9,15 @@ body {
 
 
 #root{
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 ::-webkit-scrollbar {
   /* chrome based */
-  width: 0px; /* ширина scrollbar'a */
+  width: 0; /* ширина scrollbar'a */
   background: transparent; /* опционально */
 }

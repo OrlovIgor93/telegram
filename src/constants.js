@@ -3,3 +3,7 @@ export const SEARCH_IN_LIST_DIALOGS = 'SEARCH_IN_LIST_DIALOGS';
 export const SET_ACTIVE_DIALOG = 'SET_ACTIVE_DIALOG';
 export const ADD_DIALOG = "ADD_DIALOG";
 export const REMOVE_DIALOG = "REMOVE_DIALOG";
+
+export const LOG_IN_SUCCESS = "LOG_IN_SUCCESS";
+export const LOG_OUT_USER = "LOG_IN_SUCCESS";
+export const AUTH_ERROR = "LOG_IN_SUCCESS";

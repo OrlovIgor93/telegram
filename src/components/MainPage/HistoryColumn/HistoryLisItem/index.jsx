@@ -1,9 +1,9 @@
 import React, {useContext} from "react";
 import Typography from "@material-ui/core/Typography";
-import {AvatarApp} from "../../../Avatar/Avatar";
-import {VerticalWrap} from "../../VerticalWrap";
-import {HorizontalWrap} from "../../HorizontalWrap";
-import {dialogInfoStyle, stretchAreaStyle} from "../../styles"
+import {AvatarApp} from "../../../common/Avatar/Avatar";
+import {VerticalWrap} from "../../../common/VerticalWrap";
+import {HorizontalWrap} from "../../../common/HorizontalWrap";
+import {dialogInfoStyle, stretchAreaStyle} from "../../../styles"
 import "./style.css"
 import {StoreContext} from "../../../../store";
 

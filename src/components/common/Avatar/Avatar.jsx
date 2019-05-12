@@ -1,6 +1,6 @@
 import React from "react";
-import Avatar from "@material-ui/core/Avatar";
-import { avatarSmall, avatarMedium, avatarBig, colors } from "../MainPage/styles";
+import Avatar from "@material-ui/core/Avatar/index";
+import { avatarSmall, avatarMedium, avatarBig, colors } from "../../styles";
 
 const getUserLetter = children => {
   const arrWord = children.split(" ");

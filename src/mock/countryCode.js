@@ -7,17 +7,18 @@ export const countryCode = [
     {
         "code": "+123",
         "name": "Neverland",
-        "phoneLength": 8
+        "phoneLength": 8,
     },
 
     {
         "code": "+375",
         "name": "Belarus",
-        "phoneLength": 9
+        "phoneLength": 9,
+        "selected": true
     },
     {
         "code": "+32",
         "name": "Belgium",
         "phoneLength": 10
     },
-]
+];

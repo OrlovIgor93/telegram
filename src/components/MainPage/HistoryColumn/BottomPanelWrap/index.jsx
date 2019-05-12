@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import {AvatarApp} from "../../../Avatar/Avatar";
+import {AvatarApp} from "../../../common/Avatar/Avatar";
 import {SendForm} from "../SendForm";
-import {HorizontalWrap} from "../../HorizontalWrap";
+import {HorizontalWrap} from "../../../common/HorizontalWrap";
 
 import "./style.css";
 import IconButton from "@material-ui/core/IconButton";

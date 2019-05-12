@@ -1,7 +1,7 @@
 import React from "react";
 import {HistoryListItem} from "../HistoryLisItem";
-import {VerticalWrap} from "../../VerticalWrap";
-import {bottomPanelWrap} from "../../styles";
+import {VerticalWrap} from "../../../common/VerticalWrap";
+import {bottomPanelWrap} from "../../../styles";
 import {StoreContext} from "../../../../store";
 
 export const HistoryList = () => {

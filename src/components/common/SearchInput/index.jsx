@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-import InputBase from "@material-ui/core/InputBase";
+import { withStyles } from "@material-ui/core/styles/index";
+import InputBase from "@material-ui/core/InputBase/index";
 import SearchIcon from "@material-ui/icons/Search";
 import { StoreContext } from "../../../store";
 import { searchInListDialogs } from "../../../actions/actionCreatorDialogs";

@@ -7,10 +7,10 @@ import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Typography from "@material-ui/core/Typography";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 
-import { infoLastMessageStyle } from "../../styles";
+import { infoLastMessageStyle } from "../../../styles";
 
-import { Chip } from "../../Chip";
-import { AvatarApp } from "../../../Avatar/Avatar";
+import { Chip } from "../../../common/Bage";
+import { AvatarApp } from "../../../common/Avatar/Avatar";
 import { StoreContext } from "../../../../store";
 import { setActiveDialog } from "../../../../actions/actionCreatorDialogs";
 

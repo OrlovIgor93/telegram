@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import Header from "./Header/Header";
 import { DialogsColumn } from "./DialogsColumn";
 import { HistoryColumn } from "./HistoryColumn";
-import { VerticalWrap } from "./VerticalWrap";
-import { HorizontalWrap } from "./HorizontalWrap";
+import { VerticalWrap } from "../common/VerticalWrap";
+import { HorizontalWrap } from "../common/HorizontalWrap";
 
-import { wrapPageStyle, pageContextStyle } from "./styles";
+import { wrapPageStyle, pageContextStyle } from "../styles";
 
-import { ModalWrap } from "./ModalWrap";
+import { ModalWrap } from "../common/ModalWrap";
 import { About } from "../About";
 import { Profile } from "../MyProfile";
 import { Contacts } from "../Contacts";
@@ -20,8 +20,8 @@ export const MainPage = () => {
         dialogs,
         openModal,
         handleCloseModal,
-        profileInfo,
-        changeProfileInfo,
+        user,
+        dispatchUser,
         activeDialogInfo,
     } = useContext(StoreContext);
 
@@ -33,7 +33,7 @@ export const MainPage = () => {
             case "Contacts":
                 return <Contacts onClose={handleCloseModal}/>;
             case "My profile":
-                return <Profile profileInfo={profileInfo} changeProfileInfo={changeProfileInfo}
+                return <Profile user={user} dispatchUser={dispatchUser}
                                 onClose={handleCloseModal}/>;
             case "About":
                 return <About onClose={handleCloseModal}/>;

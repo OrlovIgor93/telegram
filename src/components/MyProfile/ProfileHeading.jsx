@@ -1,7 +1,7 @@
 import React from "react";
 import CloseIcon from '@material-ui/icons/Close'
 import {Description} from "./Description"
-import {style} from "../LeraStyles/style";
+import {style} from "../styles";
 import {IconButton} from "@material-ui/core";
 
 export const ProfileHeading = ({user, onClose}) => (

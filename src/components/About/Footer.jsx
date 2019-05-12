@@ -1,5 +1,5 @@
 import React from "react";
-import {style} from "../LeraStyles/style";
+import {style} from "../styles";
 
 export const Footer = () =>
     <div className="footer_wrap">

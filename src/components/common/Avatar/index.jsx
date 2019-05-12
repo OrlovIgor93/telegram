@@ -1,5 +1,5 @@
 import React from "react";
-import { avatar, avatarMedium, avatarBig, colors } from "../MainPage/styles";
+import { avatar, avatarMedium, avatarBig, colors } from "../../styles";
 
 const getUserLetter = children => {
   const arrWord = children.split(" ");

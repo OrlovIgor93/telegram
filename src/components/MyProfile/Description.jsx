@@ -1,7 +1,7 @@
-import {AvatarApp} from "../Avatar/Avatar";
+import {AvatarApp} from "../common/Avatar/Avatar";
 import React from "react";
-import {style} from "../LeraStyles/style";
-import {Typography} from "../MainPage/Typography";
+import {style} from "../styles";
+import Typography from "@material-ui/core/Typography";
 
 export const Description = ({user}) => (
     <div style={{display: "flex"}}>
@@ -9,16 +9,16 @@ export const Description = ({user}) => (
             <AvatarApp
                 big
                 style={{marginRight: 15}}
-                name={user.fullName}
-                src={user.img}
+                name={user.displayName}
+                src={user.photoURL}
             />
         </div>
         <div style={{paddingTop: 30 + "px"}}>
             <div>
-                <Typography variant="title">{user.fullName}</Typography>
+                <Typography variant="subtitle1">{user.displayName}</Typography>
             </div>
             <div style={{paddingTop: 15 + "px"}}>
-                <Typography variant="body">online</Typography>
+                <Typography variant="body1">online</Typography>
             </div>
         </div>
     </div>

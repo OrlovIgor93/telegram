@@ -22,12 +22,6 @@ export default class FormDialog extends React.Component {
         this.setState({ open: false });
     };
     handleSave = () => {
-        // let profileInfo = this.props.user;
-        // profileInfo.firstName = this.state.firstName;
-        // profileInfo.lastName = this.state.lastName;
-        // profileInfo.fullName = this.state.firstName + " " + this.state.lastName;
-        // console.log(profileInfo);
-        // localStorage.setItem('profileInfo', JSON.stringify(profileInfo));
 
         this.props.changeProfileInfo({...this.props.user,
                                         firstName: this.state.firstName,

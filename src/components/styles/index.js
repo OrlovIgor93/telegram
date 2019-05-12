@@ -1,3 +1,51 @@
+export const style = {
+    wrapper: {
+        width: 480,
+        display: 'flex',
+        flexDirection: 'column',
+        margin: 'auto'
+    },
+    description: {
+        padding: '20px 60px',
+    },
+    bodyBackground: {
+        background: "white",
+    },
+    bodyMargins: {
+        marginTop: 19,
+        marginRight: 0,
+        marginBottom: 0,
+        marginLeft: 10,
+        paddingRight: 28
+    },
+    logoTelegram: {
+        display: 'block',
+        padding: '30px'
+    },
+    titles: {
+        display: 'flex',
+        alignItems: 'baseline',
+        justifyContent: 'space-between',
+        color: '#fff',
+        padding: '20px 0  5 px'
+    },
+    linksRight: {
+        marginLeft: 'auto',
+        marginRight: '10px'
+    },
+    head: {
+        backgroundColor: 'rgb(85, 128, 163)',
+        color: "#fff",
+        paddingLeft: 28,
+    },
+    footerLinks: {
+        display: 'flex',
+        justifyContent: 'spaceBetween',
+        padding: 20,
+        color: 'gray',
+    },
+};
+
 export const avatar = {
     display: "flex",
     justifyContent: "center",
@@ -45,24 +93,10 @@ export const chipStyle = {
     justifyContent: "space-evenly",
 };
 
-export const titleStyle = {
-    fontSize: 13,
-    fontWeight: 800,
-};
-
-export const sudTitleStyle = {
-    fontSize: 12,
-    fontWeight: 700,
-};
-
-export const bodyTextstyle = {
-    fontSize: 13,
-    fontWeight: 400,
-};
-
-export const captionStyle = {
-    fontSize: 11,
-    fontWeight: 400,
+export const loginPage = {
+    overflow: "hidden",
+    borderRadius: 10,
+    marginTop: 80
 };
 
 export const colors = {
@@ -108,8 +142,9 @@ export const verticalWrap = {
 export const wrapPageStyle = {
     maxWidth: 1000,
     minWidth: 1000,
-    maxHeight: "95vh",
-    minHeight: "95vh"
+    maxHeight: "98vh",
+    minHeight: "98vh",
+    alignSelf: "flex-start",
 };
 
 export const pageContextStyle = {
