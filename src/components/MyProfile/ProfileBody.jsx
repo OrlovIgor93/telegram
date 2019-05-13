@@ -10,6 +10,7 @@ import {Divider} from "@material-ui/core";
 import ChangeMyInfo from "./ChangeMyInfo";
 
 export const ProfileBody = ({user, dispatchUser}) => {
+
     return (
         <div style={style.bodyBackground}>
             <List style={{padding: '0 60px'}}>

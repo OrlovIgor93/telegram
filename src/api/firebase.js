@@ -1,16 +1,7 @@
 import app from "firebase/app"
 import "firebase/auth"
 import "firebase/firebase-firestore"
-
-const config = {
-    apiKey: "AIzaSyAYMxBb2Wg0zpAacs3jzGy0ke5xXwAdK3s",
-    authDomain: "react-telegram-app.firebaseapp.com",
-    databaseURL: "https://react-telegram-app.firebaseio.com",
-    projectId: "react-telegram-app",
-    storageBucket: "react-telegram-app.appspot.com",
-    messagingSenderId: "808444415442",
-    appId: "1:808444415442:web:dd99e72ffc541464"
-};
+import { config } from "./config";
 
 class Firebase {
     constructor() {
@@ -23,6 +14,10 @@ class Firebase {
     signUpWithPhone(phoneNumber, appVerifier) {
         return this.auth.signInWithPhoneNumber(phoneNumber, appVerifier);
     };
+
+    logout() {
+        return this.auth.signOut()
+    }
 
     registerUserAccount(user) {
         return this.db

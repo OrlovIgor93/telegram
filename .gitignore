@@ -186,4 +186,6 @@ modules.xml
 # Sonarlint plugin
 .idea/sonarlint
 
+C:\telegram\src\api\config.js
+
 # End of https://www.gitignore.io/api/node,webstorm+all,visualstudiocode

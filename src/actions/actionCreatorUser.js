@@ -13,11 +13,7 @@ export function authError(errorMessage) {
     return { type: AUTH_ERROR, error: errorMessage  }
 }
 
-export function logInUser(data) {
 
-console.log(data);
-  loginSuccess(data)
-}
 
 // export function logOutUser(){
 //     return function(dispatch){
