@@ -9,6 +9,9 @@ import {
 } from '../../constants';
 import {getDialogs} from '../../actions/actionCreatorDialogs.js'
 import {getDialogsBySearch} from '../../helpers/mainPageHelper'
+import firebase from "../../api/firebase";
+import {initialisingUser, loginSuccess} from "../../actions/actionCreatorUser";
+import {useCollection} from "react-firebase-hooks/firestore";
 
 
 const initialState = {
@@ -58,13 +61,30 @@ const reducer = (state, {type, dialogs, value, id, name, phone, imgUrl, lastMess
 
 export const useDialogs = () => {
     const [state, dispatchDialogs] = useReducer(reducer, initialState);
+    const { error, loading, value } = useCollection(
+        firebase.db.collection('users').doc('+375298801935').collection('myDialogs')
+    );
 
     useEffect(() => {
-        let initialDialogs = initialState.dialogs;
-        if (state.search) initialDialogs = getDialogsBySearch(initialDialogs, state.search);
-        dispatchDialogs(getDialogs(initialDialogs));
+        if (loading) {
+           console.log("loading")
+        } else if (error) {
+            console.log("error")
+        } else {
 
-    }, [state.search]);
+            const docs = value.docs.map(doc => ( {id: doc.id,...doc.data()}))
+
+
+            console.log('value', docs)}
+
+
+        });
+    // useEffect(() => {
+    //     let initialDialogs = initialState.dialogs;
+    //     if (state.search) initialDialogs = getDialogsBySearch(initialDialogs, state.search);
+    //     dispatchDialogs(getDialogs(initialDialogs));
+    //
+    // }, [state.search]);
 
     return {
         ...state,

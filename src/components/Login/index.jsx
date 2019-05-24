@@ -98,7 +98,7 @@ export const LoginPage = () => {
 
     const handleFinishRegistration = () => {
         const initialData = {
-            dialogs: {},
+            dialogs: [],
             uid: isNewUser.uid,
             phoneNumber: isNewUser.phoneNumber,
             userName: userName

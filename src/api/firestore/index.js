@@ -1,33 +1,73 @@
 import firebase from "../firebase";
 
-export const getUserByPhoneNumber = (findPhoneNumber, phoneNumber) => {
+export const getUserByPhoneNumber = async (findPhoneNumber, phoneNumber) => {
 
 
     const user = firebase.db
         .collection("users")
         .doc(findPhoneNumber);
 
-    return user.get().then(function(sfDoc) {
+    return user.get().then(async function (sfDoc) {
             if (!sfDoc.exists) {
                 throw "Document does not exist!";
             }
 
             const batch = firebase.db.batch();
-            const newDialog = firebase.db.collection("dialogs").doc();
+            const id = (new Date()).getTime().toString();
+            const newDialog = firebase.db.collection("dialogs").doc(id);
+            const myDateProfile = await firebase.db.collection("users").doc(findPhoneNumber).get().then((doc) => {
+                    if (doc.exists) {
+                        const info = doc.data();
+                        console.log("Document data:", info);
+                    } else {
+                        // doc.data() will be undefined in this case
+                        console.log("No such document!");
+                    }
+                }
+            );
+            console.log("myDateProfile", myDateProfile);
+
+            const message = {
+                id,
+                name: "Coral Newburn",
+                phone: "+86 (623) 232-8938",
+                imgUrl: "https://robohash.org/omnisvoluptasitaque.png?size=50x50&set=set1",
+                "lastMessage": "convallis morbi odio odio elementum eu interdum eu tincidunt",
+                "timeLastMessage": "2018-07-27T14:40:34Z",
+                "numberOfUnreadMessages": null,
+                author: phoneNumber,
+
+                textMessage: `${phoneNumber} create dialog1`
+            };
             const data = {
-                members: {
+                members: [
                     findPhoneNumber,
                     phoneNumber
-                },
+                ],
                 messages: [
-                    {
-                        author: phoneNumber,
-                        timeMessage: new Date(),
-                        textMessage: `${phoneNumber} create dialog`
-                    }
+                    message
                 ]
             };
+
             batch.set(newDialog, data);
+
+
+            const refUser = firebase.db
+                .collection("users")
+                .doc(phoneNumber)
+                .collection('myDialogs')
+                .doc(id);
+
+            batch.set(refUser, {});
+
+            const refFindUser = firebase.db
+                .collection("users")
+                .doc(findPhoneNumber)
+                .collection('myDialogs')
+                .doc(id);
+
+            batch.set(refFindUser, {message});
+
 
             return batch.commit();
 
