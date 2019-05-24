@@ -14,13 +14,13 @@ const StoreProvider = ({ children }) => {
         handlerBlurSearchDialog
     } = useHistoryDialog(selectedIndex);
     const { openModal, anchorLeftMenu, setAnchorLeftMenu, handleClickOpenModal, handleCloseModal, } = usePortals();
-    const { authenticated, user, dispatchUser } = useUser();
+    const { authenticated, user,initialisingUser, dispatchUser } = useUser();
 
 
     const _mapStateToProps = {
         dialogs, search, selectedIndex,
         messagesActiveDialog, activeDialogInfo, searchValueInDialog,
-        authenticated, user
+        authenticated, user,initialisingUser
     };
 
     const _dispatchFunctions = {

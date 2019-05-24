@@ -12,6 +12,7 @@ import { loginSuccess } from "../../actions/actionCreatorUser";
 
 import { loginPage } from "../styles"
 import ConfirmCode from "./ConfirmCode";
+import { Spinner } from "../common/Spinner";
 
 export const LoginPage = () => {
     const [selectCountry, setSelectCountry] = useState(() =>
@@ -28,16 +29,16 @@ export const LoginPage = () => {
     const [code, setCode] = useState("");
     const [isNewUser, setIsNewUser] = useState(null);
     const [codeSent, setCodeSent] = useState(false);
-    const { authenticated, dispatchUser } = useContext(StoreContext);
+    const { authenticated, initialisingUser, dispatchUser } = useContext(StoreContext);
 
     useEffect(() => {
-        firebase.setAutoCaptcha();
-        return () => {
-            window.recaptchaVerifier = null;
-        }
-    }, []);
+        if (!authenticated && !initialisingUser) firebase.setAutoCaptcha();
 
-    const handleChange = ({ target: { value } }) => {
+        return ()=> window.recaptchaVerifier = null;
+
+    }, [authenticated, initialisingUser]);
+
+    const handleChangeSelectCountry = ({ target: { value } }) => {
         setSelectCountry(value);
     };
 
@@ -83,6 +84,7 @@ export const LoginPage = () => {
             .confirm(code)
             .then(result => {
                 const { user, additionalUserInfo } = result;
+                console.log(" user, additionalUserInfo", user, additionalUserInfo);
                 if (additionalUserInfo.isNewUser) {
                     setIsNewUser(user);
                 } else {
@@ -94,25 +96,30 @@ export const LoginPage = () => {
             });
     };
 
-   const handleFinishRegistration =()=>{
-       const initialData = {
-           dialogs: {},
-           uid: isNewUser.uid,
-           phoneNumber: isNewUser.phoneNumber,
-           userName: userName
-       };
+    const handleFinishRegistration = () => {
+        const initialData = {
+            dialogs: {},
+            uid: isNewUser.uid,
+            phoneNumber: isNewUser.phoneNumber,
+            userName: userName
+        };
 
-       firebase
-           .registerUserAccount(initialData)
-           .then((res)=>console.log(res))
-           .catch(error=>console.log(error));
+        firebase
+            .registerUserAccount(initialData)
+            .then(res => console.log(res))
+            .catch(error => console.log(error));
 
-       firebase.updateCurrentUser(userName)
-           .then(()=>dispatchUser(loginSuccess({...isNewUser,userName: userName} )))
-           .catch(error=>console.log(error));
-   };
+        firebase.updateCurrentUser(userName)
+            .then(() => dispatchUser(loginSuccess({ ...isNewUser, displayName: userName })))
+            .catch(error => console.log(error))
+            .then(()=> setIsNewUser(false))
+    };
 
-    if (authenticated) {
+    if (initialisingUser) {
+        return <Spinner/>
+    }
+
+    if (authenticated && !isNewUser) {
         return <Redirect to="/"/>;
     }
 
@@ -129,7 +136,7 @@ export const LoginPage = () => {
                 phoneNumber={phoneNumber}
                 selectCountry={selectCountry}
                 handleBlur={handleBlur}
-                handleChange={handleChange}
+                handleChange={handleChangeSelectCountry}
                 handleChangePhoneNumberInput={handleChangePhoneNumberInput}
             />
             <LearnMore/>

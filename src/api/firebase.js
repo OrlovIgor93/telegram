@@ -22,7 +22,7 @@ class Firebase {
     registerUserAccount(user) {
         return this.db
             .collection("users")
-            .doc(user.uid)
+            .doc(user.phoneNumber)
             .set(user);
     };
 
@@ -32,10 +32,18 @@ class Firebase {
         });
     };
 
-    updateCurrentUser(userName) {
-        const userCurrent = this.auth.currentUser;
+     getCurrentUser() {
+        return  this.auth.currentUser;
+    }
 
-        return userCurrent.updateProfile({
+    updateCurrentUser(userName) {
+       const user = this.auth.currentUser;
+        this.db
+          .collection("users")
+          .doc(user.uid)
+          .update({userName: userName});
+
+        return user.updateProfile({
             displayName: userName,
         })
     };

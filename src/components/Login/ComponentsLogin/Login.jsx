@@ -64,7 +64,7 @@ const Login = ({
           <p>Please choose your country and enter your full phone number.</p>
         </div>
 
-        <FormControl>
+        <FormControl >
           <VerticalWrap >
             <FormControl className={classes.formControl}>
             <InputLabel   htmlFor="select-country">Select country</InputLabel>

@@ -9,4 +9,5 @@ export const AboutHeading = ({onClose}) => (
         <Title onClose={onClose}/>
         <Description/>
     </div>
+
 );

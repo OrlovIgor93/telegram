@@ -8,7 +8,7 @@ import { PrivateRoute } from "./requireAuth/requireAuth"
 export const App = () => (
     <Switch>
         <Route exact path="/login" component={LoginPage}/>
-        <PrivateRoute path="/" component={MainPage}/>
+        <PrivateRoute exact path="/" component={MainPage}/>
     </Switch>
 );
 

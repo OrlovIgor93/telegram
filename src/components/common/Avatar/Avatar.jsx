@@ -31,7 +31,7 @@ export const AvatarApp = ({small, medium, big, src, name, style, ...attrs }) => 
            <Avatar src={src} style={allStyle} />
          ) : (
            <Avatar {...attrs} style={allStyle}>
-             {userLetters}
+             {userLetters.toString().toUpperCase()}
            </Avatar>
          );
        };

@@ -1,34 +1,65 @@
-import { useReducer} from 'react';
-import { LOG_IN_SUCCESS, LOG_OUT_USER } from "../../constants";
+import { useEffect, useReducer } from "react";
+import { INITIALISING_USER, LOG_IN_SUCCESS, LOG_OUT_USER } from "../../constants";
+import { useAuthState } from "react-firebase-hooks/auth";
+import firebase from "../../api/firebase";
+import { initialisingUser, loginSuccess, logOutSuccess } from "../../actions/actionCreatorUser";
 
-const initialState={
+const initialState = {
+    initialisingUser: true,
     authenticated: false,
-    user: {},
+    user: null,
 };
 
-const reducer = (state, {type,authData }) => {
+const reducer = (state, { type, authData }) => {
     switch (type) {
         case LOG_IN_SUCCESS:
             return {
+                initialisingUser: false,
                 authenticated: true,
-                user:authData,
+                user: authData,
             };
+
         case LOG_OUT_USER:
             return {
+                ...state,
+                initialisingUser: false,
                 authenticated: false,
-                user:{},
+            };
+        case INITIALISING_USER:
+            return {
+                ...state,
+                initialisingUser: true,
+                authenticated: false,
+            };
+        case "new_login":
+            return {
+                ...state,
+                initialisingUser: false
             };
         default:
-            throw new Error();
+            return state;
     }
 };
 
 export const useUser = () => {
-    const [user, dispatchUser] = useReducer(reducer, initialState);
+    const [userState, dispatchUser] = useReducer(reducer, initialState);
 
+    const { initialising, user } = useAuthState(firebase.auth);
+
+    useEffect(() => {
+            if (initialising) {
+                dispatchUser(initialisingUser())
+            } else if (user) {
+                dispatchUser(loginSuccess(user))
+            } else {
+                dispatchUser({ type: "new_login" })
+            }
+
+        }, [user, initialising]
+    );
 
     return {
-        ...user, dispatchUser
+        ...userState, dispatchUser
     };
 
 };

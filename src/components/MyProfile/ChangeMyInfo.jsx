@@ -6,46 +6,12 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import withModal from "../HocComponets/withModal";
 
-export default class FormDialog extends React.Component {
-  state = {
-            open: false,
-            firstName: this.props.user.firstName,
-            lastName: this.props.user.lastName
-        };
-
-    handleClickOpen = () => {
-        this.setState({ open: true });
-    };
-
-    handleClose = () => {
-        this.setState({ open: false });
-    };
-    handleSave = () => {
-
-        this.props.changeProfileInfo({...this.props.user,
-                                        firstName: this.state.firstName,
-                                        lastName: this.state.lastName,
-                                        fullName: this.state.firstName + " " + this.state.lastName
-                                        });
-
-        this.setState({ open: false });
-    };
-    handleChange = name => event => {
-        this.setState({ [name]: event.target.value });
-    };
-
-    render() {
-    const {firstName, lastName} = this.state;
-
-        return (
-            <div>
-                <Button variant="contained" color="primary" onClick={this.handleClickOpen}>
-                    Edit profile
-                </Button>
+const ChangeMyInfo =({firstName, lastName, handleChangeInput, handleCloseModal, openModal, handleSave})=> (
                 <Dialog
-                    open={this.state.open}
-                    onClose={this.handleClose}
+                    open={openModal}
+                    onClose={handleCloseModal}
                     aria-labelledby="form-dialog-title"
                 >
                     <DialogTitle id="form-dialog-title">Edit profile</DialogTitle>
@@ -54,7 +20,7 @@ export default class FormDialog extends React.Component {
                             Please enter your new info and click "Save"
                         </DialogContentText>
                             <TextField
-                                onChange={this.handleChange('firstName')}
+                                onChange={handleChangeInput('firstName')}
                                 value={firstName}
                                 margin="dense"
                                 id="firstname"
@@ -62,7 +28,7 @@ export default class FormDialog extends React.Component {
                                 type="text"
                                 fullWidth />
                             <TextField
-                                onChange={this.handleChange('lastName')}
+                                onChange={handleChangeInput('lastName')}
                                 value={lastName}
                                 margin="dense"
                                 id="lastname"
@@ -71,15 +37,15 @@ export default class FormDialog extends React.Component {
                                 fullWidth />
                         </DialogContent>
                     <DialogActions>
-                        <Button onClick={this.handleClose} color="primary">
+                        <Button onClick={handleCloseModal} color="primary">
                             Cancel
                         </Button>
-                        <Button onClick={this.handleSave} color="primary">
+                        <Button onClick={handleSave} color="primary">
                             Save
                         </Button>
                     </DialogActions>
                 </Dialog>
-            </div>
         );
-    }
-}
+
+
+export default withModal(ChangeMyInfo);

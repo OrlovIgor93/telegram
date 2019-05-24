@@ -5,5 +5,5 @@ export const ADD_DIALOG = "ADD_DIALOG";
 export const REMOVE_DIALOG = "REMOVE_DIALOG";
 
 export const LOG_IN_SUCCESS = "LOG_IN_SUCCESS";
-export const LOG_OUT_USER = "LOG_IN_SUCCESS";
-export const AUTH_ERROR = "LOG_IN_SUCCESS";
+export const LOG_OUT_USER = "LOG_OUT_USER";
+export const INITIALISING_USER = "INITIALISING_USER";

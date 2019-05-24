@@ -8,7 +8,7 @@ export const ProfileHeading = ({user, onClose}) => (
     <div style={{
         backgroundColor: 'rgb(85, 128, 163)',
         color: '#fff',
-        paddingLeft: 28 + 'px'
+        paddingLeft: 28
     }}>
         <div style={style.titles}>
             <div>My Profile</div>

@@ -8,7 +8,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 
 
-export const NewContactDialog = ({ open, onCancel, onSubmit }) => (
+export const NewContactDialog = ({ open, onCancel, onSubmit,phoneNumber,
+                                     onChangePhoneNumber }) => (
     <Dialog
         open={open}
         aria-labelledby="form-dialog-title">
@@ -18,24 +19,9 @@ export const NewContactDialog = ({ open, onCancel, onSubmit }) => (
                 <TextField
                     autoFocus
                     margin="dense"
-                    id="phone"
-                    name="phone"
+                    valur={phoneNumber}
+                    onChange={onChangePhoneNumber}
                     label="Phone number"
-                    type="number"
-                    fullWidth />
-                <TextField
-                    margin="dense"
-                    id="firstname"
-                    name="firstname"
-                    label="First name"
-                    type="text"
-                    fullWidth />
-                <TextField
-                    margin="dense"
-                    id="lastname"
-                    name="lastname"
-                    label="Last name"
-                    type="text"
                     fullWidth />
             </DialogContent>
             <DialogActions>

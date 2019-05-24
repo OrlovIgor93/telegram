@@ -1,3 +1,50 @@
+import firebase from "../firebase";
+
+export const getUserByPhoneNumber = (findPhoneNumber, phoneNumber) => {
+
+
+    const user = firebase.db
+        .collection("users")
+        .doc(findPhoneNumber);
+
+    return user.get().then(function(sfDoc) {
+            if (!sfDoc.exists) {
+                throw "Document does not exist!";
+            }
+
+            const batch = firebase.db.batch();
+            const newDialog = firebase.db.collection("dialogs").doc();
+            const data = {
+                members: {
+                    findPhoneNumber,
+                    phoneNumber
+                },
+                messages: [
+                    {
+                        author: phoneNumber,
+                        timeMessage: new Date(),
+                        textMessage: `${phoneNumber} create dialog`
+                    }
+                ]
+            };
+            batch.set(newDialog, data);
+
+            return batch.commit();
+
+
+            // if (newPopulation <= 1000000) {
+            //     transaction.update(sfDocRef, { population: newPopulation });
+            //     return newPopulation;
+            // } else {
+            //     return Promise.reject("Sorry! Population is too big.");
+            // }
+
+
+        }
+    );
+};
+
+
 // import uuid from "uuid";
 // import dayjs from "dayjs";
 // import { firestore } from "../../components/firebase";

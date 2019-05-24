@@ -1,25 +1,13 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
-import firebase from "../api/firebase";
 import { StoreContext } from "../store";
-import { loginSuccess } from "../actions/actionCreatorUser";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { Spinner } from "../components/common/Spinner";
 
-export const PrivateRoute = (props) => {
-    const { dispatchUser } = useContext(StoreContext);
-    const { initialising, user } = useAuthState(firebase.auth);
+export const PrivateRoute = ({ component: Component, ...rest }) => {
+    const { initialisingUser, authenticated } = useContext(StoreContext);
 
-    const { component: Component, ...rest } = props;
 
-    useEffect(() => {
-            if (user) {
-                dispatchUser(loginSuccess(user))
-            }
-        }, [user,dispatchUser]
-    );
-
-    if (initialising) {
+    if (initialisingUser) {
         return <Spinner/>
     }
 
@@ -27,7 +15,7 @@ export const PrivateRoute = (props) => {
         <Route
             {...rest}
             render={renderProps => {
-                return user ? (
+                return authenticated ? (
                     <Component {...renderProps} />
                 ) : (
                     <Redirect

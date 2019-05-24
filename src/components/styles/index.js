@@ -136,8 +136,7 @@ export const horizontalWrap = {
 
 export const verticalWrap = {
     display: "flex",
-    flexDirection: "column"
-};
+    flexDirection: "column",};
 
 export const wrapPageStyle = {
     maxWidth: 1000,
@@ -221,4 +220,13 @@ export const selectDialog = {
 export const notFoundStyle = {
     alignSelf: "center",
     color: "#bfbfbf",
+};
+
+export const header = {
+    backgroundColor: "#5580a3",
+    color: "#fff",
+    padding: "10px 10px 10px 20px",
+    alignItems: 'center',
+    justifyContent: 'space-between'
+
 };
