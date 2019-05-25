@@ -59,26 +59,28 @@ const reducer = (state, {type, dialogs, value, id, name, phone, imgUrl, lastMess
 };
 
 
-export const useDialogs = (phoneNumber) => {
+export const useDialogs = (phoneNumber='121') => {
 
     const [state, dispatchDialogs] = useReducer(reducer, initialState);
-    const { value } = useCollection(()=> {phoneNumber ? firebase.db.collection('users').doc(phoneNumber).collection('myDialogs') : null}
+    const { error, loading, value } = useCollection(
+        firebase.db.collection('users').doc(phoneNumber?phoneNumber:"123").collection('myDialogs')
     );
 
     useEffect(() => {
-
+        if (loading) {
+           console.log("loading")
+        } else if (error) {
+            console.log("error")
+        } else {
 
             const docs = value.docs.map(doc => ( {...doc.data()}))
 
             dispatchDialogs(getDialogs(docs));
-            console.log('value', docs)
+            console.log('value', docs)}
 
 
         }, [phoneNumber, value]);
 
-    const getCollection =()=>{
-
-    }
 
     // useEffect(() => {
     //     let initialDialogs = initialState.dialogs;
