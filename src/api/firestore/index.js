@@ -1,43 +1,33 @@
 import firebase from "../firebase";
 
-export const getUserByPhoneNumber = async (findPhoneNumber, phoneNumber) => {
+export const getUserByPhoneNumber = (findPhoneNumber, phoneNumber, displayName) => {
 
 
     const user = firebase.db
         .collection("users")
         .doc(findPhoneNumber);
 
-    return user.get().then(async function (sfDoc) {
+   return user.get().then(  (sfDoc)=> {
             if (!sfDoc.exists) {
-                throw "Document does not exist!";
+                throw "User not found";
             }
 
+            const {phoneNumber, userName} = sfDoc.data();
+console.log(userName);
             const batch = firebase.db.batch();
             const id = (new Date()).getTime().toString();
             const newDialog = firebase.db.collection("dialogs").doc(id);
-            const myDateProfile = await firebase.db.collection("users").doc(findPhoneNumber).get().then((doc) => {
-                    if (doc.exists) {
-                        const info = doc.data();
-                        console.log("Document data:", info);
-                    } else {
-                        // doc.data() will be undefined in this case
-                        console.log("No such document!");
-                    }
-                }
-            );
-            console.log("myDateProfile", myDateProfile);
+
+
 
             const message = {
                 id,
-                name: "Coral Newburn",
-                phone: "+86 (623) 232-8938",
-                imgUrl: "https://robohash.org/omnisvoluptasitaque.png?size=50x50&set=set1",
-                "lastMessage": "convallis morbi odio odio elementum eu interdum eu tincidunt",
-                "timeLastMessage": "2018-07-27T14:40:34Z",
-                "numberOfUnreadMessages": null,
-                author: phoneNumber,
+                name:   displayName,
+                phone:  phoneNumber,
+                imgUrl: null,
+                lastMessage: `${displayName} create dialog1`,
+                numberOfUnreadMessages: null,
 
-                textMessage: `${phoneNumber} create dialog1`
             };
             const data = {
                 members: [
@@ -49,7 +39,7 @@ export const getUserByPhoneNumber = async (findPhoneNumber, phoneNumber) => {
                 ]
             };
 
-            batch.set(newDialog, data);
+            batch.set(newDialog,  {data});
 
 
             const refUser = firebase.db
@@ -58,7 +48,7 @@ export const getUserByPhoneNumber = async (findPhoneNumber, phoneNumber) => {
                 .collection('myDialogs')
                 .doc(id);
 
-            batch.set(refUser, {});
+            batch.set(refUser, {...message, name: userName});
 
             const refFindUser = firebase.db
                 .collection("users")
@@ -66,7 +56,7 @@ export const getUserByPhoneNumber = async (findPhoneNumber, phoneNumber) => {
                 .collection('myDialogs')
                 .doc(id);
 
-            batch.set(refFindUser, {message});
+            batch.set(refFindUser, {...message});
 
 
             return batch.commit();

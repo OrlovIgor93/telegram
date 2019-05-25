@@ -18,7 +18,7 @@ import { HorizontalWrap } from "../common/HorizontalWrap";
 import { StoreContext } from "../../store";
 
 export const Contacts = ({ onClose }) => {
-    const {user: {phoneNumber}} = useContext(StoreContext);
+    const {user: {phoneNumber, displayName}} = useContext(StoreContext);
     const [openModal, setOpenModal] = useState(false);
     const [findPhoneNumber, setPhoneNumber] = useState("");
     const [foundUserInfo, setFoundUserInfo] = useState(null);
@@ -26,7 +26,7 @@ export const Contacts = ({ onClose }) => {
 
     const addContact = (e) => {
         e.preventDefault();
-        getUserByPhoneNumber(findPhoneNumber, phoneNumber).then((doc) => {
+        getUserByPhoneNumber(findPhoneNumber, phoneNumber, displayName).then((doc) => {
             if (doc.exists) {
                 const info = doc.data();
                 console.log("Document data:", info);

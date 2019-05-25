@@ -7,14 +7,17 @@ import { useHistoryDialog } from "../hooks/useHistoryDialog";
 const StoreContext = React.createContext({});
 
 const StoreProvider = ({ children }) => {
-    const { dialogs, search, selectedIndex, dispatchDialogs } = useDialogs();
+    const { authenticated, user,initialisingUser, dispatchUser } = useUser();
+    const phoneNumber=  user && user.phoneNumber;
+    console.log(user);
+    const { dialogs, search, selectedIndex, dispatchDialogs } = useDialogs(phoneNumber);
     const {
         messagesActiveDialog, activeDialogInfo, searchValueInDialog,
         handleSearchForDialog,
         handlerBlurSearchDialog
     } = useHistoryDialog(selectedIndex);
     const { openModal, anchorLeftMenu, setAnchorLeftMenu, handleClickOpenModal, handleCloseModal, } = usePortals();
-    const { authenticated, user,initialisingUser, dispatchUser } = useUser();
+
 
 
     const _mapStateToProps = {
