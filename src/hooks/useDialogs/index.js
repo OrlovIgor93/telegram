@@ -59,11 +59,11 @@ const reducer = (state, {type, dialogs, value, id, name, phone, imgUrl, lastMess
 };
 
 
-export const useDialogs = (phoneNumber='121') => {
+export const useDialogs = (phoneNumber) => {
 
     const [state, dispatchDialogs] = useReducer(reducer, initialState);
     const { error, loading, value } = useCollection(
-        firebase.db.collection('users').doc(phoneNumber?phoneNumber:"123").collection('myDialogs')
+        firebase.db.collection('users').doc(phoneNumber?phoneNumber:"123")
     );
 
     useEffect(() => {
@@ -72,14 +72,39 @@ export const useDialogs = (phoneNumber='121') => {
         } else if (error) {
             console.log("error")
         } else {
+            //
+            // const docs = value.docs.map(doc => (firebase.db.collection('users').doc( doc.data())))
+            // console.log('docs', docs)
+            // dispatchDialogs(getDialogs(docs));
+            const {dialogs} = value.data();
+            const myListDialogs = dialogs.map( async (doc)=>{
+                const {userName, phoneNumber} = await firebase.db.collection('users').doc(doc.dialogInfo).get()
+                    .then((data)=>data.data() );
+                console.log('userName, phoneNumber',userName, phoneNumber);
 
-            const docs = value.docs.map(doc => ( {...doc.data()}))
-
-            dispatchDialogs(getDialogs(docs));
-            console.log('value', docs)}
 
 
-        }, [phoneNumber, value]);
+
+
+                const {textMessage, id} = await  firebase.db.collection('dialogs').doc(doc.dialogId).get()
+                    .then( (snapshot) => {
+
+                            // doc.data() is never undefined for query doc snapshots
+                        const {messages} =  snapshot.data();
+                            console.log(snapshot.id, " => ",  messages);
+                            return messages.slice(-1,1)
+
+                    });
+return {name: userName,phone: phoneNumber, lastMessage: null,imgUrl:null,timeLastMessage: null, numberOfUnreadMessages: null }
+
+
+            });
+            console.log('myListDialogs', myListDialogs)
+             console.log('value', dialogs)
+        }
+
+
+        }, [phoneNumber,value]);
 
 
     // useEffect(() => {

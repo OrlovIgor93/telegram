@@ -1,18 +1,19 @@
 import firebase from "../firebase";
 
-export const getUserByPhoneNumber = (findPhoneNumber, phoneNumber, displayName) => {
+export const getUserByPhoneNumber = (findPhoneNumber, phoneNumber) => {
 
 
-    const user = firebase.db
-        .collection("users")
-        .doc(findPhoneNumber);
+    const userTarget = firebase.db.collection("users").doc(findPhoneNumber);
+    const userCurrent = firebase.db.collection("users").doc(phoneNumber);
 
-   return user.get().then(  (sfDoc)=> {
+   return userTarget.get().then(  async (sfDoc)=> {
             if (!sfDoc.exists) {
                 throw "User not found";
             }
+           const {...dataUser} = await userCurrent.get().then((data)=>{return data.data()});
 
-            const {phoneNumber, userName} = sfDoc.data();
+            console.log('dataUser', dataUser);
+            const {phoneNumber, userName, dialogs} = sfDoc.data();
 console.log(userName);
             const batch = firebase.db.batch();
             const id = (new Date()).getTime().toString();
@@ -22,41 +23,37 @@ console.log(userName);
 
             const message = {
                 id,
-                name:   displayName,
-                phone:  phoneNumber,
-                imgUrl: null,
-                lastMessage: `${displayName} create dialog1`,
-                numberOfUnreadMessages: null,
-
+                author: dataUser.userName,
+                textMessage: `${dataUser.userName} create dialog1`,
             };
             const data = {
                 members: [
-                    findPhoneNumber,
-                    phoneNumber
+                    phoneNumber,
+                    dataUser.phoneNumber
                 ],
                 messages: [
                     message
                 ]
             };
 
-            batch.set(newDialog,  {data});
+            batch.set(newDialog,  data);
 
 
             const refUser = firebase.db
                 .collection("users")
-                .doc(phoneNumber)
-                .collection('myDialogs')
-                .doc(id);
+                .doc(dataUser.phoneNumber)
+                // .collection('myDialogs')
+               // .doc('dialogs');
 
-            batch.set(refUser, {...message, name: userName});
+            batch.update(refUser, {dialogs: [...dataUser.dialogs, {dialogId: id, dialogInfo: phoneNumber}]});
 
             const refFindUser = firebase.db
                 .collection("users")
                 .doc(findPhoneNumber)
-                .collection('myDialogs')
-                .doc(id);
+                // .collection('myDialogs')
+                // .doc(id);
 
-            batch.set(refFindUser, {...message});
+            batch.update(refFindUser, {dialogs: [...dialogs, {dialogId: id, dialogInfo: dataUser.phoneNumber}]});
 
 
             return batch.commit();
