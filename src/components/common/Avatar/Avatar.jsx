@@ -3,6 +3,7 @@ import Avatar from "@material-ui/core/Avatar/index";
 import { avatarSmall, avatarMedium, avatarBig, colors } from "../../styles";
 
 const getUserLetter = children => {
+
   const arrWord = children.split(" ");
 
   return arrWord.length === 1

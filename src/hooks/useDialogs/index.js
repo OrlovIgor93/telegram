@@ -12,16 +12,18 @@ import {getDialogsBySearch} from '../../helpers/mainPageHelper'
 import firebase from "../../api/firebase";
 import {initialisingUser, loginSuccess} from "../../actions/actionCreatorUser";
 import {useCollection} from "react-firebase-hooks/firestore";
+import {Reference as databaseRef} from "firebase";
+import {getMyDialogs, loadDialogData, useLatestDocument} from "../../api/firestore";
 
 
 const initialState = {
-    dialogs: listDialogs,
+    dialogs: [],
     selectedIndex: null,
     search: ''
 };
 
 
-const reducer = (state, {type, dialogs, value, id, name, phone, imgUrl, lastMessage, timeLastMessage, numberOfUnreadMessages}) => {
+const reducer = (state, {type, dialogs, value, id, name, phone, imgUrl, lastMessage, timeLastMessage, numberOfUnreadMessages, d}) => {
     switch (type) {
         case GET_DIALOGS:
             return {
@@ -53,58 +55,71 @@ const reducer = (state, {type, dialogs, value, id, name, phone, imgUrl, lastMess
                 ...state,
                 dialogs: [...state.dialogs].filter(dialog => dialog.id !== id)
             };
+        case "LOAD_DIALOG":
+            return {
+                ...state,
+                dialogs: [...state.dialogs, d]
+            };
         default:
+
             throw new Error();
     }
 };
 
 
 export const useDialogs = (phoneNumber) => {
-
     const [state, dispatchDialogs] = useReducer(reducer, initialState);
-    const { error, loading, value } = useCollection(
-        firebase.db.collection('users').doc(phoneNumber?phoneNumber:"123")
-    );
+
+    const {dialogs=[], loading, error,} = useLatestDocument(phoneNumber);
+    // const {error, loading, value} = useCollection(
+    //     firebase.db.collection('users').doc(phoneNumber ? phoneNumber : "123")
+    // );
 
     useEffect(() => {
-        if (loading) {
-           console.log("loading")
-        } else if (error) {
-            console.log("error")
-        } else {
+
+
+console.log('dial12121', dialogs)
+
+            getMyDialogs(dialogs).map(e=>e.then(d=>dispatchDialogs({type:"LOAD_DIALOG", d })));
+
+
+
+            // const myListDialogs = dialogs.map(async (doc) => {  .then((data)=> data.map((e)=>e));
+            //     const {userName, phoneNumber} = await firebase.db
+            //         .collection('users')
+            //         .doc(doc.dialogInfo)
+            //         .get()
+            //         .then( (data) =>  data.data());
             //
-            // const docs = value.docs.map(doc => (firebase.db.collection('users').doc( doc.data())))
-            // console.log('docs', docs)
-            // dispatchDialogs(getDialogs(docs));
-            const {dialogs} = value.data();
-            const myListDialogs = dialogs.map( async (doc)=>{
-                const {userName, phoneNumber} = await firebase.db.collection('users').doc(doc.dialogInfo).get()
-                    .then((data)=>data.data() );
-                console.log('userName, phoneNumber',userName, phoneNumber);
+            //     const {textMessage, id} = await  firebase.db
+            //         .collection('dialogs')
+            //         .doc(doc.dialogId)
+            //         .get()
+            //         .then( (data) =>{
+            //             const { messages } =  data.data();
+            //             console.log('textMessage', messages);
+            //
+            //             return {textMessage: messages.textMessage, id: data.id}
+            //             });
+            //
+            //     const data = {
+            //         name: userName,
+            //         phone: phoneNumber,
+            //         lastMessage: textMessage,
+            //         imgUrl: null,
+            //         timeLastMessage: id,
+            //         numberOfUnreadMessages: null
+            //     };
+            //
+            //     return data
+            // }
+            // );
+
+            // dispatchDialogs(list);
 
 
 
-
-
-                const {textMessage, id} = await  firebase.db.collection('dialogs').doc(doc.dialogId).get()
-                    .then( (snapshot) => {
-
-                            // doc.data() is never undefined for query doc snapshots
-                        const {messages} =  snapshot.data();
-                            console.log(snapshot.id, " => ",  messages);
-                            return messages.slice(-1,1)
-
-                    });
-return {name: userName,phone: phoneNumber, lastMessage: null,imgUrl:null,timeLastMessage: null, numberOfUnreadMessages: null }
-
-
-            });
-            console.log('myListDialogs', myListDialogs)
-             console.log('value', dialogs)
-        }
-
-
-        }, [phoneNumber,value]);
+    }, [phoneNumber, dialogs]);
 
 
     // useEffect(() => {

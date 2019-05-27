@@ -1,28 +1,27 @@
 import firebase from "../firebase";
+import {useCollection, useCollectionData} from "react-firebase-hooks/firestore";
+import {useEffect, useState} from "react";
 
 export const getUserByPhoneNumber = (findPhoneNumber, phoneNumber) => {
-
-
     const userTarget = firebase.db.collection("users").doc(findPhoneNumber);
     const userCurrent = firebase.db.collection("users").doc(phoneNumber);
 
-   return userTarget.get().then(  async (sfDoc)=> {
+    return userTarget.get().then(async (sfDoc) => {
             if (!sfDoc.exists) {
                 throw "User not found";
             }
-           const {...dataUser} = await userCurrent.get().then((data)=>{return data.data()});
+            const {...dataUser} = await userCurrent.get().then((data) => {
+                return data.data()
+            });
 
-            console.log('dataUser', dataUser);
             const {phoneNumber, userName, dialogs} = sfDoc.data();
-console.log(userName);
+
             const batch = firebase.db.batch();
             const id = (new Date()).getTime().toString();
             const newDialog = firebase.db.collection("dialogs").doc(id);
 
 
-
             const message = {
-                id,
                 author: dataUser.userName,
                 textMessage: `${dataUser.userName} create dialog1`,
             };
@@ -31,27 +30,27 @@ console.log(userName);
                     phoneNumber,
                     dataUser.phoneNumber
                 ],
-                messages: [
-                    message
-                ]
+                messages: {
+                    [id]: message
+                }
+
+
             };
 
-            batch.set(newDialog,  data);
+            batch.set(newDialog, data);
 
 
             const refUser = firebase.db
                 .collection("users")
-                .doc(dataUser.phoneNumber)
-                // .collection('myDialogs')
-               // .doc('dialogs');
+                .doc(dataUser.phoneNumber);
+
 
             batch.update(refUser, {dialogs: [...dataUser.dialogs, {dialogId: id, dialogInfo: phoneNumber}]});
 
             const refFindUser = firebase.db
                 .collection("users")
-                .doc(findPhoneNumber)
-                // .collection('myDialogs')
-                // .doc(id);
+                .doc(findPhoneNumber);
+
 
             batch.update(refFindUser, {dialogs: [...dialogs, {dialogId: id, dialogInfo: dataUser.phoneNumber}]});
 
@@ -59,18 +58,65 @@ console.log(userName);
             return batch.commit();
 
 
-            // if (newPopulation <= 1000000) {
-            //     transaction.update(sfDocRef, { population: newPopulation });
-            //     return newPopulation;
-            // } else {
-            //     return Promise.reject("Sorry! Population is too big.");
-            // }
-
-
         }
     );
 };
 
+export const useLatestDocument =(phoneNumber)=> {
+    const query = phoneNumber && firebase.db.collection('users').doc(phoneNumber);
+    const { value, loading, error } = useCollection(query);
+    const [dialogs, setDialogs]= useState([]);
+
+    useEffect(() => {
+            if (loading) {
+                console.log("loading")
+            } else if (error) {
+                console.log("error")
+            } else if (value) {
+                console.log("value",value)
+                const {dialogs} = value.data();
+                setDialogs(dialogs);
+            }
+        },[value, loading, error]
+    )
+
+    return {
+        dialogs,
+        loading,
+        error,
+    };
+}
+
+export const getMyDialogs =   (dialogs)=> dialogs.map(async (doc) => {
+    {console.log("dpc", doc)}
+        const {userName, phoneNumber} = await firebase.db
+            .collection('users')
+            .doc(doc.dialogInfo)
+            .get()
+            .then( (data) =>  data.data());
+
+        const {textMessage, id} = await firebase.db
+            .collection('dialogs')
+            .doc(doc.dialogId)
+            .get()
+            .then( (data) =>{
+                const { messages } =  data.data();
+
+                return {textMessage: messages.textMessage, id: data.id}
+            });
+
+        const data = {
+            name: userName,
+            phone: phoneNumber,
+            lastMessage: textMessage,
+            imgUrl: null,
+            timeLastMessage: id,
+            numberOfUnreadMessages: null
+        };
+
+        return data
+    }
+);
 
 // import uuid from "uuid";
 // import dayjs from "dayjs";
@@ -124,101 +170,3 @@ console.log(userName);
 //     return messageLogQuery.docs.map(e => e.data());
 // };
 //
-// export const createNewConvoRoom = async (newRoomId, senderUser, targetUser) => {
-//     const { uid } = senderUser;
-//     const { userId } = targetUser;
-//     firestore
-//         .collection("conversations")
-//         .doc(newRoomId)
-//         .set({
-//             targetUserInfo: {
-//                 [uid]: {
-//                     username: targetUser.username,
-//                     id: userId
-//                 },
-//                 [userId]: {
-//                     username: senderUser.username,
-//                     id: uid
-//                 }
-//             },
-//             members: {
-//                 [uid]: true,
-//                 [userId]: true
-//             },
-//             roomId: newRoomId
-//         });
-//
-//     const senderRef = firestore.collection("users").doc(uid);
-//     const targetRef = firestore.collection("users").doc(userId);
-//
-//     await Promise.all([
-//         senderRef.set(
-//             {
-//                 connections: {
-//                     [userId]: {
-//                         conversationId: newRoomId
-//                     }
-//                 }
-//             },
-//             { merge: true }
-//         ),
-//         targetRef.set(
-//             {
-//                 connections: {
-//                     [uid]: {
-//                         conversationId: newRoomId
-//                     }
-//                 }
-//             },
-//             { merge: true }
-//         )
-//     ]);
-// };
-//
-// export const pushMessageToFirebase = (message, roomId) => {
-//     const conversationRoom = firestore.collection("conversations").doc(roomId);
-//     conversationRoom.set(
-//         {
-//             displayMessage: message.messageText,
-//             lastMessageTime: message.messageDate,
-//             timeStamp: dayjs().unix()
-//         },
-//         { merge: true }
-//     );
-//
-//     conversationRoom
-//         .collection("messageLog")
-//         .doc(message.messageId)
-//         .set(message);
-// };
-//
-// export const processMessage = (messageLog, message, uid) => {
-//     const timeFull = dayjs().format("YYYY-MM-DD HH:mm:ss");
-//     const timeMin = dayjs().format("dddd, h:mm a");
-//
-//     const pushMessage = {
-//         senderId: uid,
-//         messageId: uuid(),
-//         messageText: message,
-//         messageDate: timeMin,
-//         messageDateFull: timeFull,
-//         showTimeStamp: false
-//     };
-//
-//     // -------- TIME STUFF -------
-//
-//     if (messageLog.length < 1) {
-//         pushMessage.showTimeStamp = true;
-//     } else {
-//         const previousMsg = messageLog[messageLog.length - 1];
-//         const lastTime = dayjs(previousMsg.dateFull);
-//         const thisTime = dayjs(message.dateFull);
-//         const timeDiff = thisTime.diff(lastTime, "minutes");
-//
-//         if (timeDiff >= 30) {
-//             pushMessage.showTimeStamp = true;
-//         }
-//     }
-//
-//     return pushMessage;
-// };

@@ -54,6 +54,7 @@ const DialogLisItem = ({
             }}
             alignItems="flex-start"
         >
+            {console.log("name",name)}
             <ListItemAvatar>
                 <AvatarApp
                     medium

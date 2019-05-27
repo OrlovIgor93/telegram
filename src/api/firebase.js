@@ -1,15 +1,20 @@
-import app from "firebase/app"
-import "firebase/auth"
-import "firebase/firebase-firestore"
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
+
+import "firebase/database";
 import { config } from "./config";
 
 class Firebase {
     constructor() {
-        app.initializeApp(config);
-        this.auth = app.auth();
-        this.db = app.firestore();
+        firebase.initializeApp(config);
+        this.auth = firebase.auth();
+        this.db = firebase.firestore();
+        this.databaseRef = firebase.database();
         this.auth.settings.appVerificationDisabledForTesting = true;
     }
+
+
 
     signUpWithPhone(phoneNumber, appVerifier) {
         return this.auth.signInWithPhoneNumber(phoneNumber, appVerifier);
@@ -27,7 +32,7 @@ class Firebase {
     };
 
     setAutoCaptcha() {
-        window.recaptchaVerifier = new app.auth.RecaptchaVerifier("recaptcha-container", {
+        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container", {
             "size": "invisible"
         });
     };
@@ -52,4 +57,4 @@ class Firebase {
 
 }
 
-export default new Firebase()
+export default new Firebase();

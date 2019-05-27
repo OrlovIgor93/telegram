@@ -21,6 +21,7 @@ const DialogsList = ({ classes, setDialog }) => {
   const { dialogs } = useContext(StoreContext);
   return(
     <List className={classes.dialogsList} component="nav">
+      {console.log('dialogs',dialogs)}
       {dialogs.map(
         ({ id, name, imgUrl, lastMessage, timeLastMessage, numberOfUnreadMessages }) => {
           return (

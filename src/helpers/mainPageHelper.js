@@ -1,3 +1,5 @@
+import {useCollection} from "react-firebase-hooks/firestore";
+
 export const getDialogsBySearch = (dialogs, searchValue) => {
 
     return dialogs.filter(dialog => {
@@ -5,3 +7,15 @@ export const getDialogsBySearch = (dialogs, searchValue) => {
     });
 
 };
+
+
+export function useLatestDocument(ref) {
+    const query = ref && ref.orderBy('timestamp', 'desc').limit(1);
+    const { value, loading, error } = useCollection(query);
+
+    return {
+        value,
+        loading,
+        error,
+    };
+}
