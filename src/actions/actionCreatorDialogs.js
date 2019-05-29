@@ -16,9 +16,10 @@ export const searchInListDialogs = value => ({
     value,
 });
 
-export const setActiveDialog = id => ({
+export const setActiveDialog = (id,idDialogInfo) => ({
     type: SET_ACTIVE_DIALOG,
     id,
+    idDialogInfo
 });
 
 export const addDialog = (id, name, phone, imgUrl, lastMessage, timeLastMessage, numberOfUnreadMessages) => ({

@@ -21,19 +21,20 @@ const DialogsList = ({ classes, setDialog }) => {
   const { dialogs } = useContext(StoreContext);
   return(
     <List className={classes.dialogsList} component="nav">
-      {console.log('dialogs',dialogs)}
       {dialogs.map(
-        ({ id, name, imgUrl, lastMessage, timeLastMessage, numberOfUnreadMessages }) => {
+        ({ idDialogInfo, name, imgUrl, lastMessage, timeLastMessage, numberOfUnreadMessages,authorLastMessage }) => {
           return (
             <DialogListItem
-              key={id}
-              id={id}
+              key={timeLastMessage}
+              id={timeLastMessage}
+              idDialogInfo={idDialogInfo}
               name={name}
               imgUrl={imgUrl}
               lastMessage={lastMessage}
               timeLastMessage={timeLastMessage}
               numberOfUnreadMessages={numberOfUnreadMessages}
               setDialog={setDialog}
+              authorLastMessage={authorLastMessage}
             />
           );
         }

@@ -101,7 +101,8 @@ export const LoginPage = () => {
             dialogs: [],
             uid: isNewUser.uid,
             phoneNumber: isNewUser.phoneNumber,
-            userName: userName
+            userName: userName,
+            photoURL: isNewUser.photoURL,
         };
 
         firebase

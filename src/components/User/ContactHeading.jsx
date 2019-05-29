@@ -14,7 +14,7 @@ export const ContactHeading = ({ imgurl, name, onClose }) => (
     >
         <div style={style.titles}>
             <div>
-                <Typography variant="title1">User Info</Typography>
+                <Typography variant="subtitle1">User Info</Typography>
             </div>
             <div style={style.linksRight}>
                 <IconButton onClick={onClose}>

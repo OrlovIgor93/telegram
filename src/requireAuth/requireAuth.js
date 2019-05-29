@@ -4,7 +4,7 @@ import { StoreContext } from "../store";
 import { Spinner } from "../components/common/Spinner";
 
 export const PrivateRoute = ({ component: Component, ...rest }) => {
-    const { initialisingUser, authenticated } = useContext(StoreContext);
+    const { initialisingUser, authenticated, user } = useContext(StoreContext);
 
 
     if (initialisingUser) {
@@ -15,7 +15,7 @@ export const PrivateRoute = ({ component: Component, ...rest }) => {
         <Route
             {...rest}
             render={renderProps => {
-                return authenticated ? (
+                return (authenticated && user) ? (
                     <Component {...renderProps} />
                 ) : (
                     <Redirect

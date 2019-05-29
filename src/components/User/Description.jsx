@@ -15,7 +15,7 @@ export const Description = ({ imgurl, name }) => (
         </div>
         <div style={{ paddingTop: 30 + "px" }}>
             <div>
-                <Typography variant="title1">{name}</Typography>
+                <Typography variant="subtitle1">{name}</Typography>
             </div>
             <div style={{ paddingTop: 15 + "px" }}>
                 <Typography variant="body1">online</Typography>

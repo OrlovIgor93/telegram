@@ -90,7 +90,6 @@ const Header = ({ classes }) => {
         handleClickOpenModal
     } = useContext(StoreContext);
 
-    const { name = "" } = activeDialogInfo;
     return (
         <AppBar position="static">
             <HorizontalWrap style={headerStyle}>
@@ -102,20 +101,20 @@ const Header = ({ classes }) => {
                 </HorizontalWrap>
                 <HorizontalWrap style={rightWrapperButtons}>
                     <Button
-                        disabled={name === ""}
+                        disabled={activeDialogInfo.userName=== ''}
                         fullWidth
                         className={classes.infoActiveDialog}
                         onClick={() => handleClickOpenModal("User")}
                     >
                         <Typography variant="subtitle1" noWrap color="inherit">
-                            {name}
+                            {activeDialogInfo.userName}
                         </Typography>
                         {/* <Typography noWrap style={{ color: "#b9cfe3" }}>
                          online
                              </Typography> */}
                     </Button>
 
-                    {activeDialogInfo  &&
+                    {activeDialogInfo  &&  activeDialogInfo.userName &&
                     <React.Fragment>
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>

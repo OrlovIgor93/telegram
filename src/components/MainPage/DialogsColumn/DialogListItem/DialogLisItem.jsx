@@ -37,7 +37,9 @@ const DialogLisItem = ({
                            name,
                            imgUrl,
                            lastMessage,
+                           idDialogInfo,
                            timeLastMessage,
+                           authorLastMessage,
                            numberOfUnreadMessages,
                            classes,
 
@@ -50,11 +52,10 @@ const DialogLisItem = ({
             button
             selected={selectedIndex === id}
             onClick={() => {
-                dispatchDialogs(setActiveDialog(id));
+                dispatchDialogs(setActiveDialog(id,idDialogInfo));
             }}
             alignItems="flex-start"
         >
-            {console.log("name",name)}
             <ListItemAvatar>
                 <AvatarApp
                     medium
@@ -84,7 +85,7 @@ const DialogLisItem = ({
                             component="span"
                             color="textPrimary"
                         >
-                            {name}:&nbsp;
+                            {authorLastMessage}:&nbsp;
                         </Typography>
                         <Typography
                             inline
@@ -104,7 +105,7 @@ const DialogLisItem = ({
                     style={{ padding: "10px 0", color: "#9c9c9c" }}
                     variant="caption"
                 >
-                    {new Date(timeLastMessage).toLocaleDateString()}
+                    {new Date(+timeLastMessage).toLocaleDateString()}
                 </Typography>
                 {numberOfUnreadMessages && <Chip value={numberOfUnreadMessages}/>}
 

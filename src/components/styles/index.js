@@ -205,6 +205,7 @@ export const dialogInfoStyle = {
 
 export const bottomPanelWrap = {
     height: "100%",
+    width: "90%",
     flexDirection: "column-reverse",
     overflow: "auto",
     margin: "0 auto",

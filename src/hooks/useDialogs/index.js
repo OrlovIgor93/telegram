@@ -13,7 +13,7 @@ import firebase from "../../api/firebase";
 import {initialisingUser, loginSuccess} from "../../actions/actionCreatorUser";
 import {useCollection} from "react-firebase-hooks/firestore";
 import {Reference as databaseRef} from "firebase";
-import {getMyDialogs, loadDialogData, useLatestDocument} from "../../api/firestore";
+import {getInfoDialog, getMyDialogs, loadDialogData, useLatestDocument} from "../../api/firestore";
 
 
 const initialState = {
@@ -23,7 +23,7 @@ const initialState = {
 };
 
 
-const reducer = (state, {type, dialogs, value, id, name, phone, imgUrl, lastMessage, timeLastMessage, numberOfUnreadMessages, d}) => {
+const reducer = (state, {type, dialogs, value, id, name, phone, imgUrl, lastMessage, timeLastMessage, numberOfUnreadMessages, d, idDialogInfo}) => {
     switch (type) {
         case GET_DIALOGS:
             return {
@@ -39,7 +39,8 @@ const reducer = (state, {type, dialogs, value, id, name, phone, imgUrl, lastMess
             return {
                 ...state,
                 search: "",
-                selectedIndex: id
+                selectedIndex: id,
+                idDialogInfo
             };
         case ADD_DIALOG:
             return {
@@ -69,57 +70,33 @@ const reducer = (state, {type, dialogs, value, id, name, phone, imgUrl, lastMess
 
 export const useDialogs = (phoneNumber) => {
     const [state, dispatchDialogs] = useReducer(reducer, initialState);
-
-    const {dialogs=[], loading, error,} = useLatestDocument(phoneNumber);
-    // const {error, loading, value} = useCollection(
-    //     firebase.db.collection('users').doc(phoneNumber ? phoneNumber : "123")
-    // );
+    const query = phoneNumber && firebase.db.collection('users').doc(phoneNumber);
+    const {value, loading, error} = useCollection(query);
 
     useEffect(() => {
 
 
-console.log('dial12121', dialogs)
+            if (loading) {
+                console.log("loading")
+            } else if (error) {
+                console.log("error")
+            } else if (value) {
+                const {dialogs} = value.data();
+                dialogs.map(dialog => getInfoDialog(dialog)).map(dialog => dialog.then(data => {
+                        const {idLastMessage, photoURL, userName, lastMessage, timeLastMessage, authorLastMessage,targetUserId} = data;
+                        const d = {idLastMessage, photoURL, name: userName, lastMessage, timeLastMessage, authorLastMessage, idDialogInfo: targetUserId};
 
-            getMyDialogs(dialogs).map(e=>e.then(d=>dispatchDialogs({type:"LOAD_DIALOG", d })));
-
-
-
-            // const myListDialogs = dialogs.map(async (doc) => {  .then((data)=> data.map((e)=>e));
-            //     const {userName, phoneNumber} = await firebase.db
-            //         .collection('users')
-            //         .doc(doc.dialogInfo)
-            //         .get()
-            //         .then( (data) =>  data.data());
-            //
-            //     const {textMessage, id} = await  firebase.db
-            //         .collection('dialogs')
-            //         .doc(doc.dialogId)
-            //         .get()
-            //         .then( (data) =>{
-            //             const { messages } =  data.data();
-            //             console.log('textMessage', messages);
-            //
-            //             return {textMessage: messages.textMessage, id: data.id}
-            //             });
-            //
-            //     const data = {
-            //         name: userName,
-            //         phone: phoneNumber,
-            //         lastMessage: textMessage,
-            //         imgUrl: null,
-            //         timeLastMessage: id,
-            //         numberOfUnreadMessages: null
-            //     };
-            //
-            //     return data
-            // }
-            // );
-
-            // dispatchDialogs(list);
-
-
-
-    }, [phoneNumber, dialogs]);
+                        if (state.dialogs.length === 0) {
+                            dispatchDialogs({type: "LOAD_DIALOG", d})
+                        } else if
+                        (!(state.dialogs.find(o => o.timeLastMessage === timeLastMessage))) {
+                            dispatchDialogs({type: "LOAD_DIALOG", d})
+                        }
+                    })
+                )
+            }
+        }, [value, loading, error]
+    );
 
 
     // useEffect(() => {
@@ -133,5 +110,11 @@ console.log('dial12121', dialogs)
         ...state,
         dispatchDialogs
     };
+
+};
+
+export const getUserData = async (refUser,) => {
+    const ref = await firebase.db.doc(refUser.path).get().then((d) => d.data());
+    return ref;
 
 };

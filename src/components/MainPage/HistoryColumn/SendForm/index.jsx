@@ -20,8 +20,7 @@ export const SendForm = () => {
     const handleSubmit = event => {
         event.preventDefault();
         const newMessage = {
-            areYouAuthor: true,
-            messages: [{timeMessage: new Date(), textMessage: inputValue}]
+            messages: [{timeMessage: new Date().getTime(), textMessage: inputValue}]
         };
         changeActiveDialog([...messagesActiveDialog, newMessage]);
         setInputValue(``);

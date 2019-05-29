@@ -1,8 +1,7 @@
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 
-import "firebase/database";
 import { config } from "./config";
 
 class Firebase {
@@ -10,7 +9,6 @@ class Firebase {
         firebase.initializeApp(config);
         this.auth = firebase.auth();
         this.db = firebase.firestore();
-        this.databaseRef = firebase.database();
         this.auth.settings.appVerificationDisabledForTesting = true;
     }
 
@@ -45,7 +43,7 @@ class Firebase {
        const user = this.auth.currentUser;
         this.db
           .collection("users")
-          .doc(user.uid)
+          .doc(user.phoneNumber)
           .update({userName: userName});
 
         return user.updateProfile({

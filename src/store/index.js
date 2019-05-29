@@ -1,29 +1,28 @@
-import { useDialogs } from "../hooks/useDialogs";
-import { usePortals } from "../hooks/usePortals";
-import React, { useEffect } from "react";
-import { useUser } from "../hooks/useUser";
-import { useHistoryDialog } from "../hooks/useHistoryDialog";
+import {useDialogs} from "../hooks/useDialogs";
+import {usePortals} from "../hooks/usePortals";
+import React, {useEffect} from "react";
+import {useUser} from "../hooks/useUser";
+import {useHistoryDialog} from "../hooks/useHistoryDialog";
 
 const StoreContext = React.createContext({});
 
-const StoreProvider = ({ children }) => {
-    const { authenticated, user,initialisingUser, dispatchUser } = useUser();
-    const phoneNumber=  user && user.phoneNumber;
-    console.log(user);
-    const { dialogs, search, selectedIndex, dispatchDialogs } = useDialogs(phoneNumber);
+const StoreProvider = ({children}) => {
+    const {authenticated, user, initialisingUser, dispatchUser} = useUser();
+    const phoneNumber = user && user.phoneNumber;
+
+    const {dialogs, search, selectedIndex, idDialogInfo, dispatchDialogs} = useDialogs(phoneNumber);
     const {
         messagesActiveDialog, activeDialogInfo, searchValueInDialog,
         handleSearchForDialog,
         handlerBlurSearchDialog
-    } = useHistoryDialog(selectedIndex);
-    const { openModal, anchorLeftMenu, setAnchorLeftMenu, handleClickOpenModal, handleCloseModal, } = usePortals();
-
+    } = useHistoryDialog(selectedIndex, idDialogInfo);
+    const {openModal, anchorLeftMenu, setAnchorLeftMenu, handleClickOpenModal, handleCloseModal,} = usePortals();
 
 
     const _mapStateToProps = {
         dialogs, search, selectedIndex,
         messagesActiveDialog, activeDialogInfo, searchValueInDialog,
-        authenticated, user,initialisingUser
+        authenticated, user, initialisingUser
     };
 
     const _dispatchFunctions = {
@@ -49,4 +48,4 @@ const StoreProvider = ({ children }) => {
         </StoreContext.Provider>
     );
 };
-export { StoreContext, StoreProvider };
+export {StoreContext, StoreProvider};

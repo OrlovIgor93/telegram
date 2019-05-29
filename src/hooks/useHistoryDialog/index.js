@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { listDialogs } from "../../mock/listDialogs"
-import { activeDialog } from "../../mock/activeDialog";
+import firebase from "../../api/firebase";
+import {getUserData} from "../useDialogs";
+import {getData} from "../../api/firestore";
 
 
-export const useHistoryDialog = (selectedIndex) => {
+export const useHistoryDialog = (selectedIndex, idDialogInfo) => {
 
     const [ messagesActiveDialog, changeActiveDialog ] = useState([]);
     const [ activeDialogInfo, setActiveDialogInfo ] = useState({});
@@ -11,23 +12,34 @@ export const useHistoryDialog = (selectedIndex) => {
 
     useEffect(
         () => {
-            setDialog(selectedIndex)
+            if(idDialogInfo){
+                getData(`users/${idDialogInfo}`)
+                    .then(res=>{
+                        console.log('---',res)
+                        setActiveDialogInfo(res)
+                    })
+
+
+
+            }
+            if (selectedIndex) {
+                const ref = firebase.db.collection('dialogs').doc(selectedIndex)
+                    .collection('messages')
+                    .get();
+
+                    ref.then(
+                    (d)=> d.docs.map(d=>d.data()
+
+
+                    )).then((e)=> changeActiveDialog(e)  )
+
+            }
+
         },
-        [ selectedIndex ]
+        [ selectedIndex, idDialogInfo ]
     );
 
-    const setDialog = (id) => {
-        const randomMessages = activeDialog.filter((el, i, arr) => {
-            return arr.indexOf(el) % id === 0;
-        });
-        randomMessages.sort((a, b) => {
-            return new Date(b.messages[0].timeMessage) - new Date(a.messages[0].timeMessage);
-        });
 
-        changeActiveDialog(randomMessages);
-
-        setActiveDialogInfo(listDialogs.find(dialog => dialog.id === id));
-    };
 
     const handleSearchForDialog = ({ target: { value } }) => {
         const regEx = new RegExp(`${value}`, "img");
@@ -56,7 +68,6 @@ export const useHistoryDialog = (selectedIndex) => {
 
     const handlerBlurSearchDialog = () => {
         setSearchValueInDialog("");
-        setDialog(activeDialogInfo.id);
     };
 
 

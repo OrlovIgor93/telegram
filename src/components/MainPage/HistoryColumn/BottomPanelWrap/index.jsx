@@ -9,8 +9,8 @@ import {StoreContext} from "../../../../store";
 
 export const BottomPanelWrap = () => {
 
-    const {profileInfo: {img, fullName},
-           activeDialogInfo: {imgUrl, name},
+    const {user,
+           activeDialogInfo: {photoURL, userName},
            handleClickOpenModal} = useContext(StoreContext);
 
     return (
@@ -21,8 +21,8 @@ export const BottomPanelWrap = () => {
                 >
                     <AvatarApp
                         big
-                        src={img}
-                        name={fullName}
+                        src={user.photoURL}
+                        name={user.displayName}
                     />
                 </IconButton>
                 <SendForm/>
@@ -31,8 +31,8 @@ export const BottomPanelWrap = () => {
                 >
                     <AvatarApp
                         big
-                        src={imgUrl}
-                        name={name}
+                        src={photoURL}
+                        name={userName}
                     />
                 </IconButton>
             </HorizontalWrap>

@@ -8,11 +8,11 @@ export const User = ({activeDialogInfo, onClose}) => (
     <Paper style={{padding: 0, width: "480px"}} elevation={1}>
         <ContactHeading
             onClose={onClose}
-            imgurl={activeDialogInfo.imgUrl}
-            name={activeDialogInfo.name}
+            imgurl={activeDialogInfo.photoURL}
+            name={activeDialogInfo.userName}
         />
-        <ContactBody name={activeDialogInfo.name}
-                     phone={activeDialogInfo.phone}
+        <ContactBody name={activeDialogInfo.userName}
+                     phone={activeDialogInfo.phoneNumber}
                      onClose={onClose}
         />
     </Paper>

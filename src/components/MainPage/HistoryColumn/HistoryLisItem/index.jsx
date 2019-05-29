@@ -7,31 +7,31 @@ import {dialogInfoStyle, stretchAreaStyle} from "../../../styles"
 import "./style.css"
 import {StoreContext} from "../../../../store";
 
-export const HistoryListItem = ({areYouAuthor, messages}) => {
+export const HistoryListItem = ({messages}) => {
 
-    const {profileInfo: {img, fullName}, activeDialogInfo: {imgUrl, name}} = useContext(StoreContext);
+    const {user, activeDialogInfo: {photoUrl, userName}} = useContext(StoreContext);
     return (
 
         <HorizontalWrap style={dialogInfoStyle}>
             <AvatarApp
                 style={{marginRight: 15}}
-                src={areYouAuthor ? img : imgUrl}
-                name={areYouAuthor ? fullName : name}
+                src={photoUrl}
+                name={userName}
             />
             <VerticalWrap style={stretchAreaStyle}>
                 <VerticalWrap>
                     <HorizontalWrap style={{alignItems: "baseline"}}>
                         <Typography variant="subtitle1">
-                            {areYouAuthor ? fullName : name}
+                            {userName}
                         </Typography>
                         <Typography variant="caption" style={{marginLeft: "auto"}}>
-                            {new Date(messages[0].timeMessage).toLocaleTimeString()}
+                            {new Date(+messages[0].timeMessage).toLocaleTimeString()}
                         </Typography>
 
                     </HorizontalWrap>
 
                     <Typography
-                        id="typography-text-message"
+                        variant='caption'
                         dangerouslySetInnerHTML={{__html: messages[0].textMessage}}
                         style={{whiteSpace: "pre-wrap", maxWidth: 500, alignItems: "baseline"}}
                     />
@@ -44,7 +44,7 @@ export const HistoryListItem = ({areYouAuthor, messages}) => {
                             variant="body2" gutterBottom style={{maxWidth: 500}}/>
 
                         <Typography variant="caption" style={{marginLeft: "auto"}}>
-                            {new Date(mes.timeMessage).toLocaleTimeString()}
+                            {new Date(+mes.timeMessage).toLocaleTimeString()}
                         </Typography>
                     </HorizontalWrap>
                 )

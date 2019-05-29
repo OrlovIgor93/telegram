@@ -49,7 +49,7 @@ export const useUser = () => {
     useEffect(() => {
             if (initialising) {
                 dispatchUser(initialisingUser())
-            } else if (user) {
+            } else if (user && user.displayName) {
                 dispatchUser(loginSuccess(user))
             } else {
                 dispatchUser({ type: "new_login" })
