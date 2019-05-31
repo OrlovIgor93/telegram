@@ -4,9 +4,6 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 
 import { header } from "../../styles";
-import IconButton  from "@material-ui/core/IconButton";
-import AddIcon from "@material-ui/core/SvgIcon";
-import MenuIcon from "@material-ui/core/SvgIcon/SvgIcon";
 
 
 export const Header = ({ title, onClose, children }) => (

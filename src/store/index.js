@@ -11,11 +11,13 @@ const StoreProvider = ({children}) => {
     const phoneNumber = user && user.phoneNumber;
 
     const {dialogs, search, selectedIndex, idDialogInfo, dispatchDialogs} = useDialogs(phoneNumber);
+
     const {
         messagesActiveDialog, activeDialogInfo, searchValueInDialog,
         handleSearchForDialog,
         handlerBlurSearchDialog
     } = useHistoryDialog(selectedIndex, idDialogInfo);
+
     const {openModal, anchorLeftMenu, setAnchorLeftMenu, handleClickOpenModal, handleCloseModal,} = usePortals();
 
 

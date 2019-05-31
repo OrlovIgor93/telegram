@@ -7,50 +7,46 @@ import {dialogInfoStyle, stretchAreaStyle} from "../../../styles"
 import "./style.css"
 import {StoreContext} from "../../../../store";
 
-export const HistoryListItem = ({messages}) => {
+export const HistoryListItem = ({messages, photoURL, userName}) => (
 
-    const {user, activeDialogInfo: {photoUrl, userName}} = useContext(StoreContext);
-    return (
+    <HorizontalWrap style={dialogInfoStyle}>
+        <AvatarApp
+            style={{marginRight: 15}}
+            src={photoURL}
+            name={userName}
+        />
+        <VerticalWrap style={stretchAreaStyle}>
+            <VerticalWrap>
+                <HorizontalWrap style={{alignItems: "baseline"}}>
+                    <Typography variant="subtitle1">
+                        {userName}
+                    </Typography>
+                    <Typography variant="caption" style={{marginLeft: "auto"}}>
+                        {new Date(+messages[0].timeMessage).toLocaleTimeString()}
+                    </Typography>
 
-        <HorizontalWrap style={dialogInfoStyle}>
-            <AvatarApp
-                style={{marginRight: 15}}
-                src={photoUrl}
-                name={userName}
-            />
-            <VerticalWrap style={stretchAreaStyle}>
-                <VerticalWrap>
-                    <HorizontalWrap style={{alignItems: "baseline"}}>
-                        <Typography variant="subtitle1">
-                            {userName}
-                        </Typography>
-                        <Typography variant="caption" style={{marginLeft: "auto"}}>
-                            {new Date(+messages[0].timeMessage).toLocaleTimeString()}
-                        </Typography>
+                </HorizontalWrap>
 
-                    </HorizontalWrap>
+                <Typography
+                    variant='caption'
+                    dangerouslySetInnerHTML={{__html: messages[0].textMessage}}
+                    style={{whiteSpace: "pre-wrap", maxWidth: 500, alignItems: "baseline"}}
+                />
 
-                    <Typography
-                        variant='caption'
-                        dangerouslySetInnerHTML={{__html: messages[0].textMessage}}
-                        style={{whiteSpace: "pre-wrap", maxWidth: 500, alignItems: "baseline"}}
-                    />
-
-                </VerticalWrap>
-                {messages.slice(1).map((mes) =>
-                    <HorizontalWrap key={mes.timeMessage} style={{alignItems: "baseline"}}>
-                        <Typography
-                            dangerouslySetInnerHTML={{__html: mes.textMessage}}
-                            variant="body2" gutterBottom style={{maxWidth: 500}}/>
-
-                        <Typography variant="caption" style={{marginLeft: "auto"}}>
-                            {new Date(+mes.timeMessage).toLocaleTimeString()}
-                        </Typography>
-                    </HorizontalWrap>
-                )
-                }
             </VerticalWrap>
-        </HorizontalWrap>
+            {messages.slice(1).map((mes) =>
+                <HorizontalWrap key={mes.timeMessage} style={{alignItems: "baseline"}}>
+                    <Typography
+                        dangerouslySetInnerHTML={{__html: mes.textMessage}}
+                        variant="body2" gutterBottom style={{whiteSpace: "pre-wrap", maxWidth: 500}}/>
 
-    );
-};
+                    <Typography variant="caption" style={{marginLeft: "auto"}}>
+                        {new Date(+mes.timeMessage).toLocaleTimeString()}
+                    </Typography>
+                </HorizontalWrap>
+            )
+            }
+        </VerticalWrap>
+    </HorizontalWrap>
+
+);

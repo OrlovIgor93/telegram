@@ -47,6 +47,7 @@ const DialogLisItem = ({
     const { selectedIndex, dispatchDialogs } = useContext(StoreContext);
 
     return (
+
         <ListItem
             id={id}
             button

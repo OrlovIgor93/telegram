@@ -1,5 +1,4 @@
 import {useEffect, useReducer} from 'react';
-import {listDialogs} from '../../mock/listDialogs'
 import {
     GET_DIALOGS,
     SEARCH_IN_LIST_DIALOGS,
@@ -7,13 +6,9 @@ import {
     ADD_DIALOG,
     REMOVE_DIALOG,
 } from '../../constants';
-import {getDialogs} from '../../actions/actionCreatorDialogs.js'
-import {getDialogsBySearch} from '../../helpers/mainPageHelper'
 import firebase from "../../api/firebase";
-import {initialisingUser, loginSuccess} from "../../actions/actionCreatorUser";
-import {useCollection} from "react-firebase-hooks/firestore";
-import {Reference as databaseRef} from "firebase";
-import {getInfoDialog, getMyDialogs, loadDialogData, useLatestDocument} from "../../api/firestore";
+import {useCollection, useCollectionDataOnce, useDocument} from "react-firebase-hooks/firestore";
+import {getInfoDialog} from "../../api/firestore";
 
 
 const initialState = {
@@ -70,8 +65,8 @@ const reducer = (state, {type, dialogs, value, id, name, phone, imgUrl, lastMess
 
 export const useDialogs = (phoneNumber) => {
     const [state, dispatchDialogs] = useReducer(reducer, initialState);
-    const query = phoneNumber && firebase.db.collection('users').doc(phoneNumber);
-    const {value, loading, error} = useCollection(query);
+    const query =phoneNumber && firebase.db.doc(`users/${phoneNumber}`);
+    const [value, loading, error] = useDocument(query);
 
     useEffect(() => {
 
@@ -83,8 +78,10 @@ export const useDialogs = (phoneNumber) => {
             } else if (value) {
                 const {dialogs} = value.data();
                 dialogs.map(dialog => getInfoDialog(dialog)).map(dialog => dialog.then(data => {
-                        const {idLastMessage, photoURL, userName, lastMessage, timeLastMessage, authorLastMessage,targetUserId} = data;
-                        const d = {idLastMessage, photoURL, name: userName, lastMessage, timeLastMessage, authorLastMessage, idDialogInfo: targetUserId};
+                        const {idLastMessage, photoURL, userName,
+                            lastMessage, timeLastMessage,
+                            authorLastMessage,targetUserId, dialogId} = data;
+                        const d = {idLastMessage, photoURL, name: userName, lastMessage, timeLastMessage, authorLastMessage, idDialogInfo: targetUserId, id:dialogId};
 
                         if (state.dialogs.length === 0) {
                             dispatchDialogs({type: "LOAD_DIALOG", d})
@@ -110,11 +107,5 @@ export const useDialogs = (phoneNumber) => {
         ...state,
         dispatchDialogs
     };
-
-};
-
-export const getUserData = async (refUser,) => {
-    const ref = await firebase.db.doc(refUser.path).get().then((d) => d.data());
-    return ref;
 
 };

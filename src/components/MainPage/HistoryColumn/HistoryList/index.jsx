@@ -9,11 +9,12 @@ export const HistoryList = () => {
     return (
         <VerticalWrap style={bottomPanelWrap}>
             <div>
-                {console.log('messagesActiveDialog',messagesActiveDialog)}
-                {messagesActiveDialog.map(({id, messages}) => (
+                {messagesActiveDialog.map(({userName, photoURL,authorId, messages}) => (
                     <HistoryListItem
-                        key={id}
+                        key={`${messages[0].timeMessage}${authorId}`}
                         messages={messages}
+                        userName={userName}
+                        photoURL={photoURL}
                     />
 
                 ))}

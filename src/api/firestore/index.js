@@ -1,5 +1,5 @@
 import firebase from "../firebase";
-import {useCollection, useCollectionData} from "react-firebase-hooks/firestore";
+import {useCollection, useCollectionData, useDocument, useDocumentDataOnce} from "react-firebase-hooks/firestore";
 import {useEffect, useState} from "react";
 import {getDialogs} from "../../actions/actionCreatorDialogs";
 
@@ -25,12 +25,12 @@ export const getUserByPhoneNumber = (findPhoneNumber, phoneNumber) => {
 
             const message = {
                 authorId: dataUser.phoneNumber,
-                messages: [
+                timeLastMessage: id,
+                messages:
                     {
-                        timeMessage: id,
-                        textMessage: `${(new Date()).toLocaleDateString()} dialog was created`
+                        [id]: `${(new Date()).toLocaleDateString()} dialog was created`
                     }
-                ]
+
             };
 
             const data = {
@@ -61,7 +61,12 @@ export const getUserByPhoneNumber = (findPhoneNumber, phoneNumber) => {
             });
 
 
-            // batch.update(refFindUser, {dialogs: [...dialogs, {dialogId: id, dialogInfo: dataUser.phoneNumber}]});
+            batch.update(refFindUser, {
+                dialogs: [
+                    ...dialogs,
+                    {dialogId: newDialogCore.id, targetUserId: dataUser.phoneNumber}
+                ]
+            });
 
 
             return batch.commit();
@@ -71,58 +76,6 @@ export const getUserByPhoneNumber = (findPhoneNumber, phoneNumber) => {
     );
 };
 
-export const useLatestDocument = (phoneNumber) => {
-    const query = phoneNumber && firebase.db.collection('users').doc(phoneNumber);
-    const {value, loading, error} = useCollection(query);
-    const [dialogs, setDialogs] = useState([]);
-
-    useEffect(() => {
-            if (loading) {
-                console.log("loading")
-            } else if (error) {
-                console.log("error")
-            } else if (value) {
-                console.log("--value", value)
-                const {dialogs} = value.data();
-                console.log("dialogs", dialogs)
-                setDialogs(dialogs);
-            }
-        }, [value, loading, error]
-    )
-
-    return {
-        dialogs,
-        loading,
-        error,
-    };
-}
-
-export const getMyDialogs = (dialogs) => dialogs.map(async ({dialogId, targetUserId}) => {
-
-    const {idLastMessage} = await getData(`dialogs/${dialogId}`);
-    const {userName, photoURL} = await getData(`users/${targetUserId}`);
-
-    return {idLastMessage, userName, photoURL}
-    // return Promise.all([
-    //     firebase.db
-    //         .collection('users')
-    //         .doc(targetUserId)
-    //         .get()
-    //         .then((data) => {const d=data.data()
-    //             return {...d}
-    //             }),
-    //
-    //     firebase.db
-    //         .collection('dialogs')
-    //         .doc(dialogId)
-    //         .get()
-    //         .then((data) => {let {idLastMessage}=data.data()
-    //             console.log(data.data())
-    //             return {idLastMessage}
-    //         }),
-    //
-    // ])
-});
 
 export const getInfoDialog = async ({dialogId, targetUserId}) => {
     const {idLastMessage} = await getData(`dialogs/${dialogId}`);
@@ -130,6 +83,7 @@ export const getInfoDialog = async ({dialogId, targetUserId}) => {
     const {authorLastMessage, textMessage, timeMessage} = await getLastData(`dialogs/${dialogId}/messages/${idLastMessage}`);
 
     return {
+        dialogId,
         idLastMessage,
         userName,
         photoURL,
@@ -142,13 +96,65 @@ export const getInfoDialog = async ({dialogId, targetUserId}) => {
 
 export const getData = async (idDoc) => {
     return await firebase.db.doc(idDoc).get().then(d => d.data())
-}
+};
 
 const getLastData = async (idDoc) => {
-    const {authorId, messages} = await firebase.db.doc(idDoc).get().then(d => d.data())
-    const {userName} = await getData(`users/${authorId}`)
-    return {authorLastMessage: userName, ...messages[messages.length - 1]}
+    const {authorId, messages} = await firebase.db.doc(idDoc).get().then(d => d.data());
+
+    const {userName} = await getData(`users/${authorId}`);
+    const arr = await getArrayByObject(await messages);
+
+    return {authorLastMessage: userName, ...arr[arr.length - 1]}
 }
+
+export const getArrayByObject = async (obj) => {
+    let formatMessages = [];
+    for (const [key, value] of Object.entries(obj)) {
+        formatMessages[formatMessages.length] = {
+            timeMessage: key,
+            textMessage: value
+        }
+    }
+    return formatMessages;
+};
+
+
+
+export const sendMessage = (selectedIndex, {timeMessage, textMessage, authorId}, update, idMessageGroup) => {
+
+    const dialogRef = firebase.db.collection("dialogs").doc(`${selectedIndex}`);
+    const batch = firebase.db.batch();
+
+
+    if (update) {
+        const lastGroupMessages = dialogRef.collection('messages').doc(idMessageGroup)
+        const mewMessage = `messages.${timeMessage}`;
+
+        batch.update(lastGroupMessages, {
+                timeLastMessage: timeMessage,
+                [mewMessage]: textMessage
+            }
+        )
+
+
+    } else {
+
+        const newDialog = dialogRef.collection('messages').doc();
+        batch.update(dialogRef, {idLastMessage: newDialog.id,})
+        batch.set(newDialog, {
+            authorId: authorId,
+            timeLastMessage: timeMessage,
+            messages:{
+            [timeMessage]: textMessage
+            }
+        })
+
+    }
+
+    return batch.commit()
+
+
+};
 
 
 // import uuid from "uuid";

@@ -22,11 +22,11 @@ const DialogsList = ({ classes, setDialog }) => {
   return(
     <List className={classes.dialogsList} component="nav">
       {dialogs.map(
-        ({ idDialogInfo, name, imgUrl, lastMessage, timeLastMessage, numberOfUnreadMessages,authorLastMessage }) => {
+        ({ idDialogInfo, name, imgUrl, lastMessage, timeLastMessage, numberOfUnreadMessages,authorLastMessage,id }) => {
           return (
             <DialogListItem
               key={timeLastMessage}
-              id={timeLastMessage}
+              id={id}
               idDialogInfo={idDialogInfo}
               name={name}
               imgUrl={imgUrl}

@@ -2,7 +2,7 @@ import { useEffect, useReducer } from "react";
 import { INITIALISING_USER, LOG_IN_SUCCESS, LOG_OUT_USER } from "../../constants";
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "../../api/firebase";
-import { initialisingUser, loginSuccess, logOutSuccess } from "../../actions/actionCreatorUser";
+import { initialisingUser, loginSuccess } from "../../actions/actionCreatorUser";
 
 const initialState = {
     initialisingUser: true,
@@ -44,7 +44,7 @@ const reducer = (state, { type, authData }) => {
 export const useUser = () => {
     const [userState, dispatchUser] = useReducer(reducer, initialState);
 
-    const { initialising, user } = useAuthState(firebase.auth);
+    const [user, initialising, error] = useAuthState(firebase.auth);
 
     useEffect(() => {
             if (initialising) {
